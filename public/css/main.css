@@ -31,6 +31,8 @@ footer, header, hgroup, menu, nav, section {
 
 body {
   line-height: 1;
+  background-color: #F4F4F4;
+  color: #444;
 }
 
 ol, ul {
@@ -75,4 +77,58 @@ table {
   text-decoration: none;
   color: #444;
   font-weight: 600;
+}
+
+.cta {
+  display: flex;
+  width: 100%;
+}
+.cta__left {
+  padding-top: 25rem;
+  width: 50%;
+}
+.cta__left-heading {
+  font-size: 3.6rem;
+}
+.cta__left-tagline {
+  width: 40rem;
+  font-size: 1.8rem;
+  opacity: 0.9;
+  padding-top: 1rem;
+}
+.cta__left-buttons {
+  display: flex;
+  gap: 1rem;
+  padding-top: 2rem;
+}
+.cta__right {
+  width: 50%;
+}
+.cta__right-img {
+  margin-top: 8rem;
+  height: 65vh;
+  width: 100%;
+}
+
+.button {
+  height: 3.2rem;
+  width: 12rem;
+  border-radius: 0.3rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+.button__black {
+  background-color: #444;
+  color: #FFF;
+}
+.button__white {
+  background-color: #FFF;
+  color: #444;
+}
+
+.container {
+  padding: 0 15rem;
 }
