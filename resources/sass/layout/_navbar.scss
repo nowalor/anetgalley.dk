@@ -1,0 +1,32 @@
+.navbar {
+    width: 100%;
+    position: relative;
+    &__content {
+        height: 7.5rem;
+
+        background-color: #FFF;
+        padding: 0 15rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #f4f4f4;
+    }
+
+    &__logo {
+
+    }
+
+    &__menu {
+        display: flex;
+    }
+
+    &__menu-item {
+        margin: 0 1rem;
+    }
+
+    &__menu-link {
+        text-decoration: none;
+        color: #444;
+        font-weight: 600;
+    }
+}
