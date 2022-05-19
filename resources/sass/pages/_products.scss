@@ -1,15 +1,31 @@
 .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .product {
+    width: 45%;
     &__price-box {
-
+        height: 3.3rem;
+        width: 100px;
+        background: var(--primary);
+        border-radius: 20rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     &__price {
-
+        color: #FFF;
+        font-size: 1.6rem;
     }
 
     &__description {
+        width: 90%;
+    }
 
+    &__image {
+        width: 100%;
     }
 }
+

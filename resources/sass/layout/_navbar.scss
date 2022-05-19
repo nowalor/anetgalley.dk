@@ -89,6 +89,12 @@
         background-color: #FFF;
         color: #444;
     }
+
+
+    &__pink {
+        background-color: var(--pink);
+        color: #FFF;
+    }
 }
 
 .container {
