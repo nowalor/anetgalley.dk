@@ -1,3 +1,28 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap);
+:root {
+  --primary: #444;
+}
+
+.large-heading-white {
+  font-size: 4.8rem;
+  color: #FFF;
+}
+
+.tagline-white-italic {
+  font-size: 2.4rem;
+  color: #FFF;
+  font-style: italic;
+}
+
+/* UTILITIES */
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -33,6 +58,7 @@ body {
   line-height: 1;
   background-color: #F4F4F4;
   color: #444;
+  font-family: "Roboto", sans-serif;
 }
 
 ol, ul {
@@ -80,6 +106,7 @@ table {
 }
 
 .cta {
+  height: calc(100vh - 7.5rem);
   display: flex;
   width: 100%;
 }
@@ -131,4 +158,47 @@ table {
 
 .container {
   padding: 0 15rem;
+}
+
+/* PAGES */
+.shop-preview {
+  height: 20rem;
+  background: #444;
+  text-align: center;
+  padding-top: 11rem;
+}
+
+.decoration-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.8rem;
+  width: 100%;
+}
+.decoration-line__line {
+  height: 0.2rem;
+  width: 20rem;
+  background-color: #A5A0A0;
+  margin: 0 1.7rem;
+}
+.decoration-line__square {
+  height: 1rem;
+  width: 1rem;
+  background-color: #A5A0A0;
+  transform: rotate(45deg);
+}
+.decoration-line__outer-square {
+  margin: 0 1.2rem;
+  height: 1.6rem;
+  width: 1.6rem;
+  border: 0.2rem solid #A5A0A0;
+  transform: rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.decoration-line__inner-square {
+  height: 0.6rem;
+  width: 0.6rem;
+  border: 0.2rem solid #A5A0A0;
 }
