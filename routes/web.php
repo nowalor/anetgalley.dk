@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 // Normal routes
 Route::get('', HomepageController::class);
 Route::resource('products', ProductController::class,
-    ['only' => ['index', 'store']]
+    ['only' => ['index', 'show']]
 );
 
 // Admin routes
