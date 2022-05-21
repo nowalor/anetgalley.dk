@@ -13,6 +13,7 @@ class StoreProductRequest extends FormRequest
      */
     public function authorize()
     {
+        // TODO validate admin
         return true;
     }
 
@@ -24,7 +25,16 @@ class StoreProductRequest extends FormRequest
     public function rules()
     {
         return [
-            //
-        ];
+            'category_id' => 'required|exists:categories,id',
+            'name' => 'required|string',
+            'price' => 'required',
+            'description' => 'required| string',
+            'images' => 'required|image',
+            'has_additional_info' => 'boolean',
+            'dimensions' => 'string',
+            'weight' => 'string',
+            'material' => 'string',
+            'condition' => 'string',
+         ];
     }
 }

@@ -6,6 +6,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Models\Category;
+use App\Http\Requests\StoreProductRequest;
 
 class AdminProductController extends Controller
 {
@@ -23,9 +24,11 @@ class AdminProductController extends Controller
         return view('admin.products.create', compact('categories'));
     }
 
-    public function store(Request $request)
+    public function store(StoreProductRequest $request)
     {
-        echo $request->name;
+        if(!$request->validate()) {
+            return redirect->back();
+        }
     }
 
     public function show($id)

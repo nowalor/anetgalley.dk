@@ -7,7 +7,11 @@
 @section('content')
     <div class="container">
         <h1>Create a new product..</h1>
-
+        @if($errors->any())
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        @endif
         <form class="col-6 mx-auto" action="{{ route('admin.products.store') }}" method="POST">
             @csrf
             <h3>Required information</h3>
