@@ -26,9 +26,17 @@ class AdminProductController extends Controller
 
     public function store(StoreProductRequest $request)
     {
-        if(!$request->validate()) {
+        $validated = $request->validated();
+
+        if(!$validated) {
             return redirect->back();
         }
+
+        if($validated['dimensions']) {
+            $validated['has_additional_info'] = true;
+            echo "if ran";
+        } else {
+        echo "...";}
     }
 
     public function show($id)
