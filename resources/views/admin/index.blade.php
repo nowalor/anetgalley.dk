@@ -6,6 +6,7 @@
 @section('title', 'Admin')
 @section('content')
     @auth
+        admin test
         {{ auth()->user()->name }}
     @endauth
 @endsection

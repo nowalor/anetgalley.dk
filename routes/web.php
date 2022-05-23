@@ -17,10 +17,11 @@ Route::get('login', [LoginController::class, 'showLoginForm'])->name('auth.show-
 Route::post('login', [LoginController::class, 'login'])->name('auth.login');
 
 // Admin routes
-Route::prefix('admin')->group(function() {
+Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function(){
     Route::get('', AdminHomepageController::class);
     Route::resource('products', AdminProductController::class, [
         'as' => 'admin'
     ]);
 });
+
 
