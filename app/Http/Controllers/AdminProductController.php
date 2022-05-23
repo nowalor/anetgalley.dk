@@ -54,8 +54,10 @@ class AdminProductController extends Controller
         //
     }
 
-    public function destroy($id)
+    public function destroy(Product $product)
     {
-        //
+        $product->delete();
+
+        return redirect()->back();
     }
 }
