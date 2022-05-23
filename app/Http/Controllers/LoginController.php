@@ -16,8 +16,12 @@ class LoginController extends Controller
     {
         $validated = $request->validated();
 
-        if(!$validated || !auth()->attempt($validated)) {
-            return redirect()->back();
+        if(!auth()->attempt($validated)) {
+            return redirect()->back()
+                ->withInput($validated)
+                ->withErrors([
+                    'password' => 'Password does not match the email',
+                ]);
         }
 
         return redirect()->route('admin.products.index');

@@ -4,14 +4,13 @@
 @endsection
 @section('title', 'Login')
 @section('content')
-
     <div class="container" style="width: 37rem;">
         <h1 class="pt-8 ttu ">Login</h1>
         <form method="POST" action="{{ route('auth.login') }}">
             @csrf
             <div class="form-group">
                 <label class="label" for="exampleInputEmail1">Email address</label>
-                <input name="email" type="email" class="input" id="exampleInputEmail1">
+                <input value="{{ old('email') }}" name="email" type="email" class="input" id="exampleInputEmail1">
                 @error('email')
                     <p class="validation-error">
                         {{ $message }}
