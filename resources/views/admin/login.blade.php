@@ -5,22 +5,27 @@
 @section('title', 'Login')
 @section('content')
 
-    @if($errors->any())
-        @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-        @endforeach
-    @endif
     <div class="container" style="width: 37rem;">
         <h1 class="pt-8 ttu ">Login</h1>
         <form method="POST" action="{{ route('auth.login') }}">
             @csrf
-            <div class="mt-2">
+            <div class="form-group">
                 <label class="label" for="exampleInputEmail1">Email address</label>
                 <input name="email" type="email" class="input" id="exampleInputEmail1">
+                @error('email')
+                    <p class="validation-error">
+                        {{ $message }}
+                    </p>
+                @enderror
             </div>
-            <div class="mt-2">
+            <div class="form-group">
                 <label  class="label" for="exampleInputPassword1">Password</label>
                 <input name="password" type="password" class="input" id="exampleInputPassword1">
+                @error('password')
+                    <p class="validation-error">
+                        {{ $message }}
+                    </p>
+                @enderror
             </div>
 
             <button type="submit" class="mt-2 button-pink-100 ttu">Login</button>
