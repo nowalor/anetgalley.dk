@@ -6,5 +6,35 @@
 @section('title', 'Admin')
 @section('content')
 
+    <div class="container pt-4">
+        <h1 class="heading-lg">Products</h1>
+
+        <div class="admin-product-header">
+            <div class="admin-product-header__item">Name</div>
+            <div class="admin-product-header__item">Category</div>
+            <div class="admin-product-header__item">Price</div>
+            <div class="admin-product-header__item">Dimensions</div>
+            <div class="admin-product-header__item">Weight</div>
+            <div class="admin-product-header__item">Material</div>
+            <div class="admin-product-header__item">Condition</div>
+            <div class="admin-product-header__item">Actions</div>
+        </div>
+        @foreach($products  as $product)
+            <div class="admin-products">
+                <div class="admin-products__item">{{ $product->name }}</div>
+                <div class="admin-products__item">{{ $product->category->name }}</div>
+                <div class="admin-products__item">{{ $product->price }}DKK</div>
+                <div class="admin-products__item">{{ $product->dimensions && $product->dimensions }}</div>
+                <div class="admin-products__item">{{ $product->weight && $product->weight }}</div>
+                <div class="admin-products__item">{{ $product->material && $product->material }}</div>
+                <div class="admin-products__item">{{ $product->condition && $product->condition }}</div>
+                <div class="admin-products__item admin-products__actions">
+                    <div class="view-product-button">View</div>
+                    <div class="edit-product-button">Edit</div>
+                    <div class="delete-product-button">Del</div>
+                </div>
+            </div>
+        @endforeach
+    </div>
 @endsection
 

@@ -111,6 +111,7 @@ table {
   text-decoration: none;
   color: #444;
   font-weight: 600;
+  font-size: 1.6rem;
 }
 
 .cta {
@@ -275,12 +276,70 @@ table {
 }
 
 /* MISC */
+.pt-4 {
+  padding-top: 4rem;
+}
+
 .pt-8 {
   padding-top: 8rem;
 }
 
 .ml-auto {
   margin-left: auto;
+}
+
+.admin-product-header {
+  display: flex;
+  height: 4rem;
+  background: #444;
+  align-items: center;
+  padding-left: 2rem;
+}
+.admin-product-header__item {
+  flex: 1;
+  color: #FFF;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.admin-products {
+  display: flex;
+  height: 4rem;
+  padding-left: 2rem;
+  align-items: center;
+  border: 1px solid #444;
+  font-size: 1.4rem;
+}
+.admin-products__item {
+  flex: 1;
+}
+.admin-products__actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.view-product-button {
+  padding: 0.2rem 1rem;
+  color: #FFF;
+  background-color: blue;
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
+
+.edit-product-button {
+  padding: 0.2rem 1rem;
+  color: #FFF;
+  background-color: #F6781D;
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
+
+.delete-product-button {
+  padding: 0.2rem 1rem;
+  color: #FFF;
+  background-color: red;
+  border-radius: 0.2rem;
+  cursor: pointer;
 }
 
 .form-group {
