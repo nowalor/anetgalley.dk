@@ -5,6 +5,8 @@
 @endsection
 @section('title', 'Admin')
 @section('content')
-
+    @auth
+        {{ auth()->user()->name }}
+    @endauth
 @endsection
 

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Request\LoginRequest;
+use App\Http\Requests\LoginRequest;
 
 use Illuminate\Http\Request;
 
@@ -16,11 +16,10 @@ class LoginController extends Controller
     {
         $validated = $request->validated();
 
-        if(!$validated || !Auth::attempt($credentials)) {
+        if(!$validated || !auth()->attempt($validated)) {
             return redirect()->back();
         }
 
-
-
+        return redirect()->route('admin.products.index');
     }
 }
