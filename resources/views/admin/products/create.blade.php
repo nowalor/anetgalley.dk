@@ -6,7 +6,7 @@
 @section('title', 'Admin')
 @section('content')
     <div class="container">
-        <h1>Create a new product..</h1>
+        <h1 class="mb-3">Create a new product..</h1>
         @if($errors->any())
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>

@@ -12,6 +12,9 @@ Route::resource('products', ProductController::class,
     ['only' => ['index', 'show']]
 );
 
+Route::get('login', [LoginController::class, 'showLoginForm']);
+Route::post('login', [LoginController::class, 'login']);
+
 // Admin routes
 Route::prefix('admin')->group(function() {
     Route::get('', AdminHomepageController::class);

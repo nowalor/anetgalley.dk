@@ -29,7 +29,7 @@ class StoreProductRequest extends FormRequest
             'name' => 'required|string',
             'price' => 'required',
             'description' => 'required| string',
-
+            'image' => 'required|image',
             'has_additional_info' => 'boolean',
             'dimensions' => 'string| nullable',
             'weight' => 'string| nullable',
