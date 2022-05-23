@@ -70,6 +70,7 @@ table {
 }
 .navbar__content {
   height: 7.5rem;
+  width: 100%;
   background-color: #FFF;
   padding: 0 15rem;
   display: flex;
