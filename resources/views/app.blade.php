@@ -47,7 +47,7 @@
                 <div class="ml-auto">
                     <form class="" method="POST" action="{{ route('auth.logout') }}">
                         @csrf
-                        <button class="" type="submit">Logout</button>
+                        <button class="button-small-primary" type="submit">Logout</button>
                     </form>
                 </div>
             </div>
