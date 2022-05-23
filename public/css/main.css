@@ -48,10 +48,18 @@
   margin-top: 2rem;
 }
 
+.ttu {
+  text-transform: uppercase;
+}
+
 * {
   margin: 0;
   padding: 0;
   border: 0;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
@@ -273,4 +281,30 @@ table {
 
 .ml-auto {
   margin-left: auto;
+}
+
+.label {
+  display: block;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.input {
+  height: 5rem;
+  width: 100%;
+  border: 1px solid var(--primary);
+  border-radius: 0.3rem;
+}
+
+.button-pink-100 {
+  height: 5.2rem;
+  width: 100%;
+  border-radius: 0.2rem;
+  background: var(--pink);
+  color: #FFF;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -10,20 +10,20 @@
             <li>{{ $error }}</li>
         @endforeach
     @endif
-    <div class="container col-6 mx-auto pt-3">
-        <h1 class="mb-3">Login</h1>
+    <div class="container" style="width: 37rem;">
+        <h1 class="pt-8 ttu ">Login</h1>
         <form method="POST" action="{{ route('auth.login') }}">
             @csrf
-            <div class="form-group mb-3">
-                <label for="exampleInputEmail1">Email address</label>
-                <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <div class="mt-2">
+                <label class="label" for="exampleInputEmail1">Email address</label>
+                <input name="email" type="email" class="input" id="exampleInputEmail1">
             </div>
-            <div class="form-group mb-3">
-                <label for="exampleInputPassword1">Password</label>
-                <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <div class="mt-2">
+                <label  class="label" for="exampleInputPassword1">Password</label>
+                <input name="password" type="password" class="input" id="exampleInputPassword1">
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="mt-2 button-pink-100 ttu">Login</button>
         </form>
     </div>
 @endsection
