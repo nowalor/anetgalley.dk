@@ -27,31 +27,31 @@
     </nav>
 
     @auth
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-                <a class="navbar-brand" href="#">{{ auth()->user()->name }}</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown link
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="{{ route('admin.products.index') }}">Products</a></li>
-                                <li><a class="dropdown-item" href="{{ route('admin.products.create') }}">Create a product</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <form class="d-flex ml-auto" method="POST" action="{{ route('auth.logout') }}">
+        <div class="secondary-navbar">
+            <div class="secondary-navbar__content">
+                <div class="heading-xs  white">
+                    Welcome, {{ auth()->user()->name }}
+                </div>
+                <ul class="secondary-navbar__list">
+                    <li class="secondary-navbar__list-item">
+                        <a href="" class="secondary-navbar__list-link">
+                            Home
+                        </a>
+                    </li>
+                    <li class="secondary-navbar__list-item">
+                        <a href="{{ route('admin.products.index') }}" class="secondary-navbar__list-link">
+                            Products
+                        </a>
+                    </li>
+                </ul>
+                <div class="ml-auto">
+                    <form class="" method="POST" action="{{ route('auth.logout') }}">
                         @csrf
-                        <button class="btn btn-outline-success" type="submit">Logout</button>
+                        <button class="" type="submit">Logout</button>
                     </form>
                 </div>
             </div>
-        </nav>
+        </div>
     @endauth
     @yield('content')
 </body>

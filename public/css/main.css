@@ -13,6 +13,22 @@
   font-size: 3.6rem;
 }
 
+.heading-md {
+  font-size: 2.4rem;
+}
+
+.heading-sm {
+  font-size: 1.8rem;
+}
+
+.heading-xs {
+  font-size: 1.4rem;
+}
+
+.white {
+  color: #FFF;
+}
+
 .medium {
   font-weight: 600;
 }
@@ -146,6 +162,29 @@ table {
 
 .container {
   padding: 0 15rem;
+}
+
+.secondary-navbar {
+  height: 5rem;
+  background: #444;
+  color: #444;
+}
+.secondary-navbar__content {
+  padding: 0 15rem;
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.secondary-navbar__list {
+  margin-left: 6rem;
+  display: flex;
+  gap: 1rem;
+}
+.secondary-navbar__list-link {
+  text-decoration: none;
+  color: #FFF;
+  text-transform: uppercase;
+  font-size: 1.2rem;
 }
 
 /* PAGES */

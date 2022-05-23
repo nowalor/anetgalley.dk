@@ -100,3 +100,35 @@
 .container {
     padding: 0 15rem;
 }
+
+.secondary-navbar {
+    height: 5rem;
+    background: #444;
+    color: #444;
+
+    &__content {
+        padding: 0 15rem;
+        display: flex;
+        height: 100%;
+        align-items: center;
+    }
+
+    &__list {
+        margin-left: 6rem;
+        display:flex;
+        gap: 1rem;
+
+        &-item {
+        }
+
+        &-link {
+            text-decoration: none;
+            color: #FFF;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+        }
+    }
+
+}
+
+
