@@ -6,7 +6,6 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-    @yield('extra-links')
     <title>@yield('title')</title>
 </head>
 <body>
@@ -46,11 +45,14 @@
                             </ul>
                         </li>
                     </ul>
+                    <form class="d-flex ml-auto" method="POST" action="{{ route('auth.logout') }}">
+                        @csrf
+                        <button class="btn btn-outline-success" type="submit">Logout</button>
+                    </form>
                 </div>
             </div>
         </nav>
     @endauth
     @yield('content')
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>

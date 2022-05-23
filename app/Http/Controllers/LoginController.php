@@ -22,4 +22,12 @@ class LoginController extends Controller
 
         return redirect()->route('admin.products.index');
     }
+
+    public function logout(Request $request)
+    {
+       $request->session()->invalidate();
+       $request->session()->regenerateToken();
+
+       return redirect('/login');
+    }
 }
