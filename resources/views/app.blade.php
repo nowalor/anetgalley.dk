@@ -29,12 +29,9 @@
     @auth
         <div class="secondary-navbar">
             <div class="secondary-navbar__content">
-                <div class="heading-xs  white">
-                    Welcome, {{ auth()->user()->name }}
-                </div>
                 <ul class="secondary-navbar__list">
                     <li class="secondary-navbar__list-item">
-                        <a href="" class="secondary-navbar__list-link">
+                        <a href="{{ route('admin.index') }}" class="secondary-navbar__list-link">
                             Home
                         </a>
                     </li>

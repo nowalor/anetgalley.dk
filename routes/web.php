@@ -19,7 +19,7 @@ Route::post('logout', [LoginController::class, 'logout'])->name('auth.logout');
 
 // Admin routes
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function(){
-    Route::get('', AdminHomepageController::class);
+    Route::get('', AdminHomepageController::class)->name('admin.index');
     Route::resource('products', AdminProductController::class, [
         'as' => 'admin'
     ]);

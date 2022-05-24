@@ -185,14 +185,12 @@ table {
   align-items: center;
 }
 .secondary-navbar__list {
-  margin-left: 6rem;
   display: flex;
   gap: 1rem;
 }
 .secondary-navbar__list-link {
   text-decoration: none;
   color: #FFF;
-  text-transform: uppercase;
   font-size: 1.2rem;
 }
 

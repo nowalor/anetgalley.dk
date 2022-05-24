@@ -25,7 +25,7 @@
             <div class="admin-product-header__item">Condition</div>
             <div class="admin-product-header__item">Actions</div>
         </div>
-        @foreach($products  as $product)
+        @forelse($products  as $product)
             <div class="admin-products">
                 <div class="admin-products__item">{{ $product->name }}</div>
                 <div class="admin-products__item">{{ $product->category->name }}</div>
@@ -44,7 +44,9 @@
                     </form>
                 </div>
             </div>
-        @endforeach
+        @empty
+            No products yet. When they have been created they will be added here.
+        @endforelse
     </div>
 @endsection
 
