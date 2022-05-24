@@ -32,11 +32,22 @@ class AdminProductController extends Controller
             return redirect->back();
         }
 
-        if($validated['dimensions']) {
+        if($validated['dimensions'] || $validated['weight'] || $validated['material'] || $validated['condition']) {
             $validated['has_additional_info'] = true;
-            echo "if ran";
-        } else {
-        echo "...";}
+        }
+
+        $validated['quantity'] = 5;
+
+        $product = Product::create($validated);
+
+        if($request->hasFile('image')) {
+            $image = $request->file('image');
+            $fileName = $image->getClientOriginalName();
+
+            $image->storeAs("product-images/$product->id", $fileName);
+
+            $product->update(['image_url' => $fileName]);
+        }
     }
 
     public function show(Product $product)

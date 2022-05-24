@@ -1,6 +1,7 @@
 .form-group {
     position: relative;
-    height: 11rem;
+    min-height: 10rem;
+    width: 100%;
 }
 
 .label {
@@ -11,11 +12,25 @@
 }
 
 .input {
-    height: 5rem;
+    height: 4rem;
     width: 100%;
     border: 1px solid var(--primary);
     border-radius: 0.3rem;
-    padding-left: 2rem;
+}
+
+.textarea {
+    height: 16rem;
+    width: 100%;
+    border: 1px solid var(--primary);
+    border-radius: 0.3rem;
+}
+
+.select {
+    height: 4rem;
+    width: 100%;
+    border: 1px solid var(--primary);
+    border-radius: 0.3rem;
+    background : #FFF;
 }
 
 .validation-error {

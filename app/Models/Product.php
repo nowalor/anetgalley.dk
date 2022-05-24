@@ -20,7 +20,8 @@ class Product extends Model
         'dimensions',
         'weight',
         'material',
-        'condition'
+        'condition',
+        'quantity',
     ];
 
     public function category(): BelongsTo
