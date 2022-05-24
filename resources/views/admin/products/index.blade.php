@@ -7,6 +7,9 @@
 @section('content')
 
     <div class="container pt-4">
+        @if(Session::has('product-created'))
+            <p class="success-message mb-4">{{ Session::get('product-created') }}</p>
+        @endif
         <h1 class="heading-lg">Products</h1>
 
         <div class="admin-product-header">

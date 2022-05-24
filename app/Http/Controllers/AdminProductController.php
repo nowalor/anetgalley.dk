@@ -28,10 +28,6 @@ class AdminProductController extends Controller
     {
         $validated = $request->validated();
 
-        if(!$validated) {
-            return redirect->back();
-        }
-
         if($validated['dimensions'] || $validated['weight'] || $validated['material'] || $validated['condition']) {
             $validated['has_additional_info'] = true;
         }
@@ -39,6 +35,7 @@ class AdminProductController extends Controller
         $validated['quantity'] = 5;
 
         $product = Product::create($validated);
+
 
         if($request->hasFile('image')) {
             $image = $request->file('image');
@@ -48,6 +45,8 @@ class AdminProductController extends Controller
 
             $product->update(['image_url' => $fileName]);
         }
+
+        return redirect()->route('admin.products.index')->with('product-created', 'New product created!');
     }
 
     public function show(Product $product)

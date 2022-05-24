@@ -14,7 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->string('image_url')->nullable()->change();
+             $table->string('image_url')->nullable()->change();
+            $table->string('dimensions')->nullable()->change();
+            $table->string('weight')->nullable()->change();
+            $table->string('material')->nullable()->change();
+            $table->string('condition')->nullable()->change();
         });
     }
 
