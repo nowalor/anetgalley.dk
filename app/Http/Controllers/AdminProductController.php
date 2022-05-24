@@ -44,7 +44,7 @@ class AdminProductController extends Controller
             $image = $request->file('image');
             $fileName = $image->getClientOriginalName();
 
-            $image->storeAs("product-images/$product->id", $fileName);
+            $image->storeAs("product-images/$product->id", $fileName, 'public');
 
             $product->update(['image_url' => $fileName]);
         }
