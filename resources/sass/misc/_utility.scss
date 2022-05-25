@@ -15,7 +15,11 @@
 }
 
 .mt-2 {
-    margin-top: 2;
+    margin-top: 2rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
 }
 
 .mb-3 {
@@ -86,6 +90,7 @@
     align-items: center;
     border: 1px solid #444;
     font-size: 1.4rem;
+
     &__item {
         flex: 1;
     }

@@ -32,10 +32,7 @@ class AdminProductController extends Controller
             $validated['has_additional_info'] = true;
         }
 
-        $validated['quantity'] = 5;
-
         $product = Product::create($validated);
-
 
         if($request->hasFile('image')) {
             $image = $request->file('image');
