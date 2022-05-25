@@ -1,7 +1,8 @@
 @extends('app')
 @section('extra-links')
     <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 @endsection
 @section('title', 'Admin')
 @section('content')
@@ -40,7 +41,7 @@
                     <form method="POST" action="{{ route('admin.products.destroy', $product) }}">
                         @csrf
                         @method('DELETE')
-                        <button onclick="return confirm('Are you sure?')" class="delete-product-button">Del</button>
+                        <button onclick="return confirm('Are you sure?')" class="delete-product-button">Delete</button>
                     </form>
                 </div>
             </div>
