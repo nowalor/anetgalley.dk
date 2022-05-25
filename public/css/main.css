@@ -320,6 +320,24 @@ table {
   width: 100%;
 }
 
+.contact-page {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 7.8rem);
+}
+.contact-page__box {
+  width: 50%;
+}
+.contact-page__image {
+  height: 100%;
+  width: 100%;
+}
+.contact-page__form {
+  padding: 10rem 18rem 0 18rem;
+  max-width: 85rem;
+}
+
 /* MISC */
 .pt-2 {
   padding-top: 2rem;
@@ -347,6 +365,10 @@ table {
 
 .mt-2 {
   margin-top: 2rem;
+}
+
+.mt-4 {
+  margin-top: 4rem;
 }
 
 .mb-2 {
@@ -561,4 +583,5 @@ table {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }

@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('', HomepageController::class)->name('home');
 Route::get('gallery', GalleryController::class)->name('gallery.index');
 Route::get('contact', [ContactPageController::class, 'index'])->name('contact.index');
+Route::post('contact', [ContactPageController::class, 'sendEmail'])->name('contact.send-email');
 Route::resource('products', ProductController::class,
     ['only' => ['index', 'show']]
 );

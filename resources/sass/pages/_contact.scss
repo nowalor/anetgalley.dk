@@ -1,0 +1,20 @@
+.contact-page {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 7.8rem);
+
+    &__box {
+        width: 50%;
+    }
+
+    &__image {
+        height: 100%;
+        width: 100%;
+    }
+
+    &__form {
+        padding: 10rem 18rem 0 18rem;
+        max-width: 85rem;
+    }
+}
