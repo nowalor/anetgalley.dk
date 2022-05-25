@@ -1,0 +1,18 @@
+.single-product-page {
+    .single-product {
+        &__price {
+            padding: 1rem 1.5rem;
+            border-radius: 10rem;
+            background-color: #444;
+            color: #FFF;
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+
+        &__image {
+            width: 50%;
+            height: 65vh;
+            object-fit: cover;
+        }
+    }
+}
