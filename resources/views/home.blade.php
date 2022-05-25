@@ -89,6 +89,12 @@
                     </div>
                 </div>
             </div>
+
+            <div class="pt-4 pb-4">
+                <a href="{{ route('products.index') }}" class="link-button-underline-white">
+                    View entire show &rarr;
+                </a>
+            </div>
         </div>
     </main>
 @endsection
