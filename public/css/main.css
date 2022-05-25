@@ -404,7 +404,7 @@ table {
 
 .form-group {
   position: relative;
-  min-height: 10rem;
+  min-height: 9rem;
   width: 100%;
 }
 
@@ -440,7 +440,11 @@ table {
 .validation-error {
   color: red;
   position: absolute;
-  bottom: 1rem;
+  bottom: 0.5rem;
+}
+
+.validation-error-input {
+  border-color: red !important;
 }
 
 .button-pink-100 {
