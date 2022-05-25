@@ -1,5 +1,4 @@
 .shop-preview {
-    height: 20rem;
     background: #444;
     text-align: center;
     padding-top: 11rem;
@@ -43,5 +42,34 @@
         height: 0.6rem;
         width: 0.6rem;
         border: 0.2rem solid #A5A0A0;
+    }
+}
+
+.shop-preview-item {
+    display: flex;
+    width: 100%;
+
+    &__box {
+        width: 50%;
+    }
+
+    &__image {
+        flex: 1;
+        height: 65rem;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    &__content {
+        padding: 12rem 8rem;
+        text-align: left;
+        width: 100%;
+    }
+
+    &__description {
+        color: #FFF;
+        font-size: 1.6rem;
+        margin-top: 4rem;
+        width: 80%;
     }
 }
