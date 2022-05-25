@@ -46,7 +46,7 @@
                 </div>
             </div>
         @empty
-            No products yet. When they have been created they will be added here.
+            <h2 class="heading-md pt-2">No products yet. When they have been created they will be added here.</h2>
         @endforelse
     </div>
 @endsection

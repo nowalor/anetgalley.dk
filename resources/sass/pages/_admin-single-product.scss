@@ -1,0 +1,18 @@
+.admin-single-product {
+    display: flex;
+    align-items: start;
+
+    &__image {
+        width: 50%;
+    }
+
+    .product-information {
+        padding: 0 2rem;
+
+        &__description {
+            font-size: 1.4rem;
+            white-space: pre-wrap;
+            padding-top: 1rem;
+        }
+    }
+}
