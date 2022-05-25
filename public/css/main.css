@@ -484,6 +484,28 @@ table {
   padding-bottom: 1rem;
 }
 
+.breadcrumbs {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 8rem;
+}
+.breadcrumbs__link {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--primary);
+}
+.breadcrumbs__link-active {
+  color: var(--pink);
+  font-weight: 600;
+}
+.breadcrumbs__slash {
+  margin: 0 0.5rem;
+  font-size: 1.6rem;
+  color: #938F8F;
+}
+
 .form-group {
   position: relative;
   min-height: 9rem;

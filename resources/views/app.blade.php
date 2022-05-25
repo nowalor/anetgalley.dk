@@ -9,47 +9,47 @@
     <title>@yield('title')</title>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="navbar__content">
-            <img src="{{ asset('img/logo.svg') }}" alt="" class="navbar__logo">
-            <ul class="navbar__menu">
-                <li class="navbar__menu-item">
-                    <a href="#" class="navbar__menu-link">SHOP</a>
+<nav class="navbar">
+    <div class="navbar__content">
+        <img src="{{ asset('img/logo.svg') }}" alt="" class="navbar__logo">
+        <ul class="navbar__menu">
+            <li class="navbar__menu-item">
+                <a href="{{ route('products.index') }}" class="navbar__menu-link">SHOP</a>
+            </li>
+            <li class="navbar__menu-item">
+                <a href="{{ route('gallery.index') }}" class="navbar__menu-link">GALLERY</a>
+            </li>
+            <li class="navbar__menu-item">
+                <a href="{{ route('contact.index') }}" class="navbar__menu-link">CONTACT</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+@auth
+    <div class="secondary-navbar">
+        <div class="secondary-navbar__content">
+            <ul class="secondary-navbar__list">
+                <li class="secondary-navbar__list-item">
+                    <a href="{{ route('admin.index') }}" class="secondary-navbar__list-link">
+                        Home
+                    </a>
                 </li>
-                <li class="navbar__menu-item">
-                    <a href="#" class="navbar__menu-link">GALLERY</a>
-                </li>
-                <li class="navbar__menu-item">
-                    <a href="#" class="navbar__menu-link">CONTACT</a>
+                <li class="secondary-navbar__list-item">
+                    <a href="{{ route('admin.products.index') }}" class="secondary-navbar__list-link">
+                        Products
+                    </a>
                 </li>
             </ul>
-        </div>
-    </nav>
-
-    @auth
-        <div class="secondary-navbar">
-            <div class="secondary-navbar__content">
-                <ul class="secondary-navbar__list">
-                    <li class="secondary-navbar__list-item">
-                        <a href="{{ route('admin.index') }}" class="secondary-navbar__list-link">
-                            Home
-                        </a>
-                    </li>
-                    <li class="secondary-navbar__list-item">
-                        <a href="{{ route('admin.products.index') }}" class="secondary-navbar__list-link">
-                            Products
-                        </a>
-                    </li>
-                </ul>
-                <div class="ml-auto">
-                    <form class="" method="POST" action="{{ route('auth.logout') }}">
-                        @csrf
-                        <button class="button-small-primary" type="submit">Logout</button>
-                    </form>
-                </div>
+            <div class="ml-auto">
+                <form class="" method="POST" action="{{ route('auth.logout') }}">
+                    @csrf
+                    <button class="button-small-primary" type="submit">Logout</button>
+                </form>
             </div>
         </div>
-    @endauth
-    @yield('content')
+    </div>
+@endauth
+@yield('content')
 </body>
 </html>

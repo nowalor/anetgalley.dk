@@ -4,6 +4,11 @@
 @section('content')
     <main>
         <div class="container">
+            <div class="breadcrumbs">
+                <a href="{{ route('home') }}" class="breadcrumbs__link">Home</a>
+                <p class="breadcrumbs__slash">/</p>
+                <a href="{{ route('products.index') }}" class="breadcrumbs__link breadcrumbs__link-active">Shop</a>
+            </div>
             <div class="products">
                 @foreach($products as $product)
                     <div class="product pt-8">

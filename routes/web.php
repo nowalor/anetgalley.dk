@@ -5,10 +5,14 @@ use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\ContactPageController;
 use Illuminate\Support\Facades\Route;
 
 // Normal routes
-Route::get('', HomepageController::class);
+Route::get('', HomepageController::class)->name('home');
+Route::get('gallery', GalleryController::class)->name('gallery.index');
+Route::get('contact', [ContactPageController::class, 'index'])->name('contact.index');
 Route::resource('products', ProductController::class,
     ['only' => ['index', 'show']]
 );
