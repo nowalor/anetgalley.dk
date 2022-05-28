@@ -4,12 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\View\View;
+use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index(): View
+    public function index(Request $request)
     {
-        $products = Product::paginate(6);
+        if($request->query('filter')) {
+            if($request->query('filter') === 'original') {
+                $products = Product::where('category_id', 1)->paginate(6);
+            } else if($request->query('filter') === 'replica') {
+                $products = Product::where('category_id', 2)->paginate(6);
+            }
+        } else {
+            $products = Product::paginate(6);
+        }
 
         return view('products.index', compact('products'));
     }

@@ -1,3 +1,22 @@
+.filter-links {
+    display: flex;
+    gap: 1rem;
+
+    &__item {
+
+    }
+
+    &__link {
+        color: var(--primary);
+        text-decoration: none;
+    }
+
+    .active {
+        color: var(--pink) !important;
+        cursor: default;
+    }
+}
+
 .products {
     display: flex;
     flex-wrap: wrap;
@@ -6,6 +25,7 @@
 
 .product {
     width: 45%;
+
     &__price-box {
         height: 3.3rem;
         width: 100px;
@@ -15,6 +35,7 @@
         align-items: center;
         justify-content: center;
     }
+
     &__price {
         color: #FFF;
         font-size: 1.6rem;
@@ -26,6 +47,8 @@
 
     &__image {
         width: 100%;
+        height: 37.5rem;
+        object-fit: cover;
     }
 }
 
