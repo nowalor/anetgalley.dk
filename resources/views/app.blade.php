@@ -11,7 +11,9 @@
 <body>
 <nav class="navbar">
     <div class="navbar__content">
-        <img src="{{ asset('img/logo.svg') }}" alt="" class="navbar__logo">
+        <a href="{{ route('home') }}">
+            <img src="{{ asset('img/logo.svg') }}" alt="" class="navbar__logo">
+        </a>
         <ul class="navbar__menu">
             <li class="navbar__menu-item">
                 <a href="{{ route('products.index') }}" class="navbar__menu-link">SHOP</a>

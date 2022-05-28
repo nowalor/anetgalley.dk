@@ -14,12 +14,20 @@ const handleLinkClick = (link) => {
 
     if (link === 'description') {
         currentLink = 'description-link'
+
         descriptionLinkEl.classList.add('active')
         additionalInformationLinkEl.classList.remove('active')
+
+        descriptionEl.classList.remove('display-none')
+        informationEl.classList.add('display-none')
     } else {
         currentLink = 'additional-information-link'
+
         descriptionLinkEl.classList.remove('active')
         additionalInformationLinkEl.classList.add('active')
+
+        descriptionEl.classList.add('display-none')
+        informationEl.classList.remove('display-none')
     }
 }
 

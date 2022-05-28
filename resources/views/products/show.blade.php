@@ -19,25 +19,48 @@
             </div>
 
             <div class="display-flex">
-                <img src="{{ asset('storage/product-images/' . $product->id . '/' . $product->image_url) }}" alt=""
-                     class="single-product__image">
+                <div class="width50">
+                    <img src="{{ asset('storage/product-images/' . $product->id . '/' . $product->image_url) }}" alt=""
+                         class="single-product__image">
+                </div>
+                <div class="width50">
+                    <div class="single-product__content">
+                        <h1 class="heading-lg medium">{{ $product->name }}</h1>
 
-                <div class="single-product__content">
-                    <h1 class="heading-lg medium">{{ $product->name }}</h1>
+                        <div class="description-and-information">
+                            <div class="header-links display-flex">
+                                <h3 id="description-link" class="font16 bold active ttu">Description</h3>
+                                <h3 id="additional-information-link" class="font16 bold ttu">Additional information</h3>
+                            </div>
+                            <p id="single-product-description" class="description">
+                                {{ $product->description }}
+                            </p>
+                            <div id="single-product-information" class="additional-information display-none">
+                                <div class="information-box">
+                                    <div class="information-box__row display-flex justify-space-between">
+                                        <h3 class="ttu medium heading-sm">Dimensions:</h3>
+                                        <h3 class="heading sm text-lighter">{{ $product->dimensions }}</h3>
+                                    </div>
 
-                    <div class="description-and-information">
-                        <div class="header-links display-flex">
-                            <h3 id="description-link" class="font16 bold active ttu">Description</h3>
-                            <h3 id="additional-information-link" class="font16 bold ttu">Additional information</h3>
+                                    <div class="information-box__row display-flex justify-space-between">
+                                        <h3 class="ttu medium heading-sm">Weight:</h3>
+                                        <h3 class="heading sm text-lighter">{{ $product->weight }}</h3>
+                                    </div>
+
+                                    <div class="information-box__row display-flex justify-space-between">
+                                        <h3 class="ttu medium heading-sm">Material:</h3>
+                                        <h3 class="heading sm text-lighter">{{ $product->material }}</h3>
+                                    </div>
+
+                                    <div class="information-box__row display-flex justify-space-between">
+                                        <h3 class="ttu medium heading-sm">Condition:</h3>
+                                        <h3 class="heading sm text-lighter">{{ $product->condition }}</h3>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <p id="single-product-description" class="description">
-                            {{ $product->description }}
-                        </p>
-                        <div id="single-product-information" class="additional-information display-none">
-                            Added information
-                        </div>
+                        <a href="#" class="button-primary ttu">Buy now</a>
                     </div>
-                    <a href="#" class="button-primary ttu">Buy now</a>
                 </div>
             </div>
         </div>
