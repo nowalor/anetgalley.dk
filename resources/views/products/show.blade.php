@@ -18,8 +18,26 @@
                 </span>
             </div>
 
-            <img src="{{ asset('storage/product-images/' . $product->id . '/' . $product->image_url) }}" alt=""
-                 class="single-product__image">
+            <div class="display-flex">
+                <img src="{{ asset('storage/product-images/' . $product->id . '/' . $product->image_url) }}" alt=""
+                     class="single-product__image">
+
+                <div class="single-product__content">
+                    <h1 class="heading-lg medium">{{ $product->name }}</h1>
+
+                    <div class="description-and-information">
+                        <div class="header-links display-flex">
+                            <h3 id="description-link" class="font16 bold active ttu">Description</h3>
+                            <h3 id="additional-information-link" class="font16 bold ttu">Additional information</h3>
+                        </div>
+                        <p class="description">
+                            {{ $product->description }}
+                        </p>
+                    </div>
+                    <a href="#" class="button-primary tty mt-4">Buy now</a>
+                </div>
+            </div>
         </div>
     </div>
+    <script src="{{ asset('js/single-product.js') }}"></script>
 @endsection

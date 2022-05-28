@@ -14,5 +14,32 @@
             height: 65vh;
             object-fit: cover;
         }
+
+        &__content {
+            padding-left: 7.2rem;
+        }
+    }
+}
+
+.description-and-information {
+    .header-links {
+        padding-top: 4.5rem;
+        gap: 3.6rem;
+        cursor: pointer;
+    }
+
+    .active {
+        color: var(--pink);
+        cursor: default;
+    }
+
+    .description, .additional-information {
+        padding-top: 2rem;
+    }
+
+    .description {
+        font-size: 1.6rem;
+        white-space: pre-wrap;
+        text-align: left;
     }
 }

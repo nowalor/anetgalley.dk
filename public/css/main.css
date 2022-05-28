@@ -26,6 +26,10 @@
   font-size: 1.8rem;
 }
 
+.font16 {
+  font-size: 1.6rem;
+}
+
 .heading-xs {
   font-size: 1.4rem;
 }
@@ -55,6 +59,10 @@
 
 .ttu {
   text-transform: uppercase;
+}
+
+.bold {
+  font-weight: 700;
 }
 
 * {
@@ -352,6 +360,27 @@ table {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.single-product-page .single-product__content {
+  padding-left: 7.2rem;
+}
+
+.description-and-information .header-links {
+  padding-top: 4.5rem;
+  gap: 3.6rem;
+  cursor: pointer;
+}
+.description-and-information .active {
+  color: var(--pink);
+  cursor: default;
+}
+.description-and-information .description, .description-and-information .additional-information {
+  padding-top: 2rem;
+}
+.description-and-information .description {
+  font-size: 1.6rem;
+  white-space: pre-wrap;
+  text-align: left;
+}
 
 /* MISC */
 .pt-2 {
@@ -603,4 +632,14 @@ table {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+
+.button-primary {
+  padding: 1rem 2.2rem;
+  font-size: 2rem;
+  background-color: var(--primary);
+  color: #FFF;
+  text-decoration: none;
+  border-radius: 0.3rem;
+  display: inline-block;
 }
