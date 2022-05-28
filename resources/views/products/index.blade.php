@@ -11,15 +11,18 @@
             </div>
             <ul class="filter-links pt-2">
                 <li class="filter-links__item">
-                    <a href="#" class="filter-links__link active font16 medium ttu">All</a>
+                    <a href="{{ route('products.index') }}"
+                       class="filter-links__link font16 medium ttu @if(Request::query('filter') == 0) active @endif }}">All</a>
                 </li>
 
                 <li class="filter-links__item">
-                    <a href="#" class="filter-links__link font16 medium ttu">Originals</a>
+                    <a href="{{ route('products.index', ['filter' => 'original']) }}"
+                       class="filter-links__link font16 medium ttu @if(Request::query('filter') === 'original') active @endif">Originals</a>
                 </li>
 
                 <li class="filter-links__item">
-                    <a href="#" class="filter-links__link font16 medium ttu">Replicas</a>
+                    <a href="{{ route('products.index', ['filter' => 'replica']) }}"
+                       class="filter-links__link font16 medium ttu @if(Request::query('filter') === 'replica') active @endif">Replicas</a>
                 </li>
             </ul>
             <div class="products">
