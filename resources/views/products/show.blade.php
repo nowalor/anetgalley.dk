@@ -30,11 +30,14 @@
                             <h3 id="description-link" class="font16 bold active ttu">Description</h3>
                             <h3 id="additional-information-link" class="font16 bold ttu">Additional information</h3>
                         </div>
-                        <p class="description">
+                        <p id="single-product-description" class="description">
                             {{ $product->description }}
                         </p>
+                        <div id="single-product-information" class="additional-information display-none">
+                            Added information
+                        </div>
                     </div>
-                    <a href="#" class="button-primary tty mt-4">Buy now</a>
+                    <a href="#" class="button-primary ttu">Buy now</a>
                 </div>
             </div>
         </div>

@@ -374,6 +374,7 @@ table {
   cursor: default;
 }
 .description-and-information .description, .description-and-information .additional-information {
+  height: 35rem;
   padding-top: 2rem;
 }
 .description-and-information .description {
@@ -552,6 +553,10 @@ table {
   text-decoration: none;
   border-bottom: 2px solid #FFF;
   padding-bottom: 1rem;
+}
+
+.display-none {
+  display: none;
 }
 
 .breadcrumbs {
