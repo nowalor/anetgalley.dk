@@ -35,12 +35,13 @@
                         <p class="product__description mt-2 font16">
                             {{ str()->words($product->description, 50) }}
                         </p>
-                        <img src="{{ asset('img/placeholder.jpg') }}" alt="" class="product__image mt-2">
+                        <img src="{{ asset("storage/product-images/$product->id/$product->image_url") }}" alt=""
+                             class="product__image mt-2">
                         <a href="{{route('products.show', $product->id)}}" class="button-pink-100 ttu mt-2">Buy</a>
                     </div>
                 @endforeach
             </div>
         </div>
-
+        {{ $products->links() }}
     </main>
 @endsection

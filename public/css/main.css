@@ -15,6 +15,10 @@
   color: #FFF;
 }
 
+.heading-xl {
+  font-size: 4.8rem;
+}
+
 .heading-lg {
   font-size: 3.6rem;
 }
@@ -41,6 +45,11 @@
 
 .medium {
   font-weight: 600;
+}
+
+.tagline-italic {
+  font-size: 2.4rem;
+  font-style: italic;
 }
 
 .tagline-white-italic {
@@ -189,7 +198,7 @@ table {
 }
 
 .container {
-  padding: 0 15rem;
+  margin: 0 15rem;
 }
 
 .secondary-navbar {
@@ -302,6 +311,35 @@ table {
   font-size: 1.6rem;
   margin-top: 4rem;
   width: 80%;
+}
+
+.gallery-preview {
+  padding-top: 11rem;
+  text-align: center;
+}
+.gallery-preview__gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding-top: 6rem;
+  text-align: left;
+}
+
+.instagram-post {
+  width: 100%;
+}
+.instagram-post__img {
+  display: block;
+  width: 100%;
+  height: 28vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.instagram-post__caption {
+  width: 80%;
+}
+.instagram-post__caption-hashtags {
+  color: blue;
 }
 
 .filter-links {

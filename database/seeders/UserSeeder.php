@@ -16,7 +16,10 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
+        $user = User::where('email', 'nikulasoskarsson@gmail.com')->get()->first();
+
+
+        !$user && User::create([
             'name' => 'Nikulás Óskarsson',
             'email' => 'nikulasoskarsson@gmail.com',
             'email_verified_at' => now(),

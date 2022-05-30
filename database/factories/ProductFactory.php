@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Product;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Product>
@@ -23,7 +24,6 @@ class ProductFactory extends Factory
             'name' => $this->faker->firstName(),
             'price' => $this->faker->randomDigit(),
             'description' => $this->faker->text(500),
-            'image_url' => 'product' .  rand(1,4) . 'jpg',
             'has_additional_info' => true,
             'dimensions' => '0.3',
             'weight' => '5kg',
@@ -31,5 +31,13 @@ class ProductFactory extends Factory
             'condition' => 'amazing',
             'quantity' => $categoryId === 1 ? 1 : rand(1, 20),
         ];
+    }
+
+    public function configure()
+    {
+        return $this->afterCreating(function(Product $product) {
+            $product->image_url = $this->faker->image(storage_path("product-images/$product->id/", 640, 480));
+            $product->save();
+        });
     }
 }

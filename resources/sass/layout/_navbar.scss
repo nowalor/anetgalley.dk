@@ -1,6 +1,7 @@
 .navbar {
     width: 100%;
     position: relative;
+
     &__content {
         height: 7.5rem;
 
@@ -99,7 +100,7 @@
 }
 
 .container {
-    padding: 0 15rem;
+    margin: 0 15rem;
 }
 
 .secondary-navbar {
@@ -115,7 +116,7 @@
     }
 
     &__list {
-        display:flex;
+        display: flex;
         gap: 1rem;
 
         &-item {

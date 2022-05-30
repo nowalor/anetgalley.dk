@@ -12,12 +12,12 @@ class ProductController extends Controller
     {
         if($request->query('filter')) {
             if($request->query('filter') === 'original') {
-                $products = Product::where('category_id', 1)->paginate(6);
+                $products = Product::where('category_id', 1)->paginate(6)->withQueryString();
             } else if($request->query('filter') === 'replica') {
-                $products = Product::where('category_id', 2)->paginate(6);
+                $products = Product::where('category_id', 2)->paginate(6)->withQueryString();
             }
         } else {
-            $products = Product::paginate(6);
+            $products = Product::paginate(6)->withQueryString();
         }
 
         return view('products.index', compact('products'));

@@ -15,7 +15,9 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        Category::insert([
+        $category = Category::where('id', 1)->first();
+
+        !$category && Category::insert([
             [
                 'name' => 'original',
             ],
