@@ -81,9 +81,9 @@
     &__gallery {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
         padding-top: 6rem;
         text-align: left;
+        gap: 2rem;
     }
 }
 
@@ -101,7 +101,21 @@
         width: 80%;
 
         &-hashtags {
-            color: blue;
+            color: #6255FE;
+        }
+    }
+
+    &__button {
+        padding: 1rem 2rem;
+        background-color: #d6249f;
+        color: #FFF;
+        font-size: 1.6rem;
+        font-weight: 600;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &-icon {
+            transform: scale(0.6) translateY(3rem);
         }
     }
 }

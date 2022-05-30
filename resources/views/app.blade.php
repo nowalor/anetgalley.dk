@@ -53,5 +53,10 @@
     </div>
 @endauth
 @yield('content')
+<footer class="footer">
+    <div class="footer__content container">
+        The footer
+    </div>
+</footer>
 </body>
 </html>
