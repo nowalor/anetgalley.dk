@@ -457,6 +457,9 @@ table {
   max-width: 85rem;
 }
 
+.single-product-page {
+  padding-bottom: 12rem;
+}
 .single-product-page .single-product__price {
   padding: 1rem 1.5rem;
   border-radius: 10rem;
