@@ -1,9 +1,37 @@
 .footer {
-    height: 30rem;
+    height: 20rem;
     width: 100%;
     background-color: var(--primary);
 
     &__content {
+        padding-top: 6rem;
+        display: flex;
+        text-align: left;
 
+        &-img {
+
+        }
+
+        &-right {
+            display: flex;
+            gap: 6rem;
+        }
+
+        &__block {
+            text-align: left;
+        }
     }
+
+    &__link {
+        color: #939790;
+        text-decoration: none;
+        margin: 0.4rem 0;
+    }
+}
+
+.pink-divider {
+    height: 0.2rem;
+    width: 1.6rem;
+    background-color: var(--pink);
+    margin-left: 0.3rem;
 }

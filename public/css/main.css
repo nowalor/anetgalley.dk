@@ -230,10 +230,35 @@ table {
 }
 
 .footer {
-  height: 30rem;
+  height: 20rem;
   width: 100%;
   background-color: var(--primary);
 }
+.footer__content {
+  padding-top: 6rem;
+  display: flex;
+  text-align: left;
+}
+.footer__content-right {
+  display: flex;
+  gap: 6rem;
+}
+.footer__content__block {
+  text-align: left;
+}
+.footer__link {
+  color: #939790;
+  text-decoration: none;
+  margin: 0.4rem 0;
+}
+
+.pink-divider {
+  height: 0.2rem;
+  width: 1.6rem;
+  background-color: var(--pink);
+  margin-left: 0.3rem;
+}
+
 /* PAGES */
 .admin-single-product {
   display: flex;
@@ -511,12 +536,20 @@ table {
   margin-left: auto;
 }
 
+.mt-1 {
+  margin-top: 1rem;
+}
+
 .mt-2 {
   margin-top: 2rem;
 }
 
 .mt-4 {
   margin-top: 4rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
 }
 
 .mb-2 {

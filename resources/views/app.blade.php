@@ -55,7 +55,52 @@
 @yield('content')
 <footer class="footer">
     <div class="footer__content container">
-        The footer
+        <div>
+            <img src="{{ asset('img/logo-white.svg') }}" alt="" class="footer__content-img">
+        </div>
+        <div class="footer__content-right" style="margin-left: auto;">
+            <div class="footer__content-block">
+                <h2 class="heading-md medium white">
+                    Socials
+                </h2>
+                <div class="pink-divider mt-1 mb-1"></div>
+                <ul class="footer__list">
+                    <li class="footer__list-item">
+                        <a href="" class="footer__link font16">Instagram</a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a href="" class="footer__link font16">Facebook</a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a href="" class="footer__link font16">Pintrest</a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a href="" class="footer__link font16">Twitter</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__content-block">
+                <h2 class="heading-md medium white">
+                    Contact
+                </h2>
+                <div class="pink-divider mt-1 mb-1"></div>
+                <ul class="footer__list">
+                    <li class="footer__list-item">
+                        <a href="" class="footer__link font16">info@skiltebanden.dk </a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a href="" class="footer__link font16">28 35 92 25 </a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a href="" class="footer__link font16">Rentemestervej 67</a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a href="" class="footer__link font16">2400 København NV </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
     </div>
 </footer>
 </body>
