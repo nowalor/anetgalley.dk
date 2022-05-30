@@ -1,5 +1,5 @@
 @extends('app')
-
+@section('shop', 'active')
 @section('content')
     <div class="container single-product-page">
         <div class="breadcrumbs">

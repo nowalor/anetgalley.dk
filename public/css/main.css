@@ -120,6 +120,9 @@ table {
   width: 100%;
   position: relative;
 }
+.navbar .active {
+  color: var(--pink);
+}
 .navbar__content {
   height: 7.5rem;
   background-color: #FFF;
@@ -148,22 +151,23 @@ table {
   width: 100%;
 }
 .cta__left {
-  padding-top: 25rem;
+  padding-top: 30vh;
   width: 50%;
 }
 .cta__left-heading {
-  font-size: 3.6rem;
+  font-size: 4.8rem;
 }
 .cta__left-tagline {
-  width: 40rem;
+  width: 50rem;
   font-size: 1.8rem;
   opacity: 0.9;
   padding-top: 1rem;
+  letter-spacing: 0.15rem;
 }
 .cta__left-buttons {
   display: flex;
-  gap: 1rem;
-  padding-top: 2rem;
+  gap: 2rem;
+  padding-top: 6rem;
 }
 .cta__right {
   width: 50%;
@@ -175,14 +179,14 @@ table {
 }
 
 .button {
-  height: 3.2rem;
-  width: 12rem;
+  height: 4.2rem;
+  width: 14rem;
   border-radius: 0.3rem;
   text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
 }
 .button__black {
   background-color: #444;
@@ -191,6 +195,7 @@ table {
 .button__white {
   background-color: #FFF;
   color: #444;
+  border: 1px solid #444;
 }
 .button__pink {
   background-color: var(--pink);
@@ -326,7 +331,7 @@ table {
 }
 .shop-preview-item__image {
   flex: 1;
-  height: 65rem;
+  height: 60vh;
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
@@ -335,6 +340,11 @@ table {
   padding: 12rem 8rem;
   text-align: left;
   width: 100%;
+}
+@media (max-width: 120rem) {
+  .shop-preview-item__content {
+    padding: 4rem;
+  }
 }
 .shop-preview-item__description {
   color: #FFF;

@@ -16,13 +16,13 @@
         </a>
         <ul class="navbar__menu">
             <li class="navbar__menu-item">
-                <a href="{{ route('products.index') }}" class="navbar__menu-link">SHOP</a>
+                <a href="{{ route('products.index') }}" class="navbar__menu-link @yield('shop')">SHOP</a>
             </li>
             <li class="navbar__menu-item">
-                <a href="{{ route('gallery.index') }}" class="navbar__menu-link">GALLERY</a>
+                <a target="_blank" href="https://www.instagram.com/anetgallery/" class="navbar__menu-link">GALLERY</a>
             </li>
             <li class="navbar__menu-item">
-                <a href="{{ route('contact.index') }}" class="navbar__menu-link">CONTACT</a>
+                <a href="{{ route('contact.index') }}" class="navbar__menu-link @yield('contact')">CONTACT</a>
             </li>
         </ul>
     </div>

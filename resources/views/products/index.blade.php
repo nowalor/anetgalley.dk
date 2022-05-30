@@ -1,5 +1,6 @@
 @extends('app')
 @section('title', 'Homepage')
+@section('shop', 'active')
 
 @section('content')
     <main>

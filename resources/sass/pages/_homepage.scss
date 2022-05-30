@@ -55,7 +55,7 @@
 
     &__image {
         flex: 1;
-        height: 65rem;
+        height: 60vh;
         object-fit: cover;
         width: 100%;
     }
@@ -64,6 +64,10 @@
         padding: 12rem 8rem;
         text-align: left;
         width: 100%;
+
+        @media(max-width: 120rem) {
+            padding: 4rem;
+        }
     }
 
     &__description {

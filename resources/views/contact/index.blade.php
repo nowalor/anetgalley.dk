@@ -1,5 +1,6 @@
 @extends('app')
 @section('title', 'contact me')
+@section('contact', 'active')
 
 @section('content')
     <div class="contact-page">
