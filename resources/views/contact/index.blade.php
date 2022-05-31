@@ -10,9 +10,9 @@
         <div class="contact-page__box">
             <form class="contact-page__form" method="POST" action="{{ route('contact.send-email') }}">
                 @csrf
-                <h2 class="heading-lg">Write me a message</h2>
+                <h2 class="heading-lg conact-page__form-heading">Write me a message</h2>
 
-                <div class="form-group mt-4">
+                <div class="form-group">
                     <label for="name" class="label">Name*</label>
                     <input type="text" name="name" class="input @error('name') validation-input-error @enderror"
                            required>

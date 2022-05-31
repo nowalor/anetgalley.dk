@@ -95,6 +95,7 @@ body {
   background-color: #F4F4F4;
   color: #444;
   font-family: "Roboto", sans-serif;
+  min-height: 100vh;
 }
 
 ol, ul {
@@ -453,8 +454,26 @@ table {
   width: 100%;
 }
 .contact-page__form {
-  padding: 10rem 18rem 0 18rem;
+  padding: 10vh 18rem 0 18rem;
   max-width: 85rem;
+}
+.contact-page__form-heading {
+  margin-bottom: 4rem;
+}
+@media (max-width: 120rem) {
+  .contact-page__form-heading {
+    margin-bottom: 4rem;
+  }
+}
+@media (max-width: 120rem) {
+  .contact-page__form {
+    padding: 4vh 12rem 0 12rem;
+  }
+}
+@media (max-width: 120rem) {
+  .contact-page .textarea {
+    height: 14rem;
+  }
 }
 
 .single-product-page {
