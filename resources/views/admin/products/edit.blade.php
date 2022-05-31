@@ -24,7 +24,8 @@
 
             <div class="form-group">
                 <div class="label">Quantity*</div>
-                <input type="number" name="quantity" class="input @error('quantity') validation-error-input @enderror">
+                <input type="number" name="quantity" class="input @error('quantity') validation-error-input @enderror"
+                       value="{{ $product->quantity }}">
                 @error('quantity')
                 <p class="validation-error">{{ $message }}</p>
                 @enderror
@@ -34,9 +35,10 @@
                 <lablel class="label">Category*</lablel>
                 <select name="category_id" class="select @error('category_id') validation-error-input @enderror"
                         aria-label="Default select example">
-                    <option selected disabled>Select category</option>
+                    <option disabled>Select category</option>
                     @foreach($categories as $category)
-                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        <option selected="{{ $product->category_id == $category->id }}"
+                                value="{{ $category->id }}">{{ $category->name }}</option>
                     @endforeach
                 </select>
                 @error('category_id')
@@ -46,7 +48,8 @@
 
             <div class="form-group">
                 <label class="label">Price*</label>
-                <input type="number" class="input @error('price') validation-error-input @enderror" name="price">
+                <input type="number" class="input @error('price') validation-error-input @enderror" name="price"
+                       value="{{ $product->price }}">
                 @error('price')
                 <p class="validation-error">{{ $message }}</p>
                 @enderror
@@ -55,7 +58,7 @@
                 <label for="exampleFormControlTextarea1" class="label">Description*</label>
                 <textarea class="textarea mb-2 @error('description')  validation-error-input @enderror"
                           id="exampleFormControlTextarea1" rows="5" name="description"
-                          placeholder="Description"></textarea>
+                          placeholder="Description">{{ $product->description }}"</textarea>
                 @error('description')
                 <p class="validation-error">{{ $message }}</p>
                 @enderror
@@ -74,7 +77,7 @@
             <div class="form-group">
                 <label class="label">Dimensions</label>
                 <input type="text" class="input @error('dimensions') validation-error-input @enderror"
-                       name="dimensions">
+                       name="dimensions" value="{{ $product->dimensions }}">
                 @error('dimensions')
                 <p class="validation-error">{{ $message }}</p>
                 @enderror
@@ -82,7 +85,8 @@
 
             <div class="form-group">
                 <label class="label">Weight</label>
-                <input type="text" class="input @error('weight') validation-error-input @enderror" name="weight">
+                <input type="text" class="input @error('weight') validation-error-input @enderror" name="weight"
+                       value="{{ $product->weight }}">
                 @error('weight')
                 <p class="validation-error">{{ $message }}</p>
                 @enderror
@@ -90,7 +94,8 @@
 
             <div class="form-group">
                 <label class="label">Material</label>
-                <input type="text" class="input @error('material') validation-error-input @enderror" name="material">
+                <input type="text" class="input @error('material') validation-error-input @enderror" name="material"
+                       value="{{ $product->material }}">
                 @error('material')
                 <p class="validation-error">{{ $message }}</p>
                 @enderror
@@ -98,7 +103,8 @@
 
             <div class="form-group">
                 <label class="label">Condition</label>
-                <input type="text" class="input @error('condition') validation-error-input @enderror" name="condition">
+                <input type="text" class="input @error('condition') validation-error-input @enderror" name="condition"
+                       value="{{ $product->condition }}">
                 @error('condition')
                 <p class="validation-error">{{ $message }}</p>
                 @enderror
