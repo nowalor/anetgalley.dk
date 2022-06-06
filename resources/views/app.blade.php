@@ -53,7 +53,7 @@
     </div>
 @endauth
 @yield('content')
-<footer class="footer">
+<div class="footer">
     <div class="footer__content container">
         <div>
             <img src="{{ asset('img/logo-white.svg') }}" alt="" class="footer__content-img">
@@ -102,6 +102,6 @@
 
         </div>
     </div>
-</footer>
+</div>
 </body>
 </html>

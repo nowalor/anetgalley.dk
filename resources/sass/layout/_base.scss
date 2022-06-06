@@ -17,6 +17,8 @@ body {
     color: #444;
     font-family: 'Roboto', sans-serif;
     min-height: 100vh;
+    position: relative;
+    padding-bottom: 20rem; // account for footer
 }
 
 ol, ul {

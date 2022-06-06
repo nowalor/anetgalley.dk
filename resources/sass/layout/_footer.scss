@@ -2,6 +2,10 @@
     height: 20rem;
     width: 100%;
     background-color: var(--primary);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
 
     &__content {
         padding-top: 6rem;

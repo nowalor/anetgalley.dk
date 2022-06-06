@@ -23,8 +23,17 @@ class UpdateProductRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
-        ];
+           return [
+               'category_id' => 'exists:categories,id',
+               'name' => 'string',
+               'quantity' => 'numeric',
+               'description' => 'string',
+               'image' => 'image',
+               'has_additional_info' => 'boolean',
+               'dimensions' => 'string|nullable',
+               'weight' => 'string|nullable',
+               'material' => 'string|nullable',
+               'condition' => 'string|nullable',
+            ];
     }
 }
