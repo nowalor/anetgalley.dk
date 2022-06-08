@@ -20,8 +20,8 @@ class UserSeeder extends Seeder
 
 
         !$user && User::create([
-            'name' => 'Nikulás Óskarsson',
-            'email' => 'nikulasoskarsson@gmail.com',
+            'name' => 'Anette Andersen',
+            'email' => 'admin@admin.com',
             'email_verified_at' => now(),
             'password' => Hash::make('@Password091'),
             'is_admin' => true,

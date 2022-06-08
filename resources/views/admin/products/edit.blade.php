@@ -8,9 +8,11 @@
 @section('content')
     <div class="container center">
         <h1 class="heading-lg pt-2">Create a new product</h1>
-        <form class="pt-4" action="{{ route('admin.products.store') }}" method="POST" enctype="multipart/form-data"
+        <form class="pt-4" action="{{ route('admin.products.update', $product) }}" method="POST"
+              enctype="multipart/form-data"
               style="width: 37rem;">
             @csrf
+            @method('PATCH')
             <h3 class="heading-md">Required information</h3>
 
             <div class="form-group pt-2">
@@ -49,7 +51,7 @@
             <div class="form-group">
                 <label class="label">Price*</label>
                 <input type="number" class="input @error('price') validation-error-input @enderror" name="price"
-                       value="{{ $product->price }}">
+                >
                 @error('price')
                 <p class="validation-error">{{ $message }}</p>
                 @enderror

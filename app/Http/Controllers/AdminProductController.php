@@ -61,7 +61,13 @@ class AdminProductController extends Controller
 
     public function update(UpdateProductRequest $request, Product $product)
     {
-        
+        $validated = $request->validated();
+
+        return $validated['price'];
+
+        $product->update($validated);
+
+         return redirect()->route('admin.products.index')->with('Product updated', 'Product has been updated');
     }
 
     public function destroy(Product $product)
