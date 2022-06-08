@@ -42,7 +42,8 @@
                     </div>
                 @endforeach
             </div>
+            {{ $products->links('components.product-paginator') }}
+
         </div>
-        {{ $products->links('components.product-paginator') }}
     </main>
 @endsection
