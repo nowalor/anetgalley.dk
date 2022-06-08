@@ -43,6 +43,6 @@
                 @endforeach
             </div>
         </div>
-        {{ $products->links() }}
+        {{ $products->links('components.product-paginator') }}
     </main>
 @endsection
