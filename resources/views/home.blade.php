@@ -47,6 +47,11 @@
                     <div class="shop-preview-item__box">>
                         <div class="shop-preview-item__content">
                             <h2 class="heading-md-white">{{ $products[0]->name }}</h2>
+                            <div class="shop-preview-item__price-box">
+                                <p class="shop-preview-item__price">
+                                    {{ $products[0]->price }}DKK
+                                </p>
+                            </div>
                             <p class="shop-preview-item__description">
                                 {{ Str::words($products[0]->description, 60)}}
                             </p>
@@ -60,6 +65,11 @@
                     <div class="shop-preview-item__box">>
                         <div class="shop-preview-item__content">
                             <h2 class="heading-md-white">{{ $products[1]->name }}</h2>
+                            <div class="shop-preview-item__price-box">
+                                <p class="shop-preview-item__price">
+                                    {{ $products[1]->price }}DKK
+                                </p>
+                            </div>
                             <p class="shop-preview-item__description">
                                 {{ Str::words($products[1]->description, 60)}}
                             </p>
@@ -83,6 +93,11 @@
                     <div class="shop-preview-item__box">>
                         <div class="shop-preview-item__content">
                             <h2 class="heading-md-white">{{ $products[2]->name }}</h2>
+                            <div class="shop-preview-item__price-box">
+                                <p class="shop-preview-item__price">
+                                    {{ $products[2]->price }}DKK
+                                </p>
+                            </div>
                             <p class="shop-preview-item__description">
                                 {{ Str::words($products[2]->description, 60)}}
                             </p>
