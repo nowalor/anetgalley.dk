@@ -8,6 +8,7 @@ use Illuminate\View\View;
 use App\Models\Category;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use Illuminate\Support\Facades\Storage;
 
 class AdminProductController extends Controller
 {
@@ -62,6 +63,16 @@ class AdminProductController extends Controller
     public function update(UpdateProductRequest $request, Product $product)
     {
         $validated = $request->validated();
+
+       if($request->hasFile('image')) {
+           $image = $request->file('image');
+           $fileName = $image->getClientOriginalName();
+
+           Storage::disk('public')->delete("product-images/$product->id/$product->image_url");
+           $image->storeAs("product-images/$product->id", $fileName, 'public');
+
+           $product->image_url = $fileName;
+       }
 
         $product->update($validated);
 
