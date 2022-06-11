@@ -85,7 +85,7 @@
     max-width: 130rem;
     margin: 0 auto;
 
-    @media(max-width: 130rem) {
+    @media(max-width: 110rem) {
         padding: 0 15rem;
     }
 
@@ -93,9 +93,10 @@
         padding: 0 6rem;
     }
 
-    @media(max-width: 50rem) {
-
+    @media(max-width: 660px) {
+        padding: 0 4rem;
     }
+
 }
 
 .success-message {

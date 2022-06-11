@@ -89,6 +89,11 @@
 html {
   font-size: 62.5%;
 }
+@media (max-width: 800px) {
+  html {
+    font-size: 50%;
+  }
+}
 
 body {
   line-height: 1;
@@ -134,8 +139,19 @@ table {
   justify-content: space-between;
   border-bottom: 1px solid #f4f4f4;
 }
+@media (max-width: 800px) {
+  .navbar__logo {
+    transform: scale(0.8);
+    margin-left: -4rem;
+  }
+}
 .navbar__menu {
   display: flex;
+}
+@media (max-width: 600px) {
+  .navbar__menu {
+    display: none;
+  }
 }
 .navbar__menu-item {
   margin: 0 1rem;
@@ -145,6 +161,31 @@ table {
   color: #444;
   font-weight: 600;
   font-size: 1.6rem;
+}
+.navbar__icon {
+  cursor: pointer;
+  display: none;
+}
+@media (max-width: 600px) {
+  .navbar__icon {
+    display: inline-block;
+  }
+}
+.navbar__icon-line {
+  width: 35px;
+  height: 5px;
+  background-color: var(--primary);
+  margin: 6px 0;
+  transition: 0.4s;
+}
+.navbar__icon-line-1-open {
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+.navbar__icon-line-2-open {
+  opacity: 0;
+}
+.navbar__icon-line-3-open {
+  transform: rotate(45deg) translate(-8px, -8px);
 }
 
 .cta {
@@ -636,7 +677,7 @@ table {
   max-width: 130rem;
   margin: 0 auto;
 }
-@media (max-width: 130rem) {
+@media (max-width: 110rem) {
   .container {
     padding: 0 15rem;
   }
@@ -646,6 +687,12 @@ table {
     padding: 0 6rem;
   }
 }
+@media (max-width: 660px) {
+  .container {
+    padding: 0 4rem;
+  }
+}
+
 .success-message {
   padding: 1rem 0;
   width: 34rem;

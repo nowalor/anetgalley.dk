@@ -25,6 +25,12 @@
                 <a href="{{ route('contact.index') }}" class="navbar__menu-link @yield('contact')">CONTACT</a>
             </li>
         </ul>
+
+        <div class="navbar__icon" onclick=")">
+            <div class="navbar__icon-line navbar__icon-line-1 navbar__icon-line-1-open"></div>
+            <div class="navbar__icon-line navbar__icon-line-2 navbar__icon-line-2-open"></div>
+            <div class="navbar__icon-line navbar__icon-line-3 navbar__icon-line-3-open"></div>
+        </div>
     </div>
 </nav>
 
@@ -53,6 +59,7 @@
     </div>
 @endauth
 @yield('content')
+<!--
 <div class="footer">
     <div class="footer__content container">
         <div>
@@ -103,5 +110,8 @@
         </div>
     </div>
 </div>
+-->
+
+<script src=" {{ asset('js/navbar.js') }}"></script>
 </body>
 </html>
