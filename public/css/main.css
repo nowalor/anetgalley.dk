@@ -137,7 +137,6 @@ table {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #f4f4f4;
 }
 @media (max-width: 800px) {
   .navbar__logo {
@@ -186,6 +185,22 @@ table {
   background-color: var(--primary);
   margin: 6px 0;
   transition: 0.4s;
+}
+
+.mobile-navigation {
+  height: 12rem;
+  width: 100%;
+  background: #FFF;
+  border-bottom: 1px solid #f4f4f4;
+}
+.mobile-navigation__menu-item {
+  margin: 0.5rem 0;
+}
+.mobile-navigation__menu-link {
+  font-size: 2rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
 }
 
 .cta {

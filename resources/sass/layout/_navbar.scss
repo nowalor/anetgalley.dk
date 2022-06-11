@@ -12,7 +12,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        border-bottom: 1px solid #f4f4f4;
+        // border-bottom: 1px solid #f4f4f4;
     }
 
     &__logo {
@@ -75,6 +75,25 @@
     }
 }
 
+.mobile-navigation {
+    height: 12rem;
+    width: 100%;
+    background: #FFF;
+    border-bottom: 1px solid #f4f4f4;
+
+    &__menu {
+        &-item {
+            margin: 0.5rem 0;
+        }
+
+        &-link {
+            font-size: 2rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+    }
+}
 
 .cta {
     height: calc(100vh - 7.5rem);
