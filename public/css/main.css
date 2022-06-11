@@ -430,6 +430,11 @@ table {
 .product {
   width: 45%;
 }
+@media (max-width: 50rem) {
+  .product {
+    width: 100%;
+  }
+}
 .product__price-box {
   height: 3.3rem;
   width: 100px;
@@ -636,7 +641,11 @@ table {
     padding: 0 15rem;
   }
 }
-
+@media (max-width: 80rem) {
+  .container {
+    padding: 0 6rem;
+  }
+}
 .success-message {
   padding: 1rem 0;
   width: 34rem;
