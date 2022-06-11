@@ -63,8 +63,6 @@ class AdminProductController extends Controller
     {
         $validated = $request->validated();
 
-        return $validated['price'];
-
         $product->update($validated);
 
          return redirect()->route('admin.products.index')->with('Product updated', 'Product has been updated');

@@ -51,6 +51,7 @@
             <div class="form-group">
                 <label class="label">Price*</label>
                 <input type="number" class="input @error('price') validation-error-input @enderror" name="price"
+                       value="{{ $product->price }}"
                 >
                 @error('price')
                 <p class="validation-error">{{ $message }}</p>
