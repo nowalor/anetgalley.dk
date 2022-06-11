@@ -26,10 +26,10 @@
             </li>
         </ul>
 
-        <div class="navbar__icon" onclick=")">
-            <div class="navbar__icon-line navbar__icon-line-1 navbar__icon-line-1-open"></div>
-            <div class="navbar__icon-line navbar__icon-line-2 navbar__icon-line-2-open"></div>
-            <div class="navbar__icon-line navbar__icon-line-3 navbar__icon-line-3-open"></div>
+        <div class="navbar__icon" id="navbar-icon">
+            <div class="navbar__icon-line navbar__icon-line-1"></div>
+            <div class="navbar__icon-line navbar__icon-line-2"></div>
+            <div class="navbar__icon-line navbar__icon-line-3"></div>
         </div>
     </div>
 </nav>

@@ -171,21 +171,21 @@ table {
     display: inline-block;
   }
 }
+.navbar__icon-open .navbar__icon-line-1 {
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+.navbar__icon-open .navbar__icon-line-2 {
+  opacity: 0;
+}
+.navbar__icon-open .navbar__icon-line-3 {
+  transform: rotate(45deg) translate(-8px, -8px);
+}
 .navbar__icon-line {
   width: 35px;
   height: 5px;
   background-color: var(--primary);
   margin: 6px 0;
   transition: 0.4s;
-}
-.navbar__icon-line-1-open {
-  transform: rotate(-45deg) translate(-9px, 6px);
-}
-.navbar__icon-line-2-open {
-  opacity: 0;
-}
-.navbar__icon-line-3-open {
-  transform: rotate(45deg) translate(-8px, -8px);
 }
 
 .cta {
