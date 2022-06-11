@@ -122,14 +122,13 @@ table {
 .navbar {
   width: 100%;
   position: relative;
+  background-color: #FFF;
 }
 .navbar .active {
   color: var(--pink);
 }
 .navbar__content {
   height: 7.5rem;
-  background-color: #FFF;
-  padding: 0 15rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -203,10 +202,6 @@ table {
 .button__pink {
   background-color: var(--pink);
   color: #FFF;
-}
-
-.container {
-  margin: 0 15rem;
 }
 
 .secondary-navbar {
@@ -630,6 +625,16 @@ table {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.container {
+  max-width: 130rem;
+  margin: 0 auto;
+}
+@media (max-width: 130rem) {
+  .container {
+    padding: 0 15rem;
+  }
 }
 
 .success-message {

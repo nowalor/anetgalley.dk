@@ -10,7 +10,7 @@
 </head>
 <body>
 <nav class="navbar">
-    <div class="navbar__content">
+    <div class="navbar__content container">
         <a href="{{ route('home') }}">
             <img src="{{ asset('img/logo.svg') }}" alt="" class="navbar__logo">
         </a>
@@ -30,7 +30,7 @@
 
 @auth
     <div class="secondary-navbar">
-        <div class="secondary-navbar__content">
+        <div class="secondary-navbar__content container">
             <ul class="secondary-navbar__list">
                 <li class="secondary-navbar__list-item">
                     <a href="{{ route('admin.index') }}" class="secondary-navbar__list-link">

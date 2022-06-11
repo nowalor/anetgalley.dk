@@ -81,6 +81,15 @@
     align-items: center;
 }
 
+.container {
+    max-width: 130rem;
+    margin: 0 auto;
+
+    @media(max-width: 130rem) {
+        padding: 0 15rem;
+    }
+}
+
 .success-message {
     padding: 1rem 0;
     width: 34rem;

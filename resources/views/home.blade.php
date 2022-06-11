@@ -36,6 +36,7 @@
                     <div class="decoration-line__square"></div>
                     <div class="decoration-line__line"></div>
                 </div>
+                @endif
 
 
                 <div class="shop-preview-item pt-4">
@@ -61,51 +62,55 @@
                     </div>
                 </div>
 
-                <div class="shop-preview-item">
-                    <div class="shop-preview-item__box">>
-                        <div class="shop-preview-item__content">
-                            <h2 class="heading-md-white">{{ $products[1]->name }}</h2>
-                            <div class="shop-preview-item__price-box">
-                                <p class="shop-preview-item__price">
-                                    {{ $products[1]->price }}DKK
+                @if(count($products) >= 2)
+                    <div class="shop-preview-item">
+                        <div class="shop-preview-item__box">>
+                            <div class="shop-preview-item__content">
+                                <h2 class="heading-md-white">{{ $products[1]->name }}</h2>
+                                <div class="shop-preview-item__price-box">
+                                    <p class="shop-preview-item__price">
+                                        {{ $products[1]->price }}DKK
+                                    </p>
+                                </div>
+                                <p class="shop-preview-item__description">
+                                    {{ Str::words($products[1]->description, 60)}}
                                 </p>
-                            </div>
-                            <p class="shop-preview-item__description">
-                                {{ Str::words($products[1]->description, 60)}}
-                            </p>
 
-                            <div class="button-pink-100 mt-12" style="width: 80%; max-width: 40rem;">BUY</div>
+                                <div class="button-pink-100 mt-12" style="width: 80%; max-width: 40rem;">BUY</div>
+                            </div>
+                        </div>
+                        <div class="shop-preview-item__box">
+                            <img
+                                src="{{ asset('storage/product-images/' . $products[1]->id . '/' . $products[1]->image_url ) }}"
+                                alt="" class="shop-preview-item__image">
+                        </div>
+
+                    </div>
+                @endif
+
+                @if(count($products) >= 3)
+                    <div class="shop-preview-item">
+                        <div class="shop-preview-item__box">
+                            <img
+                                src="{{ asset('storage/product-images/' . $products[2]->id . '/' . $products[2]->image_url ) }}"
+                                alt="" class="shop-preview-item__image">
+                        </div>
+                        <div class="shop-preview-item__box">>
+                            <div class="shop-preview-item__content">
+                                <h2 class="heading-md-white">{{ $products[2]->name }}</h2>
+                                <div class="shop-preview-item__price-box">
+                                    <p class="shop-preview-item__price">
+                                        {{ $products[2]->price }}DKK
+                                    </p>
+                                </div>
+                                <p class="shop-preview-item__description">
+                                    {{ Str::words($products[2]->description, 60)}}
+                                </p>
+
+                                <div class="button-pink-100 mt-12" style="width: 80%; max-width: 40rem;">BUY</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="shop-preview-item__box">
-                        <img
-                            src="{{ asset('storage/product-images/' . $products[1]->id . '/' . $products[1]->image_url ) }}"
-                            alt="" class="shop-preview-item__image">
-                    </div>
-
-                </div>
-                <div class="shop-preview-item">
-                    <div class="shop-preview-item__box">
-                        <img
-                            src="{{ asset('storage/product-images/' . $products[2]->id . '/' . $products[2]->image_url ) }}"
-                            alt="" class="shop-preview-item__image">
-                    </div>
-                    <div class="shop-preview-item__box">>
-                        <div class="shop-preview-item__content">
-                            <h2 class="heading-md-white">{{ $products[2]->name }}</h2>
-                            <div class="shop-preview-item__price-box">
-                                <p class="shop-preview-item__price">
-                                    {{ $products[2]->price }}DKK
-                                </p>
-                            </div>
-                            <p class="shop-preview-item__description">
-                                {{ Str::words($products[2]->description, 60)}}
-                            </p>
-
-                            <div class="button-pink-100 mt-12" style="width: 80%; max-width: 40rem;">BUY</div>
-                        </div>
-                    </div>
-                </div>
                 @endif
                 <div class="pt-8 pb-10">
                     <a href="{{ route('products.index') }}" class="link-button-underline-white">

@@ -1,6 +1,7 @@
 .navbar {
     width: 100%;
     position: relative;
+    background-color: #FFF;
 
     .active {
         color: var(--pink);
@@ -8,9 +9,6 @@
 
     &__content {
         height: 7.5rem;
-
-        background-color: #FFF;
-        padding: 0 15rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -104,10 +102,6 @@
         background-color: var(--pink);
         color: #FFF;
     }
-}
-
-.container {
-    margin: 0 15rem;
 }
 
 .secondary-navbar {
