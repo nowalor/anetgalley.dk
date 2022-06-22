@@ -677,9 +677,23 @@ table {
 }
 .single-product-page .single-product__image {
   width: 100%;
-  height: 65vh;
+  height: 50vh;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 0.3rem;
+}
+.single-product-page .single-product__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding-top: 2rem;
+  width: 50%;
+  gap: 1rem;
+  cursor: pointer;
+}
+.single-product-page .single-product__grid-img {
+  height: 12rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
 }
 .single-product-page .single-product__content {
   padding-left: 7.2rem;
@@ -946,6 +960,10 @@ table {
 
 .width50 {
   width: 50%;
+}
+
+.relative {
+  position: relative;
 }
 
 /* COMPONENTS */

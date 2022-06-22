@@ -19,9 +19,18 @@
             </div>
 
             <div class="display-flex">
-                <div class="width50">
+                <div class="width50 relative">
                     <img src="{{ asset('storage/product-images/' . $product->id . '/' . $product->image_url) }}" alt=""
                          class="single-product__image">
+
+                    <div class="single-product__grid">
+                        <img src="{{ asset('storage/product-images/' . $product->id . '/' . $product->image_url) }}"
+                             alt="" class="single-product__grid-img">
+                        <img src="{{ asset('storage/product-images/' . $product->id . '/' . $product->image_url) }}"
+                             alt="" class="single-product__grid-img">
+                        <img src="{{ asset('storage/product-images/' . $product->id . '/' . $product->image_url) }}"
+                             alt="" class="single-product__grid-img">
+                    </div>
                 </div>
                 <div class="width50">
                     <div class="single-product__content">

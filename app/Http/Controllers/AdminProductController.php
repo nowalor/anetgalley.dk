@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use Illuminate\Support\Facades\Storage;
+use App\Models\ProductAdditionalImage;
 
 class AdminProductController extends Controller
 {
@@ -73,6 +74,19 @@ class AdminProductController extends Controller
 
            $product->image_url = $fileName;
        }
+
+    if($request->hasFile('additional_images')) {
+        foreach($request->file('additional_images') as $image) {
+            $fileName = $image->getClientOriginalName();
+
+            $newImage = ProductAdditionalImage::create([
+                'product_id' => $product->id,
+                'name' => $fileName,
+            ]);
+
+            $image->storeAs("product-images/$product->id/additional/$newImage->id", $fileName, 'public');
+        }
+    }
 
         $product->update($validated);
 

@@ -76,6 +76,11 @@
                 @enderror
             </div>
 
+            <div class="form-group">
+                <div class="label">Additional images</div>
+                <input name="additional_images[]" type="file">
+            </div>
+
             <h3 class="pt-4 heading-md">Optional information</h3>
             <div class="form-group">
                 <label class="label">Dimensions</label>
