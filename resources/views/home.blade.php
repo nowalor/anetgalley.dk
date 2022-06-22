@@ -8,7 +8,7 @@
                 <div class="cta__left">
                     <h1 class="cta__left-heading">Art by Anette Andersen</h1>
                     <h3 class="cta__left-tagline">Art is a media for reflection, existensial expansion... a pulse -
-                        pleasure - provocation....a sense of life</h3>
+                        pleasure - provocation.... a sense of life</h3>
                     <div class="cta__left-buttons">
                         <a href="#" class="button button__black">SHOP &rarr;</a>
                         <a href="#" class="button button__white">GALLERY &rarr;</a>
@@ -63,7 +63,7 @@
                 </div>
 
                 @if(count($products) >= 2)
-                    <div class="shop-preview-item">
+                    <div class="shop-preview-item should-reverse">
                         <div class="shop-preview-item__box">>
                             <div class="shop-preview-item__content">
                                 <h2 class="heading-md-white">{{ $products[1]->name }}</h2>

@@ -119,12 +119,37 @@
     display: flex;
     width: 100%;
 
+    @media(max-width: 900px) {
+        flex-direction: column-reverse;
+    }
+
     &__left {
         padding-top: 30vh;
         width: 50%;
 
+        @media(max-width: 900px) {
+            width: 100%;
+            padding-top: 5vh;
+        }
+
+        .button {
+            @media(max-width: 600px) {
+                width: 100%;
+            }
+        }
+
         &-heading {
             font-size: 4.8rem;
+
+            @media(max-width: 900px) {
+                position: absolute;
+                top: 12rem;
+            }
+
+            @media(max-width: 600px) {
+                font-size: 3.8rem;
+            }
+
         }
 
         &-tagline {
@@ -134,22 +159,58 @@
             padding-top: 1rem;
             letter-spacing: 0.15rem;
 
+            @media(max-width: 900px) {
+                position: absolute;
+                top: 18rem;
+                width: 80%;
+            }
+
+            @media(max-width: 600px) {
+                font-size: 1.4rem;
+            }
+
         }
 
         &-buttons {
             display: flex;
             gap: 2rem;
             padding-top: 6rem;
+
+            @media(max-width: 900px) {
+                padding-top: 0;
+                padding-bottom: 3rem;
+            }
+
+            @media(max-width: 600px) {
+                position: relative;
+                bottom: 8rem;
+
+                flex-direction: column;
+            }
         }
     }
 
     &__right {
-        width: 50%;
+        @media(max-width: 900px) {
+            width: 100%;
+        }
 
         &-img {
             margin-top: 8rem;
             height: 65vh;
             width: 100%;
+            object-fit: cover;
+            @media(max-width: 900px) {
+                padding-top: 2rem;
+                height: 55vh;
+            }
+
+            @media(max-width: 600px) {
+                font-size: 1.4rem;
+                padding-top: 0;
+                position: relative;
+                bottom: 8rem;
+            }
         }
     }
 }
