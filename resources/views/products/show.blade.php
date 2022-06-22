@@ -24,12 +24,11 @@
                          class="single-product__image">
 
                     <div class="single-product__grid">
-                        <img src="{{ asset('storage/product-images/' . $product->id . '/' . $product->image_url) }}"
-                             alt="" class="single-product__grid-img">
-                        <img src="{{ asset('storage/product-images/' . $product->id . '/' . $product->image_url) }}"
-                             alt="" class="single-product__grid-img">
-                        <img src="{{ asset('storage/product-images/' . $product->id . '/' . $product->image_url) }}"
-                             alt="" class="single-product__grid-img">
+                        @foreach($additionalImages as $image)
+                            <img
+                                src="{{ asset('storage/product-images/' . $product->id . '/additional/' . $image->id . '/' . $image->name) }}"
+                                alt="" class="single-product__grid-img">
+                        @endforeach
                     </div>
                 </div>
                 <div class="width50">
