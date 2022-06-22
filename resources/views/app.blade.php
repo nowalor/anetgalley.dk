@@ -32,7 +32,7 @@
             <div class="navbar__icon-line navbar__icon-line-3"></div>
         </div>
     </div>
-    <div class="mobile-navigation container display-none" id="mobile-navigation">
+    <div class="mobile-navigation container" id="mobile-navigation">
         <ul class="mobile-navigation__menu">
             <li class="mobile-navigation__menu-item">
                 <a href="{{ route('products.index') }}" class="mobile-navigation__menu-link @yield('shop')">SHOP</a>

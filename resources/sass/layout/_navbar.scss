@@ -76,12 +76,19 @@
 }
 
 .mobile-navigation {
-    height: 12rem;
-    width: 100%;
-    background: #FFF;
     border-bottom: 1px solid #f4f4f4;
+    width: 100% !important;
+    visibility: visible;
+
+    @media(min-width: 600px) {
+        display: none !important;
+    }
 
     &__menu {
+        height: 0;
+        transition: height 0.3s, opacity 0.3s;
+        opacity: 0;
+
         &-item {
             margin: 0.5rem 0;
         }
@@ -92,6 +99,18 @@
             text-decoration: none;
             font-weight: 600;
         }
+    }
+}
+
+.mobile-navigation.navbar-open {
+    visibility: visible;
+
+}
+
+.navbar-open {
+    .mobile-navigation__menu {
+        height: 14rem;
+        opacity: 1;
     }
 }
 
