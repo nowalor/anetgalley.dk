@@ -78,7 +78,7 @@
 
             <div class="form-group">
                 <div class="label">Additional images</div>
-                <input name="additional_images[]" type="file">
+                <input name="additional_images[]" type="file" multiple>
             </div>
 
             <h3 class="pt-4 heading-md">Optional information</h3>

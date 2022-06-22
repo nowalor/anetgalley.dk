@@ -1,6 +1,11 @@
 @extends('app')
 @section('shop', 'active')
 @section('content')
+    <div class="modal-container">
+        <div class="modal">
+            
+        </div>
+    </div>
     <div class="container single-product-page">
         <div class="breadcrumbs">
             <a href="{{ route('home') }}" class="breadcrumbs__link">Home</a>

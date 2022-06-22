@@ -22,12 +22,13 @@
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             padding-top: 2rem;
-            width: 50%;
+            width: 100%;
             gap: 1rem;
             cursor: pointer;
 
             &-img {
                 height: 12rem;
+                width: 100%;
                 border-radius: 0.3rem;
                 cursor: pointer;
             }

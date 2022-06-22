@@ -686,12 +686,13 @@ table {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   padding-top: 2rem;
-  width: 50%;
+  width: 100%;
   gap: 1rem;
   cursor: pointer;
 }
 .single-product-page .single-product__grid-img {
   height: 12rem;
+  width: 100%;
   border-radius: 0.3rem;
   cursor: pointer;
 }
@@ -1056,6 +1057,25 @@ table {
   text-decoration: none;
   border-radius: 0.3rem;
   display: inline-block;
+}
+
+.modal-container {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(68, 68, 68, 0.5);
+  position: fixed;
+  z-index: 500;
+  top: 0;
+}
+
+.modal {
+  height: 40vh;
+  width: 40vh;
+  background: #FFF;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .paginator {

@@ -1,0 +1,18 @@
+.modal-container {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(#444, 0.5);
+    position: fixed;
+    z-index: 500;
+    top: 0;
+}
+
+.modal {
+    height: 40vh;
+    width: 40vh;
+    background: #FFF;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
