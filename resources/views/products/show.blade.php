@@ -1,10 +1,10 @@
 @extends('app')
 @section('shop', 'active')
 @section('content')
-    <div class="modal-container">
-        <div class="modal">
-            
-        </div>
+    <div class="modal-container display-none" id="show-product-modal">
+        <img id="show-product-modal-img" class="modal-image"/>
+
+
     </div>
     <div class="container single-product-page">
         <div class="breadcrumbs">
@@ -31,7 +31,8 @@
                     <div class="single-product__grid">
                         @foreach($additionalImages as $image)
                             <img
-                                src="{{ asset('storage/product-images/' . $product->id . '/additional/' . $image->id . '/' . $image->name) }}"
+                                onClick="openModal('{{ $image->url }}')"
+                                src="{{ $image->url }}"
                                 alt="" class="single-product__grid-img">
                         @endforeach
                     </div>
@@ -79,4 +80,5 @@
         </div>
     </div>
     <script src="{{ asset('js/single-product.js') }}"></script>
+    <script src="{{ asset('js/modal-image-slider.js') }}"></script>
 @endsection

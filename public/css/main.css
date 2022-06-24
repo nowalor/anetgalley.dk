@@ -1068,14 +1068,16 @@ table {
   top: 0;
 }
 
-.modal {
-  height: 40vh;
-  width: 40vh;
+.modal-image {
+  height: 80vh;
+  width: 80vw;
   background: #FFF;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .paginator {
