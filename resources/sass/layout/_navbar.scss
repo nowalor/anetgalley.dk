@@ -17,8 +17,7 @@
 
     &__logo {
         @media(max-width: 800px) {
-            transform: scale(0.8);
-            margin-left: -4rem;
+            height: 2.4rem;
         }
     }
 

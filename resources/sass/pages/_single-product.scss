@@ -59,8 +59,13 @@
 
     .description {
         font-size: 1.6rem;
-        white-space: pre-wrap;
+        // white-space: pre-wrap;
         text-align: left;
+    }
+
+    .description::first-letter {
+        font-weight: 500;
+        font-size: 2.2rem;
     }
 }
 

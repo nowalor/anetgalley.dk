@@ -6,14 +6,19 @@
 
     @media(max-width: 1000px) {
         flex-direction: column;
+        height: auto;
     }
 
     &__box {
         width: 50%;
-
         @media(max-width: 1000px) {
-            max-height: 50vh;
             width: 100%;
+        }
+
+        &-left {
+            @media(max-width: 1000px) {
+                display: none;
+            }
         }
     }
 
@@ -40,6 +45,7 @@
         @media(max-width: 1000px) {
             width: 100%;
             margin: 0 auto;
+            padding: 10vh 6rem 0 6rem;
         }
 
     }
