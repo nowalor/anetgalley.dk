@@ -5,6 +5,9 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <title>@yield('title')</title>
 </head>
@@ -73,7 +76,6 @@
     </div>
 @endauth
 @yield('content')
-<!--
 <div class="footer">
     <div class="footer__content container">
         <div>
@@ -87,15 +89,19 @@
                 <div class="pink-divider mt-1 mb-1"></div>
                 <ul class="footer__list">
                     <li class="footer__list-item">
+                        <i class="fa-brands fa-instagram footer__icon"></i>
                         <a href="" class="footer__link font16">Instagram</a>
                     </li>
                     <li class="footer__list-item">
+                        <i class="fa-brands fa-facebook-f footer__icon"></i>
                         <a href="" class="footer__link font16">Facebook</a>
                     </li>
                     <li class="footer__list-item">
+                        <i class="fa-brands fa-pinterest-p footer__icon"></i>
                         <a href="" class="footer__link font16">Pintrest</a>
                     </li>
                     <li class="footer__list-item">
+                        <i class="fa-brands fa-twitter footer__icon"></i>
                         <a href="" class="footer__link font16">Twitter</a>
                     </li>
                 </ul>
@@ -124,7 +130,6 @@
         </div>
     </div>
 </div>
--->
 
 <script src=" {{ asset('js/navbar.js') }}"></script>
 </body>

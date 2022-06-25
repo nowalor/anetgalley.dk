@@ -399,6 +399,15 @@ table {
 .footer__content__block {
   text-align: left;
 }
+.footer__list-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.footer__icon {
+  color: #939790;
+  font-size: 1.4rem;
+}
 .footer__link {
   color: #939790;
   text-decoration: none;
