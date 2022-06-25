@@ -355,7 +355,6 @@ table {
   color: #444;
 }
 .secondary-navbar__content {
-  padding: 0 15rem;
   display: flex;
   height: 100%;
   align-items: center;
@@ -378,7 +377,6 @@ table {
 }
 
 .footer {
-  height: 20rem;
   width: 100%;
   background-color: var(--primary);
   position: absolute;
@@ -386,6 +384,7 @@ table {
   bottom: 0;
   left: 0;
   padding-top: 6rem;
+  padding-bottom: 2rem;
 }
 @media (max-width: 1000px) {
   .footer {

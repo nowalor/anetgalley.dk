@@ -15,7 +15,7 @@
                     </div>
                 </div>
                 <div class="cta__right">
-                    <img src="{{ asset('img/placeholder.jpg') }}" alt="" class="cta__right-img">
+                    <img src="{{ $homepageInformation->url ? $homepageInformation->url : asset('img/placeholder.jpg') }}" alt="" class="cta__right-img">
                 </div>
             </div>
         </div>
