@@ -51,7 +51,9 @@ class AdminProductController extends Controller
 
     public function show(Product $product)
     {
-        return view('admin.products.show', compact('product'));
+        $additionalImages = $product->productAdditionalImages;
+
+        return view('admin.products.show', compact('product', 'additionalImages'));
     }
 
     public function edit(Product $product)
@@ -75,22 +77,22 @@ class AdminProductController extends Controller
            $product->image_url = $fileName;
        }
 
-    if($request->hasFile('additional_images')) {
-        foreach($request->file('additional_images') as $image) {
-            $fileName = $image->getClientOriginalName();
+        if($request->hasFile('additional_images')) {
+            foreach($request->file('additional_images') as $image) {
+                $fileName = $image->getClientOriginalName();
 
-            $newImage = ProductAdditionalImage::create([
-                'product_id' => $product->id,
-                'name' => $fileName,
-            ]);
+                $newImage = ProductAdditionalImage::create([
+                    'product_id' => $product->id,
+                    'name' => $fileName,
+                ]);
 
-            $image->storeAs("product-images/$product->id/additional/$newImage->id", $fileName, 'public');
+                $image->storeAs("product-images/$product->id/additional/$newImage->id", $fileName, 'public');
+            }
         }
-    }
 
         $product->update($validated);
 
-         return redirect()->route('admin.products.index')->with('Product updated', 'Product has been updated');
+        return redirect()->route('admin.products.index')->with('Product updated', 'Product has been updated');
     }
 
     public function destroy(Product $product)

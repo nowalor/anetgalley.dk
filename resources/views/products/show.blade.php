@@ -25,10 +25,14 @@
 
             <div class="display-flex">
                 <div class="width50 relative">
-                    <img src="{{ asset('storage/product-images/' . $product->id . '/' . $product->image_url) }}" alt=""
+                    <img id="selected-product-image" src="{{ $product->productImageUrl }}" alt=""
                          class="single-product__image">
 
                     <div class="single-product__grid">
+                        <img
+                            onClick="openModal('{{ $product->productImageUrl }}')"
+                            src="{{ $product->productImageUrl }}"
+                            alt="" class="single-product__grid-img">
                         @foreach($additionalImages as $image)
                             <img
                                 onClick="openModal('{{ $image->url }}')"

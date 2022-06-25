@@ -32,6 +32,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function(){
     Route::resource('products', AdminProductController::class, [
         'as' => 'admin'
     ]);
+    Route::delete('products/additional-image/{productAdditionalImage}',
+        \App\Http\Controllers\DeleteAdditionalProductImageController::class
+    )->name('admin.additional-image.delete');
 });
 
 

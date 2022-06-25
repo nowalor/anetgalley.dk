@@ -3,6 +3,8 @@
   --primary: #444;
   --pink: #A81C51;
   --grey: #777;
+  --red: #DC3545;
+  --yellow: #17A2B8;
 }
 
 .large-heading-white {
@@ -1059,6 +1061,19 @@ table {
   display: inline-block;
 }
 
+.button-danger {
+  font-size: 1.8rem;
+  background: var(--red);
+  color: #FFF;
+  text-decoration: none;
+  border-radius: 0.3rem;
+  display: flex;
+  height: 4rem;
+  width: 12rem;
+  align-items: center;
+  justify-content: center;
+}
+
 .modal-container {
   height: 100%;
   width: 100%;
@@ -1126,4 +1141,19 @@ table {
   font-weight: 600;
   text-decoration: none;
   color: var(--primary);
+}
+
+.alert {
+  height: 2.5rem;
+  border-radius: 8px;
+  color: #FFF;
+  FONT-SIZE: 1.6rem;
+  align-items: center;
+  padding-left: 2rem;
+  display: flex;
+  margin-bottom: 1rem;
+}
+.alert-success {
+  background: rgba(40, 167, 69, 0.2);
+  color: #28A745;
 }
