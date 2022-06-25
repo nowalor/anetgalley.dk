@@ -636,8 +636,19 @@ table {
   width: 100%;
   height: calc(100vh - 7.8rem);
 }
+@media (max-width: 1000px) {
+  .contact-page {
+    flex-direction: column;
+  }
+}
 .contact-page__box {
   width: 50%;
+}
+@media (max-width: 1000px) {
+  .contact-page__box {
+    max-height: 50vh;
+    width: 100%;
+  }
 }
 .contact-page__image {
   height: 100%;
@@ -650,14 +661,20 @@ table {
 .contact-page__form-heading {
   margin-bottom: 4rem;
 }
-@media (max-width: 120rem) {
+@media (max-width: 1400px) {
   .contact-page__form-heading {
     margin-bottom: 4rem;
   }
 }
-@media (max-width: 120rem) {
+@media (max-width: 1400px) {
   .contact-page__form {
-    padding: 4vh 12rem 0 12rem;
+    padding: 4vh 6rem 0 6rem;
+  }
+}
+@media (max-width: 1000px) {
+  .contact-page__form {
+    width: 100%;
+    margin: 0 auto;
   }
 }
 @media (max-width: 120rem) {
