@@ -2,6 +2,19 @@
     padding-bottom: 12rem;
 
     .single-product {
+        &__container {
+            position: relative;
+
+            @media(max-width: 1000px) {
+                flex-direction: column;
+            }
+        }
+
+        &__box {
+            @media(max-width: 1000px) {
+                width: 100%;
+            }
+        }
         &__price {
             padding: 1rem 1.5rem;
             border-radius: 10rem;
@@ -16,6 +29,14 @@
             height: 50vh;
             object-fit: cover;
             border-radius: 0.3rem;
+
+            @media(max-width: 1200px) {
+                height: 30vh;
+            }
+
+            @media(max-width: 1000px) {
+                margin-top: 6rem;
+            }
         }
 
         &__grid {
@@ -36,6 +57,26 @@
 
         &__content {
             padding-left: 7.2rem;
+
+            @media(max-width: 1000px) {
+                padding-left: 0;
+
+            }
+        }
+
+        &__heading {
+            @media(max-width: 1000px) {
+                position: absolute;
+                top: 0;
+            }
+        }
+
+        &__button {
+            @media(max-width: 600px) {
+                width: 100%;
+                text-align: center;
+                padding: 2.2rem 0;
+            }
         }
     }
 }
