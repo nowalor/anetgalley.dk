@@ -1,0 +1,39 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Requests\AdminEditHomepageInformationRequest;
+use App\Models\HomepageInformation;
+use Illuminate\Support\Facades\Storage;
+
+class AdminEditHomepageInformationController extends Controller
+{
+    public function index()
+    {
+        $homepageInformation = HomepageInformation::first();
+
+        return view('admin.homepage.index', compact('homepageInformation'));
+    }
+
+    public function update(AdminEditHomepageInformationRequest $request)
+    {
+        // Should only contain one record so first() is fine
+        $homepageInfo = HomepageInformation::first();
+
+        // Delete current image if it exists
+        if($homepageInfo->image_name) {
+            Storage::disk('public')->delete('homepage/cta/' . $homepageInfo->image_name);
+        }
+
+        $image = $request->file('image');
+        $fileName = $image->getClientOriginalName();
+
+        $image->storeAs("homepage/cta/$fileName", 'public');
+
+        $homepageInfo->update([
+            'image_url' => $image,
+        ]);
+
+        return redirect()->back()->with('image-changed', 'Image has been changed');
+    }
+}

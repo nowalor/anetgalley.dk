@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ContactPageController;
+use App\Http\Controllers\AdminEditHomepageInformationController;
 use Illuminate\Support\Facades\Route;
 
 // Normal routes
@@ -35,6 +36,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function(){
     Route::delete('products/additional-image/{productAdditionalImage}',
         \App\Http\Controllers\DeleteAdditionalProductImageController::class
     )->name('admin.additional-image.delete');
+
+    Route::resource('homepage',
+        AdminEditHomepageInformationController::class, [
+            'as' => 'admin',
+        ]);
+
 });
+
 
 
