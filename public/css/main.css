@@ -298,6 +298,9 @@ table {
     flex-direction: column;
   }
 }
+.cta__right {
+  width: 50%;
+}
 @media (max-width: 900px) {
   .cta__right {
     width: 100%;
