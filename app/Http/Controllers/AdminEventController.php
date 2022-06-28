@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreEventRequest;
 use App\Models\Event;
 use Illuminate\Http\Request;
 
@@ -33,9 +34,14 @@ class AdminEventController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreEventRequest $request)
     {
-        //
+        $validated = $request->validated();
+
+        $dateFrom = strtok($request->input('daterange'), '-');
+        $dateTo = substr($request->input('daterange'), strpos($request->input('daterange'), "-") + 1);
+
+        return "$dateFrom $dateTo";
     }
 
     /**
