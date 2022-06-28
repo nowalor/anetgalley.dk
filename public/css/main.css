@@ -722,6 +722,25 @@ table {
   }
 }
 
+.events-page {
+  height: 200vh;
+}
+
+.events {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+}
+.events .event {
+  width: 50%;
+  max-width: 50rem;
+}
+.events .event__img {
+  width: 100%;
+  height: 40rem;
+  border-radius: 0.5rem;
+}
+
 .single-product-page {
   padding-bottom: 12rem;
 }
