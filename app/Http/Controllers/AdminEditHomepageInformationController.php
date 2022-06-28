@@ -17,23 +17,28 @@ class AdminEditHomepageInformationController extends Controller
 
     public function update(AdminEditHomepageInformationRequest $request)
     {
+        $validated = $request->validated();
+
         // Should only contain one record so first() is fine
         $homepageInfo = HomepageInformation::first();
 
         // Delete current image if it exists
         if($homepageInfo->image_name) {
-            Storage::disk('public')->delete('homepage/cta/' . $homepageInfo->image_name);
+            $files = Storage::allFiles('homepage/cta');
+
+            Storage::delete($files);
         }
 
         $image = $request->file('image');
         $fileName = $image->getClientOriginalName();
 
-        $image->storeAs("homepage/cta/$fileName", 'public');
+        $image->storeAs("homepage/cta", $fileName,'public');
 
         $homepageInfo->update([
-            'image_url' => $image,
+            'image_name' => $fileName,
         ]);
 
+        return "worked? $fileName";
         return redirect()->back()->with('image-changed', 'Image has been changed');
     }
 }

@@ -29,7 +29,7 @@ class ProductImagesClearCommand extends Command
     public function handle()
     {
      // Get all files in a directory
-        $files =   Storage::allFiles('product-images');
+        $files = Storage::allFiles('product-images');
 
         // Delete Files
         Storage::delete($files);
