@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreEventRequest;
 use App\Models\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Storage;
 
 class AdminEventController extends Controller
 {
@@ -28,20 +31,28 @@ class AdminEventController extends Controller
         return view('admin.events.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(StoreEventRequest $request)
     {
         $validated = $request->validated();
 
-        $dateFrom = strtok($request->input('daterange'), '-');
-        $dateTo = substr($request->input('daterange'), strpos($request->input('daterange'), "-") + 1);
+        $startsAt = Carbon::parse(strtok($request->input('daterange'), '-'));
+        $endsAt = Carbon::parse(substr($request->input('daterange'), strpos($request->input('daterange'), "-") + 1));
 
-        return "$dateFrom $dateTo";
+        $validated['starts_at'] = $startsAt;
+        $validated['ends_at'] = $endsAt;
+
+        $event = Event::create($validated);
+
+        if($request->hasFile('image')) {
+            $image = $request->file('image');
+            $fileName = $image->getClientOriginalName();
+
+            $image->storeAs("event-images/$event->id", $fileName, 'public');
+
+            $event->update(['image_name' => $fileName]);
+        }
+
+        return redirect()->back()->with('event-saved', 'Event has been saved');
     }
 
     /**
