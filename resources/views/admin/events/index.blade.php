@@ -2,6 +2,10 @@
 @section('title', 'Events')
 @section('content')
     <div class="container pt-4">
+        @if(Session::has('event-updated'))
+            <p class="success-message mb-4">{{ Session::get('event-updated') }}</p>
+        @endif
+
         <div class="display-flex align-center justify-space-between width100 mb-3">
             <h1 class="heading-lg">Events</h1>
             <a class="link-btn ttu" href="{{ route('admin.events.create') }}">Add Event 🚀</a>

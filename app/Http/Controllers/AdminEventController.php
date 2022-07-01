@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreEventRequest;
+use App\Http\Requests\UpdateEventRequest;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -70,8 +71,10 @@ class AdminEventController extends Controller
         return view('admin.events.edit', compact('event'));
     }
 
-    public function update(Request $request, Event $event)
+    public function update(UpdateEventRequest $request, Event $event)
     {
+        $validated = $request->validated();
+
         if($request->hasFile('image')) {
             $image = $request->file('image');
             $fileName = $image->getClientOriginalName();
@@ -80,12 +83,12 @@ class AdminEventController extends Controller
             Storage::disk('public')->delete("event-images/$event->id/$event->image_name");
             $image->storeAs("event-images/$event->id", $fileName, 'public');
 
-            $request->image_name = $fileName;
+            $validated['image_name'] = $fileName;
         }
 
-        $event->update($request->all());
+        $event->update($validated);
 
-        return redirect()->route('admin.events.index');
+        return redirect()->route('admin.events.index')->with('event-updated', 'Event has been updated');
     }
 
     public function destroy(Event $event)
