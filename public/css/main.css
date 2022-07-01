@@ -1118,6 +1118,13 @@ table {
   gap: 0.5rem;
 }
 
+.preview-img {
+  height: 20rem;
+  width: 20rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 /* COMPONENTS */
 .breadcrumbs {
   text-align: center;

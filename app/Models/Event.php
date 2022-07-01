@@ -35,4 +35,11 @@ class Event extends Model
             get: fn() => $this->starts_at->format('d/m/Y') . '-' . $this->ends_at->format('d/m/Y'),
         );
     }
+
+    public function imageUrl(): Attribute
+    {
+        return Attribute::make(
+            get: fn() => asset("storage/event-images/$this->id/$this->image_name"),
+        );
+    }
 }

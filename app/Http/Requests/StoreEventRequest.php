@@ -29,7 +29,6 @@ class StoreEventRequest extends FormRequest
             'event_url' => 'required|string',
             'image' => 'required',
             'daterange' => 'required',
-
         ];
     }
 }

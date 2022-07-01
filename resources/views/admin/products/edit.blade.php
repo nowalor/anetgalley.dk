@@ -69,8 +69,10 @@
 
             <div class="form-group">
                 <label for="exampleFormControlFile1" class="label">Image</label>
-                <input name="image" type="file" class="input-file @error('image') validation-error-input @enderror"
+                <input name="image" type="file" class="image-input input-file @error('image') validation-error-input @enderror"
                        id="exampleFormControlFile1">
+
+                <img src=" {{ $product->productImageUrl }}" alt="" class="preview-img">
                 @error('image')
                 <p class="validation-error">{{ $message }}</p>
                 @enderror
@@ -121,5 +123,8 @@
             <button type="submit" class="mt-2 button-pink-100 ttu">Submit</button>
         </form>
     </div>
+@endsection
+@section('scripts')
+    <script src="{{ asset('js/image-preview.js') }}"></script>
 @endsection
 

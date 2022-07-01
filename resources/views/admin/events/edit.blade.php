@@ -4,9 +4,10 @@
     <div class="container center pb-4">
         <h1 class="heading-lg pt-2">Create a new event</h1>
 
-        <form class="pt-4" action="{{ route('admin.events.store') }}" method="POST" enctype="multipart/form-data"
+        <form class="pt-4" action="{{ route('admin.events.update', $event) }}" method="POST" enctype="multipart/form-data"
               style="width: 37rem;">
             @csrf
+            @method('PATCH')
             <h3 class="heading-md">Required information</h3>
 
             <div class="form-group pt-2">
@@ -38,12 +39,13 @@
 
             <div class="form-group">
                 <label for="" class="label">Event image</label>
-                <input type="file" class="" name="image">
+                <input  type="file" class="image-input" name="image">
+                <img src="{{ $event->imageUrl }}" alt="" class="preview-img">
+
             </div>
             <div class="form-group">
                 <label class="label">Dates</label>
                 <input type="text" name="daterange" value="{{ $event->formattedFromToDate  }}"/>
-
             </div>
 
             <button type="submit" class="mt-2 button-pink-100 ttu">Submit</button>
@@ -52,5 +54,6 @@
 @endsection
 @section('scripts')
     <script src="{{ asset('js/datepicker.js') }}"></script>
+    <script src="{{ asset('js/image-preview.js') }}"></script>
 @endsection
 

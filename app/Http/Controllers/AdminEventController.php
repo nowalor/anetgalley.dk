@@ -70,26 +70,26 @@ class AdminEventController extends Controller
         return view('admin.events.edit', compact('event'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Event  $event
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Event $event)
     {
-        //
+        if($request->hasFile('image')) {
+            $image = $request->file('image');
+            $fileName = $image->getClientOriginalName();
+
+
+            Storage::disk('public')->delete("event-images/$event->id/$event->image_name");
+            $image->storeAs("event-images/$event->id", $fileName, 'public');
+
+            $request->image_name = $fileName;
+        }
+
+        $event->update($request->all());
+
+        return redirect()->route('admin.events.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Event  $event
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Event $event)
     {
-        //
+        return $event;
     }
 }
