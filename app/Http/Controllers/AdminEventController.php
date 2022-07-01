@@ -51,7 +51,7 @@ class AdminEventController extends Controller
             $event->update(['image_name' => $fileName]);
         }
 
-        return redirect()->back()->with('event-saved', 'Event has been saved');
+        return redirect()->route('admin.events.index')->with('event-created', 'Event has been created');
     }
 
     /**

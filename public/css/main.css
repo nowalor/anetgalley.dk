@@ -959,23 +959,14 @@ table {
 }
 
 .success-message {
-  padding: 1rem;
+  padding: 1rem 0;
   width: 34rem;
+  padding-left: 1rem;
   font-size: 1.6rem;
   font-weight: 600;
   border-radius: 0.5rem;
   background-color: rgba(40, 167, 69, 0.2);
   color: #28A745;
-}
-
-.alert-message {
-  padding: 1rem;
-  width: 34rem;
-  font-size: 1.6rem;
-  font-weight: 600;
-  border-radius: 0.5rem;
-  background-color: rgba(220, 53, 69, 0.2);
-  color: #DC3545;
 }
 
 .display-flex {

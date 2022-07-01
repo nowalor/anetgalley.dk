@@ -2,6 +2,12 @@
 @section('title', 'Events')
 @section('content')
     <div class="container pt-4">
+        @if(Session::has('event-created'))
+            <p class="success-message mb-4">
+                {{ Session::get('event-created') }}
+            </p>
+        @endif
+
         @if(Session::has('event-updated'))
             <p class="success-message mb-4">{{ Session::get('event-updated') }}</p>
         @endif
