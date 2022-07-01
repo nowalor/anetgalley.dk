@@ -100,9 +100,18 @@
 }
 
 .success-message {
-    padding: 1rem 0;
+    padding: 1rem;
     width: 34rem;
-    padding-left: 1rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    background-color: rgba(#28A745, 0.2);
+    color: #28A745;
+}
+
+.alert-message {
+    padding: 1rem;
+    width: 34rem;
     font-size: 1.6rem;
     font-weight: 600;
     border-radius: 0.5rem;

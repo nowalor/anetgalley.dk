@@ -93,6 +93,8 @@ class AdminEventController extends Controller
 
     public function destroy(Event $event)
     {
-        return $event;
+        $event->delete();
+
+        return redirect()->back()->with('event-deleted', 'Event has been deleted');
     }
 }
