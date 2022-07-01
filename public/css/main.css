@@ -1019,7 +1019,7 @@ table {
   gap: 0.5rem;
 }
 
-.view-product-button {
+.view-button {
   padding: 0.3rem 1.2rem;
   color: #FFF;
   background-color: #17A2B8;
@@ -1029,7 +1029,7 @@ table {
   font-size: 1.5rem;
 }
 
-.edit-product-button {
+.edit-button {
   padding: 0.3rem 1.2rem;
   color: #FFF;
   background-color: #F6781D;
@@ -1039,7 +1039,7 @@ table {
   font-size: 1.5rem;
 }
 
-.delete-product-button {
+.delete-button {
   padding: 0.3rem 1.2rem;
   color: #FFF;
   background-color: #DC3555;
@@ -1086,6 +1086,36 @@ table {
 
 .relative {
   position: relative;
+}
+
+.table-header {
+  display: flex;
+  height: 4rem;
+  background: #444;
+  align-items: center;
+  padding-left: 2rem;
+}
+.table-header .table-heading {
+  flex: 1;
+  color: #FFF;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.table-items .table-row {
+  display: flex;
+  height: 4rem;
+  padding-left: 2rem;
+  align-items: center;
+  border: 1px solid #444;
+  font-size: 1.4rem;
+}
+.table-items .table-row__item {
+  flex: 1;
+}
+.table-items .table-row__actions {
+  display: flex;
+  gap: 0.5rem;
 }
 
 /* COMPONENTS */

@@ -11,14 +11,12 @@ use Illuminate\Support\Facades\Storage;
 
 class AdminEventController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        $events = Event::orderBy('ends_at')->get();
+
+        return view('admin.events.index', compact('events'));
     }
 
     /**

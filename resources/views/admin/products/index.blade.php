@@ -36,12 +36,12 @@
                 <div class="admin-products__item">{{ $product->material && $product->material }}</div>
                 <div class="admin-products__item">{{ $product->condition && $product->condition }}</div>
                 <div class="admin-products__item admin-products__actions">
-                    <a class="view-product-button" href="{{ route('admin.products.show', $product) }}">View</a>
-                    <a class="edit-product-button" href="{{ route('admin.products.edit', $product) }}">Edit</a>
+                    <a class="view-button" href="{{ route('admin.products.show', $product) }}">View</a>
+                    <a class="edit-button" href="{{ route('admin.products.edit', $product) }}">Edit</a>
                     <form method="POST" action="{{ route('admin.products.destroy', $product) }}">
                         @csrf
                         @method('DELETE')
-                        <button onclick="return confirm('Are you sure?')" class="delete-product-button">Delete</button>
+                        <button onclick="return confirm('Are you sure?')" class="delete-button">Delete</button>
                     </form>
                 </div>
             </div>
