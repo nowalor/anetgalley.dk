@@ -11,6 +11,10 @@
         @if(Session::has('product-created'))
             <p class="success-message mb-4">{{ Session::get('product-created') }}</p>
         @endif
+
+            @if(Session::has('product-deleted'))
+                <p class="alert-message mb-4">{{ Session::get('product-deleted') }}</p>
+            @endif
         <div class="display-flex align-center justify-space-between width100 mb-3">
             <h1 class="heading-lg">Products</h1>
             <a class="link-btn ttu" href="{{ route('admin.products.create') }}">Add product 🚀</a>

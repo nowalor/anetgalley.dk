@@ -99,6 +99,6 @@ class AdminProductController extends Controller
     {
         $product->delete();
 
-        return redirect()->back();
+        return redirect()->back()->with('product-deleted', 'Product has been deleted');
     }
 }
