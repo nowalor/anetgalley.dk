@@ -26,7 +26,7 @@
                     </p>
                     <div class="table-row__item table-row__actions">
                         <a class="view-button" href="">View</a>
-                        <a class="edit-button" href="">Edit</a>
+                        <a class="edit-button" href=" {{ route('admin.events.edit', $event) }} ">Edit</a>
                         <form method="POST" action="">
                             @csrf
                             @method('DELETE')

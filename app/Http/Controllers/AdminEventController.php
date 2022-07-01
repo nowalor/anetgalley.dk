@@ -64,15 +64,10 @@ class AdminEventController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Event  $event
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit(Event $event)
     {
-        //
+        return view('admin.events.edit', compact('event'));
     }
 
     /**

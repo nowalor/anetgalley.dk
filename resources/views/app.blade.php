@@ -66,6 +66,11 @@
                         Products
                     </a>
                 </li>
+                <li class="secondary-navbar__list-item">
+                    <a href="{{ route('admin.events.index') }}" class="secondary-navbar__list-link">
+                        Events
+                    </a>
+                </li>
             </ul>
             <div class="ml-auto">
                 <form class="" method="POST" action="{{ route('auth.logout') }}">
