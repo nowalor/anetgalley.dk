@@ -723,17 +723,19 @@ table {
 }
 
 .events-page {
-  height: 200vh;
+  min-height: 100vh;
+  padding-bottom: 4rem;
 }
 
 .events {
   display: flex;
-  gap: 2rem;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 -15px;
 }
 .events .event {
-  width: 50%;
-  max-width: 50rem;
+  width: 33%;
+  padding: 0 5px;
+  margin: 2rem 0;
 }
 .events .event__img {
   width: 100%;
@@ -959,14 +961,23 @@ table {
 }
 
 .success-message {
-  padding: 1rem 0;
+  padding: 1rem;
   width: 34rem;
-  padding-left: 1rem;
   font-size: 1.6rem;
   font-weight: 600;
   border-radius: 0.5rem;
   background-color: rgba(40, 167, 69, 0.2);
   color: #28A745;
+}
+
+.alert-message {
+  padding: 1rem;
+  width: 34rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  background-color: rgba(220, 53, 69, 0.2);
+  color: #DC3545;
 }
 
 .display-flex {
@@ -1123,6 +1134,8 @@ table {
   width: 20rem;
   -o-object-fit: cover;
      object-fit: cover;
+  margin-top: 2rem;
+  border-radius: 0.5rem;
 }
 
 /* COMPONENTS */

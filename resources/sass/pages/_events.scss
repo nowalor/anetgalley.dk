@@ -1,15 +1,17 @@
 .events-page {
-    height: 200vh;
+    min-height: 100vh;
+    padding-bottom: 4rem;
 }
 
 .events {
     display: flex;
-    gap: 2rem;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 -15px;
 
     .event {
-        width: 50%;
-        max-width: 50rem;
+        width: calc(99% / 3);
+        padding: 0 5px;
+        margin: 2rem 0;
         &__img {
             width: 100%;
             height: 40rem;

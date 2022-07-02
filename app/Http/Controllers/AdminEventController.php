@@ -86,6 +86,13 @@ class AdminEventController extends Controller
             $validated['image_name'] = $fileName;
         }
 
+        $startsAt = Carbon::parse(strtok($request->input('daterange'), '-'));
+        $endsAt = Carbon::parse(substr($request->input('daterange'), strpos($request->input('daterange'), "-") + 1));
+
+        $validated['starts_at'] = $startsAt;
+        $validated['ends_at'] = $endsAt;
+
+
         $event->update($validated);
 
         return redirect()->route('admin.events.index')->with('event-updated', 'Event has been updated');

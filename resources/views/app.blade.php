@@ -23,6 +23,9 @@
                 <a href="{{ route('products.index') }}" class="navbar__menu-link @yield('shop')">SHOP</a>
             </li>
             <li class="navbar__menu-item">
+                <a href="{{ route('events.index') }}" class="navbar__menu-link @yield('contact')">EVENTS</a>
+            </li>
+            <li class="navbar__menu-item">
                 <a target="_blank" href="https://www.instagram.com/anetgallery/" class="navbar__menu-link">GALLERY</a>
             </li>
             <li class="navbar__menu-item">
