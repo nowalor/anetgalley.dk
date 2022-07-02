@@ -29,7 +29,7 @@
                         <h3 class="heading-md medium pt-2">{{ $event->name }}</h3>
                         <p class="pt-1 font16"> {{ $event->short_description }}</p>
                         <p class="pt-2 font14 light pb-4">{{ $event->formattedFromToDate }}</p>
-                        <a href="" class="button button__black width100">View event</a>
+                        <a target="_blank" href=" {{ $event->event_url }} " class="button button__black width100">View event</a>
                     </div>
                 @empty
                     empty...

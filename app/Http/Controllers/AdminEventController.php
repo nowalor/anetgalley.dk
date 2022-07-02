@@ -32,11 +32,19 @@ class AdminEventController extends Controller
 
     public function store(StoreEventRequest $request)
     {
+
         $validated = $request->validated();
 
-        $startsAt = Carbon::parse(strtok($request->input('daterange'), '-'));
-        $endsAt = Carbon::parse(substr($request->input('daterange'), strpos($request->input('daterange'), "-") + 1));
+        $firstDate = strtok($request->input('daterange'), '-');
+        $lastDate = substr
+            ($request->input('daterange'), strpos
+            ($request->input('daterange'), "-") + 1);
 
+        $startsAt = Carbon::createFromFormat('m/d/Y', $firstDate)->format('y-m-d');
+
+        $endsAt = Carbon::parse();
+
+        return "$request->input('daterange') $startsAt - $endsAt";
         $validated['starts_at'] = $startsAt;
         $validated['ends_at'] = $endsAt;
 
