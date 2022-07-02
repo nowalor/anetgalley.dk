@@ -4,7 +4,7 @@
 
 @section('content')
     <main>
-        <div class="container">
+        <div class="container pb-8">
             <div class="breadcrumbs">
                 <a href="{{ route('home') }}" class="breadcrumbs__link">Home</a>
                 <p class="breadcrumbs__slash">/</p>
@@ -42,7 +42,9 @@
                     </div>
                 @endforeach
             </div>
-            {{ $products->links('components.product-paginator') }}
+            @if($products->hasPages())
+                {{ $products->links('components.product-paginator') }}
+            @endif
 
         </div>
     </main>
