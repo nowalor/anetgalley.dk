@@ -34,8 +34,11 @@ class AdminEventController extends Controller
     {
         $validated = $request->validated();
 
-        $startsAt = Carbon::parse(strtok($request->input('daterange'), '-'));
-        $endsAt = Carbon::parse(substr($request->input('daterange'), strpos($request->input('daterange'), "-") + 1));
+        $firstDate = strtok($request->input('daterange'), ' ');
+        $lastDate = trim(substr($request->input('daterange'), strpos($request->input('daterange'), "-") + 1));
+
+        $startsAt = Carbon::createFromFormat('m/d/Y', $firstDate)->format('Y-m-d');
+        $endsAt = Carbon::createFromFormat('m/d/Y', $lastDate)->format('Y-m-d');
 
         $validated['starts_at'] = $startsAt;
         $validated['ends_at'] = $endsAt;
@@ -85,6 +88,7 @@ class AdminEventController extends Controller
 
             $validated['image_name'] = $fileName;
         }
+
 
         $startsAt = Carbon::parse(strtok($request->input('daterange'), '-'));
         $endsAt = Carbon::parse(substr($request->input('daterange'), strpos($request->input('daterange'), "-") + 1));

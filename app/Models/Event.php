@@ -32,7 +32,7 @@ class Event extends Model
     public function formattedFromToDate(): Attribute
     {
         return Attribute::make(
-            get: fn() => $this->starts_at->format('d/m/Y') . ' - ' . $this->ends_at->format('d/m/Y'),
+            get: fn() => $this->starts_at->format('m/d/Y') . ' - ' . $this->ends_at->format('m/d/Y'),
         );
     }
 

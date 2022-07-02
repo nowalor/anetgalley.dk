@@ -1,7 +1,7 @@
 @extends('app')
 @section('title', 'Events')
 @section('content')
-    <div class="container pt-4">
+    <div class="container pt-4 pb-4">
         @if(Session::has('event-created'))
             <p class="success-message mb-4">
                 {{ Session::get('event-created') }}
