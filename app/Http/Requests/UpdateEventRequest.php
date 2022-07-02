@@ -24,7 +24,11 @@ class UpdateEventRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'nullable|string',
+            'short_description' => 'nullable|string',
+            'event_url' => 'nullable|string',
+            'image' => 'nullable|image',
+            'daterange' => 'nullable',
         ];
     }
 }
