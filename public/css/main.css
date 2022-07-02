@@ -730,17 +730,33 @@ table {
 .events {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -15px;
+  margin: 0 -30px;
 }
 .events .event {
-  width: 33%;
-  padding: 0 5px;
+  width: 33.3333333333%;
+  padding: 0 10px;
   margin: 2rem 0;
+}
+@media (max-width: 1000px) {
+  .events .event {
+    width: 50%;
+  }
+}
+@media (max-width: 600px) {
+  .events .event {
+    width: 100%;
+  }
 }
 .events .event__img {
   width: 100%;
-  height: 40rem;
+  height: 20vw;
   border-radius: 0.5rem;
+  min-height: 20rem;
+}
+@media (max-width: 600px) {
+  .events .event__img {
+    height: 40vw;
+  }
 }
 
 .single-product-page {
