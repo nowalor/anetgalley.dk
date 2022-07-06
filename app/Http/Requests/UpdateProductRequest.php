@@ -13,7 +13,7 @@ class UpdateProductRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -27,6 +27,7 @@ class UpdateProductRequest extends FormRequest
                'category_id' => 'exists:categories,id',
                'name' => 'string',
                'quantity' => 'numeric',
+               'price' => 'numeric',
                'description' => 'string',
                'image' => 'image',
                'has_additional_info' => 'boolean',

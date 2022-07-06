@@ -81,15 +81,42 @@
     align-items: center;
 }
 
+.container {
+    max-width: 130rem;
+    margin: 0 auto;
+
+    @media(max-width: 1000px) {
+        padding: 0 15rem;
+    }
+
+    @media(max-width: 80rem) {
+        padding: 0 6rem;
+    }
+
+    @media(max-width: 660px) {
+        padding: 0 4rem;
+    }
+
+}
+
 .success-message {
-    padding: 1rem 0;
+    padding: 1rem;
     width: 34rem;
-    padding-left: 1rem;
     font-size: 1.6rem;
     font-weight: 600;
     border-radius: 0.5rem;
     background-color: rgba(#28A745, 0.2);
     color: #28A745;
+}
+
+.alert-message {
+    padding: 1rem;
+    width: 34rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    background-color: rgba(#DC3545, 0.2);
+    color: #DC3545;
 }
 
 .display-flex {
@@ -146,7 +173,7 @@
     }
 }
 
-.view-product-button {
+.view-button {
     padding: 0.3rem 1.2rem;
     color: #FFF;
     background-color: #17A2B8;
@@ -156,7 +183,7 @@
     font-size: 1.5rem;
 }
 
-.edit-product-button {
+.edit-button {
     padding: 0.3rem 1.2rem;
     color: #FFF;
     background-color: #F6781D;
@@ -166,7 +193,7 @@
     font-size: 1.5rem;
 }
 
-.delete-product-button {
+.delete-button {
     padding: 0.3rem 1.2rem;
     color: #FFF;
     background-color: #DC3555;
@@ -210,3 +237,52 @@
 .width50 {
     width: 50%;
 }
+
+.relative {
+    position: relative;
+}
+
+
+.table-header {
+    display: flex;
+    height: 4rem;
+    background: #444;
+    align-items: center;
+    padding-left: 2rem;
+    .table-heading {
+        flex: 1;
+        color: #FFF;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+    }
+}
+
+.table-items {
+    .table-row{
+        display: flex;
+        height: 4rem;
+        padding-left: 2rem;
+        align-items: center;
+        border: 1px solid #444;
+        font-size: 1.4rem;
+
+        &__item {
+            flex: 1;
+        }
+
+        &__actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+    }
+}
+
+.preview-img {
+    height: 20rem;
+    width: 20rem;
+    object-fit: cover;
+    margin-top: 2rem;
+    border-radius: 0.5rem;
+}
+
+

@@ -1,29 +1,57 @@
 .footer {
-    height: 20rem;
     width: 100%;
     background-color: var(--primary);
     position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+
+    @media(max-width: 1000px) {
+        padding-top: 2rem;
+        height: 24rem;
+    }
 
     &__content {
-        padding-top: 6rem;
         display: flex;
         text-align: left;
 
-        &-img {
+        @media(max-width: 1000px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
 
+        &-img {
+            @media(max-width: 600px) {
+                height: 2.4rem;
+            }
         }
 
         &-right {
             display: flex;
             gap: 6rem;
+
+            @media(max-width: 1000px) {
+                margin-left: 0 !important;
+                margin-top: 2rem;
+            }
         }
 
         &__block {
             text-align: left;
         }
+    }
+
+    &__list-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__icon {
+        color: #939790;
+        font-size: 1.4rem;
     }
 
     &__link {

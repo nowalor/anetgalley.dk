@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\ContactPageSendEmailRequest;
+use App\Mail\ContactMail;
+use Illuminate\Support\Facades\Mail;
 
 class ContactPageController extends Controller
 {
@@ -14,8 +16,10 @@ class ContactPageController extends Controller
 
     public function sendEmail(ContactPageSendEmailRequest $request)
     {
-        $validated = $request->validated;
+        $validated = $request->validated();
 
-        var_dump($request);
+        echo env('MAIL_TO_ADDRESS');
+
+        Mail::to(env('MAIL_TO_ADDRESS'))->send(new ContactMail($validated));
     }
 }

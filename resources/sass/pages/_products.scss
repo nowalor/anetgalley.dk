@@ -25,6 +25,9 @@
 
 .product {
     width: 45%;
+    @media(max-width: 50rem) {
+        width: 100%;
+    }
 
     &__price-box {
         height: 3.3rem;

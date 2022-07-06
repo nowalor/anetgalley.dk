@@ -9,11 +9,16 @@
 @import 'pages/_homepage';
 @import 'pages/_products';
 @import 'pages/_contact';
+@import 'pages/_events';
 @import 'pages/_single-product';
 
 /* MISC */
 @import 'misc/_utility';
 
+/* COMPONENTS */
 @import 'components/_breadcrumbs';
 @import 'components/_forms';
+@import 'components/_modals';
+@import 'components/_paginator';
+@import 'components/_alerts';
 

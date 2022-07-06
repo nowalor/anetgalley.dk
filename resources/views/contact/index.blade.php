@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="contact-page">
-        <div class="contact-page__box">
+        <div class="contact-page__box contact-page__box-left">
             <img class="contact-page__image" src="{{ asset('img/placeholder.jpg') }}" alt="">
         </div>
         <div class="contact-page__box">

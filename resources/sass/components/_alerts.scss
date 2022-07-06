@@ -1,0 +1,15 @@
+.alert {
+    height: 2.5rem;
+    border-radius: 8px;
+    color: #FFF;
+    FONT-SIZE: 1.6rem;
+    align-items: center;
+    padding-left: 2rem;
+    display: flex;
+    margin-bottom: 1rem;
+
+    &-success {
+        background: rgba(#28A745, 0.2);
+        color: #28A745
+    }
+}

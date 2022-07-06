@@ -8,6 +8,8 @@ use Illuminate\View\View;
 use App\Models\Category;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use Illuminate\Support\Facades\Storage;
+use App\Models\ProductAdditionalImage;
 
 class AdminProductController extends Controller
 {
@@ -49,7 +51,9 @@ class AdminProductController extends Controller
 
     public function show(Product $product)
     {
-        return view('admin.products.show', compact('product'));
+        $additionalImages = $product->productAdditionalImages;
+
+        return view('admin.products.show', compact('product', 'additionalImages'));
     }
 
     public function edit(Product $product)
@@ -61,13 +65,40 @@ class AdminProductController extends Controller
 
     public function update(UpdateProductRequest $request, Product $product)
     {
-        
+        $validated = $request->validated();
+
+       if($request->hasFile('image')) {
+           $image = $request->file('image');
+           $fileName = $image->getClientOriginalName();
+
+           Storage::disk('public')->delete("product-images/$product->id/$product->image_url");
+           $image->storeAs("product-images/$product->id", $fileName, 'public');
+
+           $product->image_url = $fileName;
+       }
+
+        if($request->hasFile('additional_images')) {
+            foreach($request->file('additional_images') as $image) {
+                $fileName = $image->getClientOriginalName();
+
+                $newImage = ProductAdditionalImage::create([
+                    'product_id' => $product->id,
+                    'name' => $fileName,
+                ]);
+
+                $image->storeAs("product-images/$product->id/additional/$newImage->id", $fileName, 'public');
+            }
+        }
+
+        $product->update($validated);
+
+        return redirect()->route('admin.products.index')->with('Product updated', 'Product has been updated');
     }
 
     public function destroy(Product $product)
     {
         $product->delete();
 
-        return redirect()->back();
+        return redirect()->back()->with('product-deleted', 'Product has been deleted');
     }
 }

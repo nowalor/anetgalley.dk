@@ -9,7 +9,7 @@
         <h1 class="heading-lg pt-8 ttu ">Login</h1>
         <form method="POST" action="{{ route('auth.login') }}">
             @csrf
-            <div class="form-group pt-2">
+            <div class="form-group mt-2">
                 <label class="label" for="exampleInputEmail1">Email address</label>
                 <input value="{{ old('email') }}" name="email" type="email"
                        class="input @error('email') validation-error-input @enderror" id="exampleInputEmail1">

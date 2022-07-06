@@ -8,9 +8,11 @@
 @section('content')
     <div class="container center">
         <h1 class="heading-lg pt-2">Create a new product</h1>
-        <form class="pt-4" action="{{ route('admin.products.store') }}" method="POST" enctype="multipart/form-data"
+        <form class="pt-4" action="{{ route('admin.products.update', $product) }}" method="POST"
+              enctype="multipart/form-data"
               style="width: 37rem;">
             @csrf
+            @method('PATCH')
             <h3 class="heading-md">Required information</h3>
 
             <div class="form-group pt-2">
@@ -49,7 +51,8 @@
             <div class="form-group">
                 <label class="label">Price*</label>
                 <input type="number" class="input @error('price') validation-error-input @enderror" name="price"
-                       value="{{ $product->price }}">
+                       value="{{ $product->price }}"
+                >
                 @error('price')
                 <p class="validation-error">{{ $message }}</p>
                 @enderror
@@ -66,11 +69,18 @@
 
             <div class="form-group">
                 <label for="exampleFormControlFile1" class="label">Image</label>
-                <input name="image" type="file" class="input-file @error('image') validation-error-input @enderror"
+                <input name="image" type="file" class="image-input input-file @error('image') validation-error-input @enderror"
                        id="exampleFormControlFile1">
+
+                <img src=" {{ $product->productImageUrl }}" alt="" class="preview-img">
                 @error('image')
                 <p class="validation-error">{{ $message }}</p>
                 @enderror
+            </div>
+
+            <div class="form-group">
+                <div class="label">Additional images</div>
+                <input name="additional_images[]" type="file" multiple>
             </div>
 
             <h3 class="pt-4 heading-md">Optional information</h3>
@@ -113,5 +123,8 @@
             <button type="submit" class="mt-2 button-pink-100 ttu">Submit</button>
         </form>
     </div>
+@endsection
+@section('scripts')
+    <script src="{{ asset('js/image-preview.js') }}"></script>
 @endsection
 
