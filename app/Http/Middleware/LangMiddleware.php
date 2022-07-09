@@ -20,9 +20,18 @@ class LangMiddleware
     public function handle(Request $request, Closure $next)
     {
         if($request->method() === 'GET') {
-            $lang = $request->input('lang');
 
-            App::setLocale($lang);
+            if($request->has('lang')) {
+                $lang = $request->input('lang');
+
+                Session::put('lang', $lang);
+
+                App::setLocale($lang);
+            } else if(Session::has('lang')) {
+                $lang = Session::get('lang');
+
+                App::setLocale($lang);
+            }
         }
 
         return $next($request);
