@@ -5,5 +5,5 @@ return [
     'all' => 'All',
     'originals' => 'Originals',
     'replicas' => 'Replicas',
-    'buy' => 'Buy',
+    'view_product' => 'View product',
 ];
