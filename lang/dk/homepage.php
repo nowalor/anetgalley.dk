@@ -10,4 +10,4 @@ return [
     'checkout_the_latest_items' => 'Checkout the latest items that are for sale',
     'latest_posts_from_my_instagram' => 'Latest posts from my Instagram',
     'view_product' => 'View product',
-];
+    ];

@@ -6,12 +6,11 @@
         <div class="container">
             <div class="cta">
                 <div class="cta__left">
-                    <h1 class="cta__left-heading">Art by Anette Andersen</h1>
-                    <h3 class="cta__left-tagline">Art is a media for reflection, existensial expansion... a pulse -
-                        pleasure - provocation.... a sense of life</h3>
+                    <h1 class="cta__left-heading">{{ __('homepage.art_by') }}</h1>
+                    <h3 class="cta__left-tagline">{{ __('homepage.art_is_a_media') }}</h3>
                     <div class="cta__left-buttons">
-                        <a href="#" class="button button__black">SHOP &rarr;</a>
-                        <a href="#" class="button button__white">GALLERY &rarr;</a>
+                        <a href="#" class="button button__black">{{ __('homepage.shop') }} &rarr;</a>
+                        <a href="#" class="button button__white">{{ __('homepage.gallery') }} &rarr;</a>
                     </div>
                 </div>
                 <div class="cta__right">
@@ -22,10 +21,10 @@
         @if(count($products))
             <div class="shop-preview">
                 <h1 class="large-heading-white">
-                    SHOP
+                    {{ __('homepage.shop') }}
                 </h1>
                 <h3 class="tagline-white-italic mt-1">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    {{ __('homepage.checkout_the_latest_items') }}
                 </h3>
                 <div class="decoration-line mt-2">
                     <div class="decoration-line__line"></div>
@@ -57,14 +56,14 @@
                                 {{ Str::words($products[0]->description, 60)}}
                             </p>
 
-                            <div class="button-pink-100 mt-12" style="width: 80%; max-width: 40rem;">BUY</div>
+                            <div class="button-pink-100 mt-12" style="width: 80%; max-width: 40rem;">{{ __('homepage.view_product') }}</div>
                         </div>
                     </div>
                 </div>
 
                 @if(count($products) >= 2)
                     <div class="shop-preview-item should-reverse">
-                        <div class="shop-preview-item__box">>
+                        <div class="shop-preview-item__box">
                             <div class="shop-preview-item__content">
                                 <h2 class="heading-md-white">{{ $products[1]->name }}</h2>
                                 <div class="shop-preview-item__price-box">
@@ -114,17 +113,17 @@
                 @endif
                 <div class="pt-8 pb-10">
                     <a href="{{ route('products.index') }}" class="link-button-underline-white">
-                        View entire shop &rarr;
+                        {{ __('homepage.view_entire_shop') }} &rarr;
                     </a>
                 </div>
             </div>
 
             <div class="gallery-preview container">
                 <h1 class="heading-xl ttu">
-                    Gallery
+                    {{ __('homepage.gallery') }}
                 </h1>
                 <h3 class="tagline-italic mt-1">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    {{ __('homepage.latest_posts_from_my_instagram') }}
                 </h3>
                 <div class="decoration-line mt-2">
                     <div class="decoration-line__line"></div>
@@ -158,7 +157,7 @@
                 </div>
                 <div class="pt-8 pb-10">
                     <a href="{{ route('products.index') }}" class="link-button-underline">
-                        View entire shop &rarr;
+                        {{ __('homepage.view_entire_gallery') }}&rarr;
                     </a>
                 </div>
             </div>

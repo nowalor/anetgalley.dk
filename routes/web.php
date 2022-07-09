@@ -11,7 +11,7 @@ use App\Http\Controllers\ContactPageController;
 use App\Http\Controllers\AdminEditHomepageInformationController;
 use Illuminate\Support\Facades\Route;
 
-Route::group(['prefix' => '{lang?}', 'middleware' => 'lang'], function() {
+Route::group(['middleware' => 'lang'], function() {
     // Normal routes
     Route::get('', HomepageController::class)->name('home');
     Route::get('gallery', GalleryController::class)->name('gallery.index');
