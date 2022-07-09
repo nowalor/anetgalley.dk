@@ -23,6 +23,7 @@
 
     &__menu {
         display: flex;
+        align-items: center;
 
         @media(max-width: 600px) {
             display: none;
@@ -38,6 +39,38 @@
         color: #444;
         font-weight: 600;
         font-size: 1.6rem;
+        text-transform: uppercase;
+    }
+
+    &__menu-flag {
+        width: 3rem;
+        position: relative;
+
+        label {
+            cursor: pointer;
+        }
+    }
+
+    &__menu-flag-checkbox {
+        display: none;
+    }
+
+    &__menu-flag-checkbox:checked + &__menu-dropdown {
+        visibility: visible;
+    }
+
+    &__menu-dropdown {
+        width: 3rem;
+        background-color: #FFF;
+        position: absolute;
+        z-index: 501;
+        top: 3rem;
+        visibility: hidden;
+
+        &-item {
+            width: 3rem;
+            height: auto;
+        }
     }
 
     &__icon {

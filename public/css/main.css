@@ -147,6 +147,7 @@ table {
 }
 .navbar__menu {
   display: flex;
+  align-items: center;
 }
 @media (max-width: 600px) {
   .navbar__menu {
@@ -161,6 +162,32 @@ table {
   color: #444;
   font-weight: 600;
   font-size: 1.6rem;
+  text-transform: uppercase;
+}
+.navbar__menu-flag {
+  width: 3rem;
+  position: relative;
+}
+.navbar__menu-flag label {
+  cursor: pointer;
+}
+.navbar__menu-flag-checkbox {
+  display: none;
+}
+.navbar__menu-flag-checkbox:checked + .navbar__menu-dropdown {
+  visibility: visible;
+}
+.navbar__menu-dropdown {
+  width: 3rem;
+  background-color: #FFF;
+  position: absolute;
+  z-index: 501;
+  top: 3rem;
+  visibility: hidden;
+}
+.navbar__menu-dropdown-item {
+  width: 3rem;
+  height: auto;
 }
 .navbar__icon {
   cursor: pointer;
