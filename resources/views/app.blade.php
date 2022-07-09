@@ -20,7 +20,7 @@
         </a>
         <ul class="navbar__menu">
             <li class="navbar__menu-item">
-                <a href="{{ route('products.index') }}" class="navbar__menu-link @yield('shop')">SHOP</a>
+                <a href="{{ route('products.index') }}" class="navbar__menu-link @yield('shop')">{{ __('header.shop') }}</a>
             </li>
             <li class="navbar__menu-item">
                 <a href="{{ route('events.index') }}" class="navbar__menu-link @yield('contact')">EVENTS</a>
