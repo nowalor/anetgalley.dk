@@ -6,7 +6,7 @@
 @endsection
 @section('title', 'Admin')
 @section('content')
-    <div class="container center">
+    <div class="container center pb-4">
         <h1 class="heading-lg pt-2">Create a new product</h1>
         <form class="pt-4" action="{{ route('admin.products.store') }}" method="POST" enctype="multipart/form-data"
               style="width: 37rem;">

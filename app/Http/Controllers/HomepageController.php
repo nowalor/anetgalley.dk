@@ -19,7 +19,9 @@ class HomepageController extends Controller
         $instagramAccessToken = env('INSTAGRAM_ACCESS_TOKEN');
 
         $response= Http::get("https://graph.instagram.com/me/media?fields=id,permalink,caption,media_type,media_url&limit=6&access_token=$instagramAccessToken");
-        $instagramPosts = json_decode($response->body())->data;
+
+        // $instagramPosts = json_decode($response->body())->data;
+        $instagramPosts = [];
 
         return view('home', compact('products', 'instagramPosts', 'homepageInformation'));
     }

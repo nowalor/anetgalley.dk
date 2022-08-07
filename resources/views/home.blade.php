@@ -5,7 +5,7 @@
     <main>
         <div class="container">
             <div class="cta">
-                <div class="cta__left">
+                <div class="cta__left" data-aos="fade-down-right">
                     <h1 class="cta__left-heading">{{ __('homepage.art_by') }}</h1>
                     <h3 class="cta__left-tagline">{{ __('homepage.art_is_a_media') }}</h3>
                     <div class="cta__left-buttons">
@@ -13,17 +13,17 @@
                         <a href="#" class="button button__white">{{ __('homepage.gallery') }} &rarr;</a>
                     </div>
                 </div>
-                <div class="cta__right">
+                <div class="cta__right" data-aos="fade-up-left">
                     <img src="{{ $homepageInformation->url ? $homepageInformation->url : asset('img/placeholder.jpg') }}" alt="" class="cta__right-img">
                 </div>
             </div>
         </div>
         @if(count($products))
             <div class="shop-preview">
-                <h1 class="large-heading-white">
+                <h1 class="large-heading-white" data-aos="fade-right">
                     {{ __('homepage.shop') }}
                 </h1>
-                <h3 class="tagline-white-italic mt-1">
+                <h3 class="tagline-white-italic mt-1" data-aos="fade-left">
                     {{ __('homepage.checkout_the_latest_items') }}
                 </h3>
                 <div class="decoration-line mt-2">
@@ -39,12 +39,12 @@
 
 
                 <div class="shop-preview-item pt-4">
-                    <div class="shop-preview-item__box">
+                    <div class="shop-preview-item__box" data-aos="fade-right">
                         <img
                             src="{{ asset('storage/product-images/' . $products[0]->id . '/' . $products[0]->image_url ) }}"
                             alt="" class="shop-preview-item__image">
                     </div>
-                    <div class="shop-preview-item__box">>
+                    <div class="shop-preview-item__box" data-aos="fade-left">
                         <div class="shop-preview-item__content">
                             <h2 class="heading-md-white">{{ $products[0]->name }}</h2>
                             <div class="shop-preview-item__price-box">
@@ -62,7 +62,7 @@
                 </div>
 
                 @if(count($products) >= 2)
-                    <div class="shop-preview-item should-reverse">
+                    <div class="shop-preview-item should-reverse" data-aos="fade-left">
                         <div class="shop-preview-item__box">
                             <div class="shop-preview-item__content">
                                 <h2 class="heading-md-white">{{ $products[1]->name }}</h2>
@@ -78,7 +78,7 @@
                                 <div class="button-pink-100 mt-12" style="width: 80%; max-width: 40rem;">BUY</div>
                             </div>
                         </div>
-                        <div class="shop-preview-item__box">
+                        <div class="shop-preview-item__box" data-aos="fade-left">
                             <img
                                 src="{{ asset('storage/product-images/' . $products[1]->id . '/' . $products[1]->image_url ) }}"
                                 alt="" class="shop-preview-item__image">
@@ -88,13 +88,13 @@
                 @endif
 
                 @if(count($products) >= 3)
-                    <div class="shop-preview-item">
+                    <div class="shop-preview-item" data-aos="fade-right">
                         <div class="shop-preview-item__box">
                             <img
                                 src="{{ asset('storage/product-images/' . $products[2]->id . '/' . $products[2]->image_url ) }}"
                                 alt="" class="shop-preview-item__image">
                         </div>
-                        <div class="shop-preview-item__box">>
+                        <div class="shop-preview-item__box" data-aos="fade-left">
                             <div class="shop-preview-item__content">
                                 <h2 class="heading-md-white">{{ $products[2]->name }}</h2>
                                 <div class="shop-preview-item__price-box">
@@ -112,7 +112,7 @@
                     </div>
                 @endif
                 <div class="pt-8 pb-10">
-                    <a href="{{ route('products.index') }}" class="link-button-underline-white">
+                    <a href="{{ route('products.index') }}" class="link-button-underline-white" data-aos="fade-in">
                         {{ __('homepage.view_entire_shop') }} &rarr;
                     </a>
                 </div>
@@ -137,7 +137,7 @@
                 <div class="gallery-preview__gallery">
                     @foreach($instagramPosts as $instagramPost)
                         <div class="instagram-post">
-                            <img src="{{ $instagramPost->media_url  }}" alt="" class="instagram-post__img">
+                            <img data-aos="zoom-in" src="{{ $instagramPost->media_url  }}" alt="" class="instagram-post__img">
                         <!-- <h2 class="heading-md medium pt-2">anetgallery</h2>
                             <p class="instagram-post__caption pt-1 font16 mb-8">{{ strtok($instagramPost->caption, '#') }}
                             <span
@@ -155,7 +155,7 @@
                         </div>
                     @endforeach
                 </div>
-                <div class="pt-8 pb-10">
+                <div class="pt-8 pb-10" data-aos="fade-in">
                     <a href="{{ route('products.index') }}" class="link-button-underline">
                         {{ __('homepage.view_entire_gallery') }}&rarr;
                     </a>

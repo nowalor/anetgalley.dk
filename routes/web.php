@@ -12,6 +12,7 @@ use App\Http\Controllers\AdminEditHomepageInformationController;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => 'lang'], function() {
+    Route::get('lang/{lang}', \App\Http\Controllers\LanguageController::class)->name('lang');
     // Normal routes
     Route::get('', HomepageController::class)->name('home');
     Route::get('gallery', GalleryController::class)->name('gallery.index');

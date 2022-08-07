@@ -105,6 +105,7 @@ body {
   min-height: 100vh;
   position: relative;
   padding-bottom: 20rem;
+  overflow-x: hidden;
 }
 
 ol, ul {
@@ -179,7 +180,6 @@ table {
 }
 .navbar__menu-dropdown {
   width: 3rem;
-  background-color: #FFF;
   position: absolute;
   z-index: 501;
   top: 3rem;

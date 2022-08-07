@@ -3,7 +3,9 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
@@ -13,25 +15,16 @@ class LangMiddleware
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
-     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
+     * @param Request $request
+     * @param Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
+     * @return Response|RedirectResponse
      */
     public function handle(Request $request, Closure $next)
     {
-        if($request->method() === 'GET') {
+        if (Session::has('lang')) {
+            $lang = Session::get('lang');
 
-            if($request->has('lang')) {
-                $lang = $request->input('lang');
-
-                Session::put('lang', $lang);
-
-                App::setLocale($lang);
-            } else if(Session::has('lang')) {
-                $lang = Session::get('lang');
-
-                App::setLocale($lang);
-            }
+            App::setLocale($lang);
         }
 
         return $next($request);
