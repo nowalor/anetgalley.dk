@@ -79,6 +79,7 @@
                                 </div>
                             </div>
                             <a href="#" class="button-primary ttu single-product__button">Buy now</a>
+                            <a href="{{ route('checkout.products.show', $product) }}" class="button-primary ttu single-product__button">Invoice</a>
                         </div>
                     </div>
                 </div>

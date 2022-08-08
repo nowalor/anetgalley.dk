@@ -23,6 +23,10 @@ Route::group(['middleware' => 'lang'], function() {
         ['only' => ['index', 'show']]
     );
 
+    Route::resource('checkout/products', \App\Http\Controllers\ProductCheckoutController::class,
+        ['only' => ['show', 'store'], 'as' => 'checkout',]
+    );
+
 // Guest routes
     Route::middleware('guest')->group(function() {
         Route::get('login', [LoginController::class, 'showLoginForm'])->name('auth.show-login');
