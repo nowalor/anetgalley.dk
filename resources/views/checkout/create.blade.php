@@ -23,6 +23,7 @@
                 <div class="width50">
                     <form action="{{ route('checkout.products.store') }}" method="POST">
                         @csrf
+                        <input type="hidden" name="product-id" value="{{ $product->id }}">
                         <div class="form-group">
                             <label for="" class="label">Name*</label>
                             <input name="name" type="text" class="input">
