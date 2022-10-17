@@ -143,6 +143,9 @@ return [
         // 'store'  => 'redis',
     ],
 
+    // Payment data from env
+    'mobile_pay_link' => env('MOBILE_PAY_ONLINE_PAYMENT_LINK'),
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
