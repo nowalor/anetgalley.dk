@@ -4,7 +4,7 @@
             <img src="http://165.22.81.169/img/logo.svg"/>
             <div>
                 <p><b>Product name: </b>{{ $product->name }}</p>
-                <p><b>Invoice id: </b>{{ $order->id }}</p>
+                <p><b>Invoice number: </b>{{ $invoice->invoice_number }}</p>
                 <p><b>Issue date: </b>{{ $order->created_at }}</p>
                 <p><b>Due date: </b>{{ $invoice->due_date }}</p>
             </div>

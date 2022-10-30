@@ -13,13 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('invoices', function (Blueprint $table) {
+        Schema::create('gallery_images', function (Blueprint $table) {
             $table->id();
-            $table->string('invoice_number')->nullable();
-            $table->foreignId('order_id')->constrained();
-            $table->string('buyer_name');
-            $table->string('buyer_email');
-            $table->string('buyer_phone');
+            $table->string('image');
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('invoices');
+        Schema::dropIfExists('gallery_images');
     }
 };

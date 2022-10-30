@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\GalleryImage;
 
 class GalleryController extends Controller
 {
 
     public function __invoke()
     {
-        return view('gallery.index');
+        $images = GalleryImage::all();
+        $chunkedImages = collect($images)->chunk(3);
+
+
+        return view('gallery.index', compact('chunkedImages'));
     }
 }

@@ -147,7 +147,7 @@
         <div class="footer__content-right" style="margin-left: auto;">
             <div class="footer__content-block">
                 <h2 class="heading-md medium white">
-                    Socials
+                    {{ __('footer.socials') }}
                 </h2>
                 <div class="pink-divider mt-1 mb-1"></div>
                 <ul class="footer__list">
@@ -171,7 +171,7 @@
             </div>
             <div class="footer__content-block">
                 <h2 class="heading-md medium white">
-                    Contact
+                    {{ __('footer.contact') }}
                 </h2>
                 <div class="pink-divider mt-1 mb-1"></div>
                 <ul class="footer__list">

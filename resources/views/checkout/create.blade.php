@@ -4,7 +4,6 @@
     <div class="modal-container display-none" id="show-product-modal">
         <img id="show-product-modal-img" class="modal-image"/>
 
-
     </div>
     <div class="container">
         <div class="product-checkout-page">
@@ -24,13 +23,23 @@
                     <form action="{{ route('checkout.products.store') }}" method="POST">
                         @csrf
                         <input type="hidden" name="product-id" value="{{ $product->id }}">
+
                         <div class="form-group">
-                            <label for="" class="label">Name*</label>
+                            <label class="label" for="">Quantity</label>
+                            <select name="" id="" class="input">
+                                @for($i = 1; $i <= $product->quantity; $i++)
+                                    <option>{{ $i }}</option>
+                                @endfor
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="" class="label">Your name*</label>
                             <input name="name" type="text" class="input">
                         </div>
 
                         <div class="form-group">
-                            <label for="" class="label">Email*</label>
+                            <label for="" class="label">Your email*</label>
                             <input name="email" type="text" class="input">
                         </div>
 

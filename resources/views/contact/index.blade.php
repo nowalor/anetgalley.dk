@@ -10,10 +10,10 @@
         <div class="contact-page__box">
             <form class="contact-page__form" method="POST" action="{{ route('contact.send-email') }}">
                 @csrf
-                <h2 class="heading-lg conact-page__form-heading">Write me a message</h2>
+                <h2 class="heading-lg conact-page__form-heading">{{ __('contact.write_me_a_message') }}</h2>
 
                 <div class="form-group">
-                    <label for="name" class="label">Name*</label>
+                    <label for="name" class="label">{{ __('contact.name') }}*</label>
                     <input type="text" name="name" class="input @error('name') validation-input-error @enderror"
                            required>
                     @error('name')
@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="email" class="label">Email*</label>
+                    <label for="email" class="label">{{ __('contact.email') }}*</label>
                     <input type="email" class="input @error('email') validation-input-error @enderror" name="email">
                     @error('email')
                     <p class="validation-error">{{ $message }}</p>
@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="subject" class="label">Subject*</label>
+                    <label for="subject" class="label">{{ __('contact.subject') }}*</label>
                     <input type="email" class="input @error('subject') validation-input-error @enderror" name="subject">
                     @error('subject')
                     <p class="validation-error">{{ $message }}</p>
@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="message" class="label">Message*</label>
+                    <label for="message" class="label">{{ __('contact.message') }}*</label>
                     <textarea name="message"
                               class="textarea @error('message') validation-input-error @enderror"></textarea>
                     @error('message')
@@ -46,7 +46,7 @@
                     @enderror
                 </div>
 
-                <button class="mt-2 button-pink-100 ttu">Send</button>
+                <button class="mt-2 button-pink-100 ttu">{{ __('contact.send') }}</button>
             </form>
         </div>
     </div>

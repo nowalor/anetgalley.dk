@@ -1,6 +1,6 @@
 <?php
 return [
-    'write_me_a_message' => 'Write me a message DK',
+    'write_me_a_message' => 'Write me a message',
     'name' => 'Name',
     'email' => 'Email',
     'subject' => 'Subject',

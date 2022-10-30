@@ -54,6 +54,15 @@ Route::group(['middleware' => 'lang'], function() {
         Route::resource('events', AdminEventController::class, [
             'as' => 'admin',
         ]);
+
+        Route::resource('gallery', \App\Http\Controllers\AdminGalleryController::class, [
+            'as' => 'admin'
+        ])
+        ->except(['edit', 'update']);
+
+        Route::resource('orders', \App\Http\Controllers\AdminOrderController::class, [
+            'as' => 'admin'
+        ])->except(['create', 'store', 'edit']);
     });
 });
 

@@ -8,6 +8,7 @@ use App\Models\Invoice;
 use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 use PDF;
 
 class ProductCheckoutController extends Controller
@@ -19,12 +20,13 @@ class ProductCheckoutController extends Controller
         $product = Product::find($request->input('product-id'));
 
         $product->update([
-            'quantity' => $product->quantity--,
+            'quantity' => $product->quantity - $request->get('quantity'),
         ]);
 
         $order = Order::create([
             'product_id' => $product->id,
             'method' => 'invoice',
+            'quantity' => $request->get('quantity')
         ]);
 
         $invoice = Invoice::create([
@@ -34,13 +36,18 @@ class ProductCheckoutController extends Controller
             'buyer_phone' => '61477261',
         ]);
 
+        $invoice->update([
+            'invoice_number' => Str::random(6) . $invoice->id,
+        ]);
+
         $pdf = PDF::loadView('pdfs.invoice' , compact('product', 'order', 'invoice'));
 
         $invoice = $pdf->output();
 
         Mail::to('nikulasoskarsson@gmail.com')->send(new InvoiceMail($invoice));
 
-        return $pdf->stream();
+        return redirect()->route('products.show', $product)
+            ->with('order-successful', 'Your order was successful. Check your email');
     }
 
     public function show(Product $product)
