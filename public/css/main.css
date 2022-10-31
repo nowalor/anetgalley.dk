@@ -790,18 +790,39 @@ table {
   display: flex;
   flex-wrap: wrap;
   padding: 0 4px;
+  position: relative;
 }
 .gallery__column {
   flex: 30%;
   max-width: 33%;
   padding: 5px 8px;
 }
+.gallery__image-container {
+  position: relative;
+}
+.gallery__image-container:hover .gallery__form {
+  display: block;
+}
+.gallery__form {
+  position: absolute;
+  top: 5%;
+  left: 5px;
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+.gallery__form-delete-btn {
+  font-size: 2rem;
+  background: transparent;
+}
+.gallery__form-delete-btn:hover {
+  cursor: pointer;
+}
 .gallery__image {
   margin-top: 8px;
   vertical-align: middle;
   width: 100%;
 }
-
 .single-product-page {
   padding-bottom: 12rem;
 }

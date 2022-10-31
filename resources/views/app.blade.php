@@ -128,6 +128,11 @@
                         Events
                     </a>
                 </li>
+                <li class="secondary-navbar__list-item">
+                    <a href="{{ route('admin.gallery.index') }}" class="secondary-navbar__list-link">
+                        Gallery
+                    </a>
+                </li>
             </ul>
             <div class="ml-auto">
                 <form class="" method="POST" action="{{ route('auth.logout') }}">

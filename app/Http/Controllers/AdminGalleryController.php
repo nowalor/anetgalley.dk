@@ -12,7 +12,9 @@ class AdminGalleryController extends Controller
     {
         $images = GalleryImage::all();
 
-        return view('admin.gallery.index', compact('images'));
+        $chunkedImages = collect($images)->chunk(3);
+
+        return view('admin.gallery.index', compact('chunkedImages'));
     }
 
     public function create()
@@ -32,8 +34,10 @@ class AdminGalleryController extends Controller
         return redirect()->route('admin.gallery.index');
     }
 
-    public function destroy(GalleryImage $galleryImage)
+    public function destroy(GalleryImage $gallery)
     {
-        //
+        $gallery->delete();
+
+        return redirect()->back()->with('image-deleted', 'Image has been deleted');
     }
 }

@@ -12,7 +12,6 @@ class GalleryController extends Controller
         $images = GalleryImage::all();
         $chunkedImages = collect($images)->chunk(3);
 
-
         return view('gallery.index', compact('chunkedImages'));
     }
 }

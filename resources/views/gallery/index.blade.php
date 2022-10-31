@@ -13,7 +13,7 @@
             @foreach($chunkedImages as $images)
                 <div class="gallery__column">
                     @foreach($images as $image)
-                        <img src="storage/{{ $image->image }}" class="gallery__image">
+                        <img src="{{ asset('storage/' . $image->image) }}" class="gallery__image">
                     @endforeach
                 </div>
             @endforeach
