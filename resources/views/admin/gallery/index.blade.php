@@ -1,7 +1,7 @@
 @extends('app')
 @section('title', 'Gallery - Admin')
 @section('content')
-    <div class="container pt-2">
+    <div class="container pt-4 pb-4">
         @if(Session::has('image-deleted'))
             <p class="success-message mb-4">{{ Session::get('image-deleted') }}</p>
         @endif

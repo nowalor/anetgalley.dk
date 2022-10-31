@@ -23,31 +23,77 @@
                     <form action="{{ route('checkout.products.store') }}" method="POST">
                         @csrf
                         <input type="hidden" name="product-id" value="{{ $product->id }}">
-
+                        <h1 class="mb-2">Invoice information</h1>
                         <div class="form-group">
                             <label class="label" for="">Quantity</label>
-                            <select name="" id="" class="input">
+                            <select class="input" name="quantity">
                                 @for($i = 1; $i <= $product->quantity; $i++)
-                                    <option>{{ $i }}</option>
+                                    <option value="{{ $i }}">{{ $i }}</option>
                                 @endfor
                             </select>
                         </div>
 
                         <div class="form-group">
                             <label for="" class="label">Your name*</label>
-                            <input name="name" type="text" class="input">
+                            <input name="name" type="text" class="input" required>
                         </div>
 
                         <div class="form-group">
                             <label for="" class="label">Your email*</label>
-                            <input name="email" type="text" class="input">
+                            <input name="email" type="text" class="input" required>
                         </div>
 
-                        <button class="mt-2 button-pink-100 ttu">Buy</button>
+                        <h1 class="mb-2">Delivery information</h1>
+                        <div class="form-group">
+                            <label class="label" for="">Choose delivery</label>
+                            <select class="input" id="checkout_location_select">
+                                <option value="location_a">Pick up at location A</option>
+                                <option value="location_b">Pick up at location B</option>
+                                <option value="delivery_denmark">Delivery within Denmark</option>
+                                <option value="delivery_outside_denmark">Delivery outside of Denmark</option>
+                            </select>
+
+                            <div id="delivery_denmark_form" class="display-none">
+                                <div class="form-group">
+                                    <label for="" class="label">City*</label>
+                                    <input name="text" type="text" class="input">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="" class="label">Zip code*</label>
+                                    <input name="text" type="text" class="input">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="" class="label">Address*</label>
+                                    <input name="text" type="text" class="input">
+                                </div>
+                            </div>
+                        </div>
+                        <input type="submit" value="buy" class="mt-2 button-pink-100 ttu"/>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+@endsection
+@section('scripts')
+    <script>
+        const checkoutLocationSelectEl = document.getElementById('checkout_location_select')
+        const deliveryDenmarkFormEl = document.getElementById('delivery_denmark_form')
 
+        const handleChangeDelivery = (deliveryType) => {
+            if (
+                deliveryType === 'delivery_denmark' ||
+                deliveryType === 'delivery_outside_denmark'
+            ) {
+                deliveryDenmarkFormEl.classList.remove('display-none')
+            } else {
+                deliveryDenmarkFormEl.classList.add('display-none')
+
+            }
+        }
+
+        checkoutLocationSelectEl.addEventListener('change', (event) => handleChangeDelivery(event.target.value))
+    </script>
 @endsection

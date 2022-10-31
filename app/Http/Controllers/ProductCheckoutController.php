@@ -7,7 +7,10 @@ use App\Mail\InvoiceMail;
 use App\Models\Invoice;
 use App\Models\Order;
 use App\Models\Product;
+use Illuminate\Http\File;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use PDF;
 
@@ -42,13 +45,16 @@ class ProductCheckoutController extends Controller
 
         $pdf = PDF::loadView('pdfs.invoice' , compact('product', 'order', 'invoice'));
 
+        Storage::put("public/pdf/$invoice->invoice_number.pdf", $pdf->output());
+
+
         $invoice = $pdf->output();
 
         Mail::to('nikulasoskarsson@gmail.com')->send(new InvoiceMail($invoice));
 
         return redirect()->route('products.show', $product)
             ->with('order-successful', 'Your order was successful. Check your email');
-    }
+   }
 
     public function show(Product $product)
     {

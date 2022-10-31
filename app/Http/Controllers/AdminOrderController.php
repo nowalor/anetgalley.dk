@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AdminOrderController extends Controller
 {
@@ -24,6 +25,8 @@ class AdminOrderController extends Controller
 
     public function show(Order $order)
     {
+        $order->load('invoice', 'product');
+
         return view('admin.orders.show', compact('order'));
     }
 

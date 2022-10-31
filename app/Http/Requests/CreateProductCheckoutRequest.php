@@ -26,7 +26,6 @@ class CreateProductCheckoutRequest extends FormRequest
         return [
             'name' => 'required|string',
             'email' => 'required|string',
-            'quantity' => 'required|number',
         ];
     }
 }

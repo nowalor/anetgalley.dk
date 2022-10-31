@@ -133,6 +133,12 @@
                         Gallery
                     </a>
                 </li>
+
+                <li class="secondary-navbar__list-item">
+                    <a href="{{ route('admin.orders.index') }}" class="secondary-navbar__list-link">
+                        Orders
+                    </a>
+                </li>
             </ul>
             <div class="ml-auto">
                 <form class="" method="POST" action="{{ route('auth.logout') }}">

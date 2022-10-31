@@ -1,7 +1,7 @@
 @extends('app')
 @section('title', 'Admin - Orders')
 @section('content')
-    <div class="container pt-4">
+    <div class="container pt-4 pb-4">
 
         @if(Session::has('order-deleted'))
             <p class="alert-message mb-4">{{ Session::get('order-deleted') }}</p>
@@ -16,21 +16,23 @@
         </div>
         <div class="admin-product-header">
             <div class="admin-product-header__item">Product name</div>
+            <div class="admin-product-header__item">Payment method</div>
+            <div class="admin-product-header__item">Total price</div>
             <div class="admin-product-header__item">Product Price</div>
+            <div class="admin-product-header__item">Order quantity</div>
             <div class="admin-product-header__item">Invoice number</div>
             <div class="admin-product-header__item">Buyer name</div>
-            <div class="admin-product-header__item">Buyer email</div>
-            <div class="admin-product-header__item">Buyer phone</div>
             <div class="admin-product-header__item">Actions</div>
         </div>
         @forelse($orders as $order)
             <div class="admin-products">
                 <div class="admin-products__item">{{ $order->product->name }}</div>
+                <div class="admin-products__item">{{ $order->method }}</div>
+                <div class="admin-products__item">{{ $order->quantity * $order->product->price }} / DKK</div>
                 <div class="admin-products__item">{{ $order->product->price }} / DKK</div>
+                <div class="admin-products__item">{{ $order->quantity }}</div>
                 <div class="admin-products__item">{{ $order->invoice->invoice_number }}</div>
                 <div class="admin-products__item">{{ $order->invoice->buyer_name }}</div>
-                <div class="admin-products__item">{{ $order->invoice->buyer_email  }}</div>
-                <div class="admin-products__item">{{ $order->invoice->buyer_phone  }}</div>
                 <div class="admin-products__item admin-products__actions">
                     <a class="view-button" href="{{ route('admin.orders.show', $order) }}">View</a>
                     <form method="POST" action="{{ route('admin.orders.update', $order) }}">
