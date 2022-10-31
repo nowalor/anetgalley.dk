@@ -23,6 +23,7 @@ class Product extends Model
         'material',
         'condition',
         'quantity',
+        'delivery_cost',
     ];
 
     public function category(): BelongsTo

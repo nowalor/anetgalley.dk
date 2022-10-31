@@ -44,7 +44,6 @@
                         </div>
 
                         <button class="mt-2 button-pink-100 ttu">Buy</button>
-
                     </form>
                 </div>
             </div>

@@ -35,6 +35,8 @@ class AdminProductController extends Controller
             $validated['has_additional_info'] = true;
         }
 
+        $validated['price'] = $validated['price'] * 100; // 25.5dkk = 2555 in database
+        $validated['delivery_cost'] = $validated['delivery_cost'] * 100;
         $product = Product::create($validated);
 
         if($request->hasFile('image')) {

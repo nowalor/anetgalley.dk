@@ -136,10 +136,16 @@
                     <div class="decoration-line__line"></div>
                 </div>
 
-                <div class="gallery-preview__gallery">
-
-
+                <div class="gallery">
+                    @foreach($chunkedImages as $images)
+                        <div class="gallery__column">
+                            @foreach($images as $image)
+                                <img src="storage/{{ $image->image }}" class="gallery__image">
+                            @endforeach
+                        </div>
+                    @endforeach
                 </div>
+
                 <div class="pt-8 pb-10" data-aos="fade-in">
                     <a href="{{ route('products.index') }}" class="link-button-underline">
                         {{ __('homepage.view_entire_gallery') }}&rarr;

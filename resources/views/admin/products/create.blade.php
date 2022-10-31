@@ -54,6 +54,14 @@
                 @enderror
             </div>
             <div class="form-group">
+                <label class="label">Delivery cost*</label>
+                <input type="number" class="input @error('delivery_cost') validation-error-input @enderror" name="delivery_cost"
+                       value="{{ old('delivery_cost') }}">
+                @error('delivery_cost')
+                <p class="validation-error">{{ $message }}</p>
+                @enderror
+            </div>
+            <div class="form-group">
                 <label for="exampleFormControlTextarea1" class="label">Description*</label>
                 <textarea class="textarea mb-2 @error('description')  validation-error-input @enderror"
                           id="exampleFormControlTextarea1" rows="5" name="description"

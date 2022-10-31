@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\GalleryImage;
 use App\Models\HomepageInformation;
 use Dymantic\InstagramFeed\Profile;
 use Illuminate\View\View;
@@ -16,6 +17,10 @@ class HomepageController extends Controller
 
         $products = Product::orderBy('id', 'desc')->take(3)->get();
 
-        return view('home', compact('products', 'homepageInformation'));
+        $galleryImages = GalleryImage::take(9)->get();
+
+        $chunkedImages = collect($galleryImages)->chunk(3);
+
+        return view('home', compact('products', 'homepageInformation', 'chunkedImages'));
     }
 }
