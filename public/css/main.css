@@ -1406,3 +1406,28 @@ table {
   background: rgba(40, 167, 69, 0.2);
   color: #28A745;
 }
+
+.order-preview-box {
+  background-color: #FFF;
+  margin-right: 4rem;
+  padding: 2rem;
+}
+.order-preview-box__img {
+  height: 6rem;
+  margin-bottom: 2rem;
+}
+.order-preview-box p {
+  font-size: 1.4rem;
+}
+.order-preview-box__info-header {
+  font-size: 1.6rem !important;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.order-preview-box__info-heading {
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+.order-preview-box__info {
+  font-weight: 400;
+}

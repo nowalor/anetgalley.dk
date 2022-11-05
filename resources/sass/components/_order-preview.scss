@@ -1,0 +1,29 @@
+.order-preview-box {
+    background-color: #FFF;
+    margin-right: 4rem;
+    padding: 2rem;
+
+    &__img {
+        height: 6rem;
+        margin-bottom: 2rem;
+    }
+
+    p {
+        font-size: 1.4rem;
+    }
+    &__info-header {
+        font-size: 1.6rem !important;
+        font-weight: 700;
+        margin-bottom: 0.4rem;
+    }
+
+    &__info-heading {
+        font-weight: 600;
+        margin-bottom: 0.2rem;
+    }
+
+    &__info {
+        font-weight: 400;
+    }
+
+}

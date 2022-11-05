@@ -42,4 +42,18 @@ class Product extends Model
             get: fn($value) => asset('storage/product-images/' . $this->id . '/' . $this->image_url),
         );
     }
+
+    public function price(): Attribute
+    {
+        return Attribute::make(
+          get: fn($value) => number_format($value / 100, 2),
+        );
+    }
+
+    public function deliveryCost(): Attribute
+    {
+        return Attribute::make(
+            get: fn($value) => number_format($value / 100, 2),
+        );
+    }
 }

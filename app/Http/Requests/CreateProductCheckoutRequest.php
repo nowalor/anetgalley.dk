@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Order;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class CreateProductCheckoutRequest extends FormRequest
 {
@@ -26,6 +28,8 @@ class CreateProductCheckoutRequest extends FormRequest
         return [
             'name' => 'required|string',
             'email' => 'required|string',
+            // quantity
+            'delivery_type' => ['required', Rule::in(Order::DELIVERY_TYPES)]
         ];
     }
 }
