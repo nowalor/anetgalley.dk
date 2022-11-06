@@ -31,7 +31,7 @@
                    class="navbar__menu-link @yield('contact')">{{ __('header.events') }}</a>
             </li>
             <li class="navbar__menu-item">
-                <a target="_blank" href="https://www.instagram.com/anetgallery/"
+                <a href="{{ route('gallery.index') }}"
                    class="navbar__menu-link">{{ __('header.gallery') }}</a>
             </li>
             <li class="navbar__menu-item">
@@ -137,6 +137,12 @@
                 <li class="secondary-navbar__list-item">
                     <a href="{{ route('admin.orders.index') }}" class="secondary-navbar__list-link">
                         Orders
+                    </a>
+                </li>
+
+                <li class="secondary-navbar__list-item">
+                    <a href="{{ route('admin.homepage.index') }}" class="secondary-navbar__list-link">
+                        Edit homepage
                     </a>
                 </li>
             </ul>

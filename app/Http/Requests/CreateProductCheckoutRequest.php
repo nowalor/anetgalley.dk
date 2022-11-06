@@ -28,8 +28,13 @@ class CreateProductCheckoutRequest extends FormRequest
         return [
             'name' => 'required|string',
             'email' => 'required|string',
-            // quantity
-            'delivery_type' => ['required', Rule::in(Order::DELIVERY_TYPES)]
+            'quantity' => 'numeric',
+            'delivery_type' => ['required', Rule::in(Order::DELIVERY_TYPES)],
+            'country_id' => 'exists:countries,id',
+            'city' => 'required_if:delivery_type,==,' .Order::DELIVERY_TYPE_DELIVERY_DENMARK,
+            'address' => 'required_if:delivery_type,==,' .Order::DELIVERY_TYPE_DELIVERY_DENMARK,
+            'zip_code' => 'required_if:delivery_type,==,' .Order::DELIVERY_TYPE_DELIVERY_DENMARK,
+
         ];
     }
 }

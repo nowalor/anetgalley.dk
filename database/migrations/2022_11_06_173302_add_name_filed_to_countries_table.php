@@ -13,14 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('orders', function (Blueprint $table) {
-            $table->string('delivery_type');
-            $table->foreignId('country_id')
-                ->nullable()
-                ->constrained();
-            $table->string('city')->nullable();
-            $table->string('zip_code')->nullable();
-            $table->string('address')->nullable();
+        Schema::table('countries', function (Blueprint $table) {
+            $table->string('name');
         });
     }
 
@@ -31,7 +25,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('orders', function (Blueprint $table) {
+        Schema::table('countries', function (Blueprint $table) {
             //
         });
     }

@@ -13,6 +13,18 @@
                 <p class="breadcrumbs__link breadcrumbs__link-active">Checkout</p>
             </div>
 
+            @if($errors->any)
+                @foreach($errors->all() as $error)
+                    {{ $error }}
+                @endforeach
+            @endif
+
+            @if(session()->has('error'))
+                <div class="alert-message mb-4">
+                    {{ session()->get('error') }}
+                </div>
+            @endif
+
             <div class="display-flex pt-8">
                 <div class="width50">
                     <h1 class="mb-2">Your order</h1>
@@ -31,8 +43,23 @@
                                 class="order-preview-box__info"><span id="product_checkout_delivery_cost">0</span> / Dkk</span>
                         </p>
                         <p class="order-preview-box__info-heading">Total cost: <span
-                                class="order-preview-box__info"><span
+                                class="order-preview-box__info "><span
                                     id="product_checkout_total"> {{ $product->price }} </span>/ DKK</span></p>
+
+                        <p class="order-preview-box__info-header mt-2">Delivery information</p>
+                        <div>
+                            <p class="order-preview-box__info-heading">Delivery type: <span
+                                    class="order-preview-box__info" id="checkout_delivery_type_preview">Pick up at {{ $deliveryTypes[0] }}</span></p>
+                            <div id="delivery-mail-preview" class="display-none">
+                                <p class="order-preview-box__info-heading">City: <span
+                                        class="order-preview-box__info" id="checkout_city_preview"></span></p>
+                                <p class="order-preview-box__info-heading">Address: <span
+                                        class="order-preview-box__info" id="checkout_address_preview"></span></p>
+                                <p class="order-preview-box__info-heading">Zip code: <span
+                                        class="order-preview-box__info" id=checkout_zip_preview></span></p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
                 <div class="width50">
@@ -62,7 +89,7 @@
                         <h1 class="mb-2">Delivery information</h1>
                         <div class="form-group">
                             <label class="label" for="">Choose delivery</label>
-                            <select class="input" id="checkout_location_select">
+                            <select class="input" id="checkout_location_select" name="delivery_type">
                                 <option value="location_a">Pick up at location A</option>
                                 <option value="location_b">Pick up at location B</option>
                                 <option value="delivery_denmark">Delivery within Denmark</option>
@@ -82,17 +109,17 @@
 
                             <div class="form-group">
                                 <label for="" class="label">City*</label>
-                                <input name="text" type="text" class="input">
+                                <input name="city" type="text" class="input" id="checkout_city_input">
                             </div>
 
                             <div class="form-group">
                                 <label for="" class="label">Zip code*</label>
-                                <input name="text" type="text" class="input">
+                                <input name="zip_code" type="text" class="input" id="checkout_address_input">
                             </div>
 
                             <div class="form-group">
                                 <label for="" class="label">Address*</label>
-                                <input name="text" type="text" class="input">
+                                <input name="address" type="text" class="input" id="checkout_zip_input">
                             </div>
                         </div>
 
@@ -123,6 +150,19 @@
         const checkoutTotalEl = document.getElementById('product_checkout_total')
         const checkoutDeliveryCostEl = document.getElementById('product_checkout_delivery_cost')
 
+        // Delivery preview elements
+        const checkoutDeliveryTypePreviewEl = document.getElementById('checkout_delivery_type_preview')
+        const checkoutCityPreviewEl = document.getElementById('checkout_city_preview')
+        const checkoutAddressPreviewEl = document.getElementById('checkout_address_preview')
+        const checkoutZipPreviewEl = document.getElementById('checkout_zip_preview')
+
+        const deliveryMailPreviewEl = document.getElementById('delivery-mail-preview')
+
+        // Inputs
+        const checkoutCityInput = document.getElementById('checkout_city_input')
+        const checkoutAddressInput = document.getElementById('checkout_address_input')
+        const checkoutZipInput = document.getElementById('checkout_zip_input')
+
 
         const calculatePrice = () => {
             const productPrice = ({{ $product->price }}).toFixed(2)
@@ -131,22 +171,24 @@
 
             let deliveryCost
 
-            console.log('selectedDeliveryOption', selectedDeliveryOption)
-
             if (selectedDeliveryOption === 'delivery_denmark') {
                 deliveryCost = ({{ $product->delivery_cost }})
                 deliveryDenmarkFormEl.classList.remove('display-none')
                 countrySelectEl.disabled = selectedDeliveryOption === 'delivery_denmark'
                 checkoutDeliveryCostEl.innerHTML = deliveryCost.toFixed(2)
-                deliveryOutsideDenmarkFormEl.classList.add('display_none')
+                deliveryOutsideDenmarkFormEl.classList.add('display-none')
+                deliveryMailPreviewEl.classList.remove('display-none')
             } else if (selectedDeliveryOption === 'delivery_outside_denmark') {
                 deliveryCost = 0
                 deliveryDenmarkFormEl.classList.add('display-none')
                 deliveryOutsideDenmarkFormEl.classList.remove('display-none')
+                deliveryMailPreviewEl.classList.add('display-none')
+
             } else {
                 deliveryCost = 0
                 deliveryDenmarkFormEl.classList.add('display-none')
                 deliveryOutsideDenmarkFormEl.classList.add('display_none')
+                deliveryMailPreviewEl.classList.add('display-none')
             }
 
             const totalPrice = ((productPrice * quantity) + deliveryCost).toFixed(2)
@@ -156,7 +198,36 @@
             checkoutQuantityEl.innerHTML = quantity
         }
 
-        checkoutLocationSelectEl.addEventListener('change', calculatePrice)
+        const updateDeliveryPreview = () => {
+            const checkoutCityInputValue = document.getElementById('checkout_city_input').value
+            const checkoutAddressInputValue = document.getElementById('checkout_address_input').value
+            const checkoutZipInputValue = document.getElementById('checkout_zip_input').value
+            const selectedDeliveryOption = document.getElementById('checkout_location_select').value
+
+
+            checkoutCityPreviewEl.innerHTML = checkoutCityInputValue
+            checkoutAddressPreviewEl.innerHTML = checkoutAddressInputValue
+            checkoutZipPreviewEl.innerHTML = checkoutZipInputValue
+
+            if(selectedDeliveryOption === 'location_a') {
+                checkoutDeliveryTypePreviewEl.innerHTML = '{{ $deliveryTypes[0] }}'
+            } else if(selectedDeliveryOption === 'location_b') {
+                checkoutDeliveryTypePreviewEl.innerHTML = '{{ $deliveryTypes[1] }}'
+            } else if(selectedDeliveryOption === 'delivery_denmark') {
+                checkoutDeliveryTypePreviewEl.innerHTML = '{{ $deliveryTypes[2] }}'
+            } else if(selectedDeliveryOption === 'delivery_outside_denmark') {
+                checkoutDeliveryTypePreviewEl.innerHTML = '{{ $deliveryTypes[3] }}'
+            }
+        }
+
+        checkoutLocationSelectEl.addEventListener('change', () => {
+            calculatePrice()
+            updateDeliveryPreview()
+        })
         checkoutQuantitySelectEl.addEventListener('change', calculatePrice)
+
+        checkoutCityInput.addEventListener('keyup', updateDeliveryPreview)
+        checkoutAddressInput.addEventListener('keyup', updateDeliveryPreview)
+        checkoutZipInput.addEventListener('keyup', updateDeliveryPreview)
     </script>
 @endsection

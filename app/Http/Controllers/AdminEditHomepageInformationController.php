@@ -38,7 +38,6 @@ class AdminEditHomepageInformationController extends Controller
             'image_name' => $fileName,
         ]);
 
-        return "worked? $fileName";
-        return redirect()->back()->with('image-changed', 'Image has been changed');
+        return redirect()->route('home');
     }
 }

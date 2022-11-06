@@ -1,5 +1,5 @@
 @extends('app')
-@section('title', 'Gallery');
+@section('title', 'Gallery')
 
 @section('content')
     <div class="container">
@@ -10,13 +10,15 @@
         </div>
 
         <div class="gallery">
-            @foreach($chunkedImages as $images)
+            @forelse($chunkedImages as $images)
                 <div class="gallery__column">
                     @foreach($images as $image)
                         <img src="{{ asset('storage/' . $image->image) }}" class="gallery__image">
                     @endforeach
                 </div>
-            @endforeach
+            @empty
+                <p>No images in gallery</p>
+            @endforelse
         </div>
     </div>
 
