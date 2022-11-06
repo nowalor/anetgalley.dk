@@ -8,6 +8,11 @@
     </div>
     <div class="container">
         <div class="single-product-page">
+            @if(session()->has('order-successful'))
+                <p class="success-message mt-2">
+                    {{ session()->get('order-successful') }}
+                </p>
+            @endif
             <div class="breadcrumbs">
                 <a href="{{ route('home') }}" class="breadcrumbs__link">Home</a>
                 <p class="breadcrumbs__slash">/</p>
@@ -79,6 +84,7 @@
                                 </div>
                             </div>
                             <a href="#" class="button-primary ttu single-product__button">Buy now</a>
+                            <a href="{{ route('checkout.products.show', $product) }}" class="button-primary ttu single-product__button">Invoice</a>
                         </div>
                     </div>
                 </div>

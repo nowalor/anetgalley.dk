@@ -31,7 +31,7 @@
                    class="navbar__menu-link @yield('contact')">{{ __('header.events') }}</a>
             </li>
             <li class="navbar__menu-item">
-                <a target="_blank" href="https://www.instagram.com/anetgallery/"
+                <a href="{{ route('gallery.index') }}"
                    class="navbar__menu-link">{{ __('header.gallery') }}</a>
             </li>
             <li class="navbar__menu-item">
@@ -128,6 +128,23 @@
                         Events
                     </a>
                 </li>
+                <li class="secondary-navbar__list-item">
+                    <a href="{{ route('admin.gallery.index') }}" class="secondary-navbar__list-link">
+                        Gallery
+                    </a>
+                </li>
+
+                <li class="secondary-navbar__list-item">
+                    <a href="{{ route('admin.orders.index') }}" class="secondary-navbar__list-link">
+                        Orders
+                    </a>
+                </li>
+
+                <li class="secondary-navbar__list-item">
+                    <a href="{{ route('admin.homepage.index') }}" class="secondary-navbar__list-link">
+                        Edit homepage
+                    </a>
+                </li>
             </ul>
             <div class="ml-auto">
                 <form class="" method="POST" action="{{ route('auth.logout') }}">
@@ -147,7 +164,7 @@
         <div class="footer__content-right" style="margin-left: auto;">
             <div class="footer__content-block">
                 <h2 class="heading-md medium white">
-                    Socials
+                    {{ __('footer.socials') }}
                 </h2>
                 <div class="pink-divider mt-1 mb-1"></div>
                 <ul class="footer__list">
@@ -171,7 +188,7 @@
             </div>
             <div class="footer__content-block">
                 <h2 class="heading-md medium white">
-                    Contact
+                    {{ __('footer.contact') }}
                 </h2>
                 <div class="pink-divider mt-1 mb-1"></div>
                 <ul class="footer__list">

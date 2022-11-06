@@ -27,7 +27,7 @@
                 </li>
             </ul>
             <div class="products">
-                @foreach($products as $product)
+                @forelse($products as $product)
                     <div class="product pt-8">
                         <h2 class="heading-lg medium">{{ $product->name }}</h2>
                         <div class="product__price-box mt-2">
@@ -40,7 +40,9 @@
                              class="product__image mt-2">
                         <a href="{{route('products.show', $product->id)}}" class="button-pink-100 ttu mt-2">{{ __('shop.view_product') }}</a>
                     </div>
-                @endforeach
+                    @empty
+                    <p class="heading-md mt-2">No products match criteria.</p>
+                @endforelse
             </div>
             @if($products->hasPages())
                 {{ $products->links('components.product-paginator') }}

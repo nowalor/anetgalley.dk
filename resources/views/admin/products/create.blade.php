@@ -22,7 +22,7 @@
                 @enderror
             </div>
 
-            <div class="form-group">
+            <div class="form-group pt-2">
                 <div class="label">Quantity*</div>
                 <input type="number" name="quantity" class="input @error('quantity') validation-error-input @enderror"
                        value="{{ old('quantity') }}">
@@ -31,7 +31,7 @@
                 @enderror
             </div>
 
-            <div class="form-group">
+            <div class="form-group pt-2">
                 <lablel class="label">Category*</lablel>
                 <select name="category_id" class="select @error('category_id') validation-error-input @enderror"
                         aria-label="Default select example">
@@ -45,15 +45,23 @@
                 @enderror
             </div>
 
-            <div class="form-group">
-                <label class="label">Price*</label>
-                <input type="number" class="input @error('price') validation-error-input @enderror" name="price"
+            <div class="form-group pt-2">
+                <label class="label">Price(DKK)*</label>
+                <input type="text" class="input @error('price') validation-error-input @enderror" name="price"
                        value="{{ old('price') }}">
                 @error('price')
                 <p class="validation-error">{{ $message }}</p>
                 @enderror
             </div>
-            <div class="form-group">
+            <div class="form-group pt-2">
+                <label class="label">Delivery cost(DKK)*</label>
+                <input type="text" class="input @error('delivery_cost') validation-error-input @enderror" name="delivery_cost"
+                       value="{{ old('delivery_cost') }}">
+                @error('delivery_cost')
+                <p class="validation-error">{{ $message }}</p>
+                @enderror
+            </div>
+            <div class="form-group pt-2">
                 <label for="exampleFormControlTextarea1" class="label">Description*</label>
                 <textarea class="textarea mb-2 @error('description')  validation-error-input @enderror"
                           id="exampleFormControlTextarea1" rows="5" name="description"
@@ -63,7 +71,7 @@
                 @enderror
             </div>
 
-            <div class="form-group">
+            <div class="form-group pt-2">
                 <label for="exampleFormControlFile1" class="label">Image</label>
                 <input name="image" type="file" class="input-file @error('image') validation-error-input @enderror"
                        id="exampleFormControlFile1">
@@ -73,7 +81,7 @@
             </div>
 
             <h3 class="pt-4 heading-md">Optional information</h3>
-            <div class="form-group">
+            <div class="form-group pt-2">
                 <label class="label">Dimensions</label>
                 <input type="text" class="input @error('dimensions') validation-error-input @enderror"
                        name="dimensions" value="{{ old('dimensions') }}">
@@ -82,7 +90,7 @@
                 @enderror
             </div>
 
-            <div class="form-group">
+            <div class="form-group pt-2">
                 <label class="label">Weight</label>
                 <input type="text" class="input @error('weight') validation-error-input @enderror" name="weight"
                        value="{{ old('weight') }}">
@@ -91,7 +99,7 @@
                 @enderror
             </div>
 
-            <div class="form-group">
+            <div class="form-group pt-2">
                 <label class="label">Material</label>
                 <input type="text" class="input @error('material') validation-error-input @enderror" name="material"
                        value="{{ old('material') }}">
@@ -100,7 +108,7 @@
                 @enderror
             </div>
 
-            <div class="form-group">
+            <div class="form-group pt-2">
                 <label class="label">Condition</label>
                 <input type="text" class="input @error('condition') validation-error-input @enderror" name="condition"
                        value="{{ old('condition') }}">

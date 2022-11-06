@@ -23,6 +23,11 @@ Route::group(['middleware' => 'lang'], function() {
         ['only' => ['index', 'show']]
     );
 
+    Route::resource('checkout/products', \App\Http\Controllers\ProductCheckoutController::class,
+        ['only' => ['show', 'store'], 'as' => 'checkout',]
+    );
+
+
 // Guest routes
     Route::middleware('guest')->group(function() {
         Route::get('login', [LoginController::class, 'showLoginForm'])->name('auth.show-login');
@@ -49,6 +54,15 @@ Route::group(['middleware' => 'lang'], function() {
         Route::resource('events', AdminEventController::class, [
             'as' => 'admin',
         ]);
+
+        Route::resource('gallery', \App\Http\Controllers\AdminGalleryController::class, [
+            'as' => 'admin'
+        ])
+        ->except(['edit', 'update']);
+
+        Route::resource('orders', \App\Http\Controllers\AdminOrderController::class, [
+            'as' => 'admin'
+        ])->except(['create', 'store', 'edit']);
     });
 });
 
