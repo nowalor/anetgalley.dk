@@ -1,0 +1,53 @@
+
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+    position: relative;
+
+    &__column {
+        flex: 30%;
+        max-width: 33%;
+        padding: 5px 8px;
+    }
+
+    &__image-container {
+        position: relative;
+
+        &:hover {
+            .gallery__form{
+                display: block;
+            }
+        }
+    }
+    &__form {
+        position: absolute;
+        top: 5%;
+        left: 5px;
+        height: 100%;
+        width: 100%;
+        display: none;
+
+        &-delete-btn {
+            font-size: 2rem;
+            background: transparent;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__image {
+        margin-top: 8px;
+        vertical-align: middle;
+        width: 100%;
+
+        &-admin {
+
+            &:hover {
+            }
+        }
+    }
+}

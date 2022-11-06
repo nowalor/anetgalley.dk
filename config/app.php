@@ -82,7 +82,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'dk',
 
     /*
     |--------------------------------------------------------------------------
@@ -95,7 +95,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'dk',
 
     /*
     |--------------------------------------------------------------------------
@@ -143,6 +143,9 @@ return [
         // 'store'  => 'redis',
     ],
 
+    // Payment data from env
+    'mobile_pay_link' => env('MOBILE_PAY_ONLINE_PAYMENT_LINK'),
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
@@ -182,9 +185,12 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+
         /*
          * Package Service Providers...
          */
+
+        Barryvdh\DomPDF\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -210,6 +216,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class,
     ])->toArray(),
 
 ];

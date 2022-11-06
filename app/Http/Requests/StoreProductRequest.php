@@ -36,6 +36,7 @@ class StoreProductRequest extends FormRequest
             'weight' => 'string|nullable',
             'material' => 'string|nullable',
             'condition' => 'string|nullable',
+            'delivery_cost' => 'required',
          ];
     }
 }

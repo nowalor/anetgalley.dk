@@ -20,7 +20,7 @@ return new class extends Migration
                 ->onDelete('cascade');
 
             $table->string('name');
-            $table->decimal('price');
+            $table->integer('price');
             $table->text('description');
             $table->string('image_url');
             // Additional information
