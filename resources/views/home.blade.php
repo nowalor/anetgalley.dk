@@ -6,8 +6,8 @@
         <div class="container">
             <div class="cta">
                 <div class="cta__left" data-aos="fade-down-right">
-                    <h1 class="cta__left-heading">{{ __('homepage.art_by') }}</h1>
-                    <h3 class="cta__left-tagline">{{ __('homepage.art_is_a_media') }}</h3>
+                    <h1 class="cta__left-heading">{{ $homepageInformation->title }}</h1>
+                    <h3 class="cta__left-tagline">{{ $homepageInformation->tagline }}</h3>
                     <div class="cta__left-buttons">
                         <a href="#" class="button button__black">{{ __('homepage.shop') }} &rarr;</a>
                         <a href="#" class="button button__white">{{ __('homepage.gallery') }} &rarr;</a>
@@ -35,32 +35,61 @@
                 <div class="decoration-line__square"></div>
                 <div class="decoration-line__line"></div>
             </div>
+            <div class="pt-4">
+
+            </div>
 
             @forelse($products as $product)
-                <div class="shop-preview-item pt-4">
-                    <div class="shop-preview-item__box" data-aos="fade-right">
-                        <img
-                            src="{{ asset('storage/product-images/' . $product->id . '/' . $product->image_url ) }}"
-                            alt="" class="shop-preview-item__image">
-                    </div>
-                    <div class="shop-preview-item__box" data-aos="fade-left">
-                        <div class="shop-preview-item__content">
-                            <h2 class="heading-md-white">{{ $product->name }}</h2>
-                            <div class="shop-preview-item__price-box">
-                                <p class="shop-preview-item__price">
-                                    {{ $product->price }}DKK
+                @if($loop->index !== 1)
+                    <div class="shop-preview-item">
+                        <div class="shop-preview-item__box" data-aos="fade-right">
+                            <img
+                                src="{{ asset('storage/product-images/' . $product->id . '/' . $product->image_url ) }}"
+                                alt="" class="shop-preview-item__image">
+                        </div>
+                        <div class="shop-preview-item__box" data-aos="fade-left">
+                            <div class="shop-preview-item__content">
+                                <h2 class="heading-md-white">{{ $product->name }}</h2>
+                                <div class="shop-preview-item__price-box">
+                                    <p class="shop-preview-item__price">
+                                        {{ $product->price }}DKK
+                                    </p>
+                                </div>
+                                <p class="shop-preview-item__description">
+                                    {{ Str::words($product->description, 60)}}
                                 </p>
-                            </div>
-                            <p class="shop-preview-item__description">
-                                {{ Str::words($product->description, 60)}}
-                            </p>
 
-                            <div class="button-pink-100 mt-12"
-                                 style="width: 80%; max-width: 40rem;">{{ __('homepage.view_product') }}</div>
+                                <div class="button-pink-100 mt-12"
+                                     style="width: 80%; max-width: 40rem;">{{ __('homepage.view_product') }}</div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    @else
+                    <div class="shop-preview-item">
+                        <div class="shop-preview-item__box" data-aos="fade-left">
+                            <div class="shop-preview-item__content">
+                                <h2 class="heading-md-white">{{ $product->name }}</h2>
+                                <div class="shop-preview-item__price-box">
+                                    <p class="shop-preview-item__price">
+                                        {{ $product->price }}DKK
+                                    </p>
+                                </div>
+                                <p class="shop-preview-item__description">
+                                    {{ Str::words($product->description, 60)}}
+                                </p>
 
+                                <div class="button-pink-100 mt-12"
+                                     style="width: 80%; max-width: 40rem;">{{ __('homepage.view_product') }}</div>
+                            </div>
+                        </div>
+                        <div class="shop-preview-item__box" data-aos="fade-right">
+                            <img
+                                src="{{ asset('storage/product-images/' . $product->id . '/' . $product->image_url ) }}"
+                                alt="" class="shop-preview-item__image">
+                        </div>
+                    </div>
+
+                @endif
             @empty
                 <p style="color: white;">No products have been added</p>
             @endforelse

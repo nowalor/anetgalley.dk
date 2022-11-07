@@ -18,6 +18,7 @@ class AdminEditHomepageInformationController extends Controller
     public function update(AdminEditHomepageInformationRequest $request)
     {
         $validated = $request->validated();
+        unset($validated['image']);
 
         // Should only contain one record so first() is fine
         $homepageInfo = HomepageInformation::first();
@@ -29,14 +30,15 @@ class AdminEditHomepageInformationController extends Controller
             Storage::delete($files);
         }
 
-        $image = $request->file('image');
-        $fileName = $image->getClientOriginalName();
+        if($request->hasFile('image')) {
+            $image = $request->file('image');
+            $fileName = $image->getClientOriginalName();
 
-        $image->storeAs("homepage/cta", $fileName,'public');
+            $image->storeAs("homepage/cta", $fileName,'public');
+            $validated['image_name'] = $fileName;
+        }
 
-        $homepageInfo->update([
-            'image_name' => $fileName,
-        ]);
+        $homepageInfo->update($validated);
 
         return redirect()->route('home');
     }
