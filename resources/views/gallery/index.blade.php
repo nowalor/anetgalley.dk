@@ -1,5 +1,6 @@
 @extends('app')
 @section('title', 'Gallery')
+@section('gallery', 'active')
 
 @section('content')
     <div class="container">

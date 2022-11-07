@@ -1,5 +1,8 @@
 @extends('app')
 @section('title', 'Events')
+@section('events', 'active')
+
+
 @section('content')
     <div class="container">
         <div class="events-page">
@@ -29,7 +32,7 @@
                         <h3 class="heading-md medium pt-2">{{ $event->name }}</h3>
                         <p class="pt-1 font16"> {{ $event->short_description }}</p>
                         <p class="pt-2 font14 light pb-4">{{ $event->formattedFromToDate }}</p>
-                        <a target="_blank" href=" {{ $event->event_url }} " class="button button__black width100">{{ __('events.view_events') }}</a>
+                        <a target="_blank" href=" {{ $event->event_url }} " class="button button__black width100">{{ __('events.view_event') }}</a>
                     </div>
                 @empty
                     empty...

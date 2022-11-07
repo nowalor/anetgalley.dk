@@ -9,8 +9,8 @@
                     <h1 class="cta__left-heading">{{ $homepageInformation->title }}</h1>
                     <h3 class="cta__left-tagline">{{ $homepageInformation->tagline }}</h3>
                     <div class="cta__left-buttons">
-                        <a href="#" class="button button__black">{{ __('homepage.shop') }} &rarr;</a>
-                        <a href="#" class="button button__white">{{ __('homepage.gallery') }} &rarr;</a>
+                        <a href="{{ route('products.index') }}" class="button button__black">{{ __('homepage.shop') }} &rarr;</a>
+                        <a href="{{ route('gallery.index') }}" class="button button__white">{{ __('homepage.gallery') }} &rarr;</a>
                     </div>
                 </div>
                 <div class="cta__right" data-aos="fade-up-left">
@@ -105,7 +105,7 @@
                 {{ __('homepage.gallery') }}
             </h1>
             <h3 class="tagline-italic mt-1">
-                {{ __('homepage.latest_posts_from_my_instagram') }}
+                {{ __('homepage.latest_posts_from_my_gallery') }}
             </h3>
             <div class="decoration-line mt-2">
                 <div class="decoration-line__line"></div>

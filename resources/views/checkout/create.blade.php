@@ -28,7 +28,6 @@
             <div class="display-flex pt-8">
                 <div class="width50">
                     <h1 class="mb-2">Your order</h1>
-
                     <div class="order-preview-box">
                         <h1 class="mb-2">Your order</h1>
                         <img src="{{ $product->productImageUrl }}" class="order-preview-box__img">
@@ -84,6 +83,11 @@
                         <div class="form-group">
                             <label for="" class="label">Your email*</label>
                             <input name="email" type="text" class="input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="" class="label">Your phone*</label>
+                            <input name="phone" type="text" class="input" required>
                         </div>
 
                         <h1 class="mb-2">Delivery information</h1>

@@ -28,11 +28,11 @@
             </li>
             <li class="navbar__menu-item">
                 <a href="{{ route('events.index') }}"
-                   class="navbar__menu-link @yield('contact')">{{ __('header.events') }}</a>
+                   class="navbar__menu-link @yield('events')">{{ __('header.events') }}</a>
             </li>
             <li class="navbar__menu-item">
                 <a href="{{ route('gallery.index') }}"
-                   class="navbar__menu-link">{{ __('header.gallery') }}</a>
+                   class="navbar__menu-link @yield('gallery')">{{ __('header.gallery') }}</a>
             </li>
             <li class="navbar__menu-item">
                 <a href="{{ route('contact.index') }}"

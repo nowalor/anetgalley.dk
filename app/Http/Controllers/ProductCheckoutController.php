@@ -48,7 +48,7 @@ class ProductCheckoutController extends Controller
                 'order_id' => $order->id,
                 'buyer_name' => $request->name,
                 'buyer_email' => $request->email,
-                'buyer_phone' => '61477261',
+                'buyer_phone' => $request->phone,
             ]);
 
             $invoice->update([
