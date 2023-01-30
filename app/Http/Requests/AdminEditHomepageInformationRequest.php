@@ -24,7 +24,11 @@ class AdminEditHomepageInformationRequest extends FormRequest
     public function rules()
     {
         return [
-            'image' => 'image',
+            'image' => 'nullable|image',
+            'title_en' => 'nullable|string',
+            'title_dk' => 'nullable|string',
+            'tagline_en' => 'nullable|string',
+            'tagline_dk' => 'nullable|string',
         ];
     }
 }

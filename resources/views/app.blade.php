@@ -16,99 +16,139 @@
     <title>@yield('title')</title>
 </head>
 <body>
-<nav class="navbar" data-aos="fade-in">
-    <div class="navbar__content container">
-        <a href="{{ route('home') }}">
-            <img src="{{ asset('img/logo.svg') }}" alt="" class="navbar__logo">
-        </a>
-        <ul class="navbar__menu">
-            <li class="navbar__menu-item">
-                <a href="{{ route('products.index') }}"
-                   class="navbar__menu-link @yield('shop')">{{ __('header.shop') }}</a>
-            </li>
-            <li class="navbar__menu-item">
-                <a href="{{ route('events.index') }}"
-                   class="navbar__menu-link @yield('contact')">{{ __('header.events') }}</a>
-            </li>
-            <li class="navbar__menu-item">
-                <a href="{{ route('gallery.index') }}"
-                   class="navbar__menu-link">{{ __('header.gallery') }}</a>
-            </li>
-            <li class="navbar__menu-item">
-                <a href="{{ route('contact.index') }}"
-                   class="navbar__menu-link @yield('contact')">{{ __('header.contact') }}</a>
-            </li>
-            <li class="navbar__menu-item navbar__menu-flag">
-                <label for="menu-flag-checkbox">
-                    @if(App::isLocale('en'))
-                        <svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-gb" viewBox="0 0 640 480">
-                            <path fill="#012169" d="M0 0h640v480H0z"/>
-                            <path fill="#FFF"
-                                  d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/>
-                            <path fill="#C8102E"
-                                  d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/>
-                            <path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/>
-                            <path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"/>
-                        </svg
-                    @else
-                        <svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-dk" viewBox="0 0 640 480">
-                            <path fill="#c8102e" d="M0 0h640.1v480H0z"/>
-                            <path fill="#fff" d="M205.7 0h68.6v480h-68.6z"/>
-                            <path fill="#fff" d="M0 205.7h640.1v68.6H0z"/>
-                        </svg>
-                    @endif
-                </label>
-                <input type="checkbox" class="navbar__menu-flag-checkbox" id="menu-flag-checkbox"/>
-                <div class="navbar__menu-dropdown">
-                    @if(App::isLocale('en'))
-                        <a class="navbar__menu-dropdown-item" href="{{ route('lang', 'dk') }}">
-                            <svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-dk" viewBox="0 0 640 480">
-                                <path fill="#c8102e" d="M0 0h640.1v480H0z"/>
-                                <path fill="#fff" d="M205.7 0h68.6v480h-68.6z"/>
-                                <path fill="#fff" d="M0 205.7h640.1v68.6H0z"/>
-                            </svg>
-                        </a>
-                    @else
-                        <a class="navbar__menu-dropdown-item" href="{{ route('lang', 'en') }}">
-                            <svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-gb" viewBox="0 0 640 480">
-                                <path fill="#012169" d="M0 0h640v480H0z"/>
-                                <path fill="#FFF"
-                                      d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/>
-                                <path fill="#C8102E"
-                                      d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/>
-                                <path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/>
-                                <path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"/>
-                            </svg>
-                        </a>
-                    @endif
+{{--<nav class="navbar" data-aos="fade-in" id="navbar">--}}
+{{--    <div class="navbar__content container">--}}
+{{--        <a href="{{ route('home') }}">--}}
+{{--            <img src="{{ asset('img/logo.svg') }}" alt="" class="navbar__logo">--}}
+{{--        </a>--}}
+{{--        <ul class="navbar__menu">--}}
+{{--            <li class="navbar__menu-item">--}}
+{{--                <a href="{{ route('products.index') }}"--}}
+{{--                   class="navbar__menu-link @yield('shop')">{{ __('header.shop') }}</a>--}}
+{{--            </li>--}}
+{{--            <li class="navbar__menu-item">--}}
+{{--                <a href="{{ route('events.index') }}"--}}
+{{--                   class="navbar__menu-link @yield('events')">{{ __('header.events') }}</a>--}}
+{{--            </li>--}}
+{{--            <li class="navbar__menu-item">--}}
+{{--                <a href="{{ route('gallery.index') }}"--}}
+{{--                   class="navbar__menu-link @yield('gallery')">{{ __('header.gallery') }}</a>--}}
+{{--            </li>--}}
+{{--            <li class="navbar__menu-item">--}}
+{{--                <a href="{{ route('contact.index') }}"--}}
+{{--                   class="navbar__menu-link @yield('contact')">{{ __('header.contact') }}</a>--}}
+{{--            </li>--}}
+{{--            <li class="navbar__menu-item navbar__menu-flag">--}}
+{{--                <label for="menu-flag-checkbox">--}}
+{{--                    @if(App::isLocale('en'))--}}
+{{--                        <svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-gb" viewBox="0 0 640 480">--}}
+{{--                            <path fill="#012169" d="M0 0h640v480H0z"/>--}}
+{{--                            <path fill="#FFF"--}}
+{{--                                  d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/>--}}
+{{--                            <path fill="#C8102E"--}}
+{{--                                  d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/>--}}
+{{--                            <path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/>--}}
+{{--                            <path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"/>--}}
+{{--                        </svg--}}
+{{--                    @else--}}
+{{--                        <svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-dk" viewBox="0 0 640 480">--}}
+{{--                            <path fill="#c8102e" d="M0 0h640.1v480H0z"/>--}}
+{{--                            <path fill="#fff" d="M205.7 0h68.6v480h-68.6z"/>--}}
+{{--                            <path fill="#fff" d="M0 205.7h640.1v68.6H0z"/>--}}
+{{--                        </svg>--}}
+{{--                    @endif--}}
+{{--                </label>--}}
+{{--                <input type="checkbox" class="navbar__menu-flag-checkbox" id="menu-flag-checkbox"/>--}}
+{{--                <div class="navbar__menu-dropdown">--}}
+{{--                    @if(App::isLocale('en'))--}}
+{{--                        <a class="navbar__menu-dropdown-item" href="{{ route('lang', 'dk') }}">--}}
+{{--                            <svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-dk" viewBox="0 0 640 480">--}}
+{{--                                <path fill="#c8102e" d="M0 0h640.1v480H0z"/>--}}
+{{--                                <path fill="#fff" d="M205.7 0h68.6v480h-68.6z"/>--}}
+{{--                                <path fill="#fff" d="M0 205.7h640.1v68.6H0z"/>--}}
+{{--                            </svg>--}}
+{{--                        </a>--}}
+{{--                    @else--}}
+{{--                        <a class="navbar__menu-dropdown-item" href="{{ route('lang', 'en') }}">--}}
+{{--                            <svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-gb" viewBox="0 0 640 480">--}}
+{{--                                <path fill="#012169" d="M0 0h640v480H0z"/>--}}
+{{--                                <path fill="#FFF"--}}
+{{--                                      d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/>--}}
+{{--                                <path fill="#C8102E"--}}
+{{--                                      d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/>--}}
+{{--                                <path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/>--}}
+{{--                                <path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"/>--}}
+{{--                            </svg>--}}
+{{--                        </a>--}}
+{{--                    @endif--}}
 
 
+{{--                </div>--}}
+{{--            </li>--}}
+{{--        </ul>--}}
+
+{{--        <div class="navbar__icon" id="navbar-icon">--}}
+{{--            <div class="navbar__icon-line navbar__icon-line-1"></div>--}}
+{{--            <div class="navbar__icon-line navbar__icon-line-2"></div>--}}
+{{--            <div class="navbar__icon-line navbar__icon-line-3"></div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--    <div class="mobile-navigation container" id="mobile-navigation">--}}
+{{--        <ul class="mobile-navigation__menu">--}}
+{{--            <li class="mobile-navigation__menu-item">--}}
+{{--                <a href="{{ route('products.index') }}" class="mobile-navigation__menu-link @yield('shop')">SHOP</a>--}}
+{{--            </li>--}}
+{{--            <li class="mobile-navigation__menu-item">--}}
+{{--                <a target="_blank" href="https://www.instagram.com/anetgallery/" class="mobile-navigation__menu-link">GALLERY</a>--}}
+{{--            </li>--}}
+{{--            <li class="mobile-navigation__menu-item">--}}
+{{--                <a href="{{ route('contact.index') }}"--}}
+{{--                   class="mobile-navigation__menu-link @yield('contact')">CONTACT</a>--}}
+{{--            </li>--}}
+{{--        </ul>--}}
+{{--    </div>--}}
+{{--</nav>--}}
+<nav class="new-navbar" id="navbar">
+    <div class="new-navbar__content container">
+        <ul class="new-navbar__menu">
+            <li class="new-navbar__menu-item">
+                <div class="a new-navbar__link" id="home-link">
+                    Home
                 </div>
             </li>
-        </ul>
 
-        <div class="navbar__icon" id="navbar-icon">
-            <div class="navbar__icon-line navbar__icon-line-1"></div>
-            <div class="navbar__icon-line navbar__icon-line-2"></div>
-            <div class="navbar__icon-line navbar__icon-line-3"></div>
-        </div>
-    </div>
-    <div class="mobile-navigation container" id="mobile-navigation">
-        <ul class="mobile-navigation__menu">
-            <li class="mobile-navigation__menu-item">
-                <a href="{{ route('products.index') }}" class="mobile-navigation__menu-link @yield('shop')">SHOP</a>
+            <li class="new-navbar__menu-item">
+                <div class="a new-navbar__link" id="gallery-link">
+                    Gallery
+                </div>
             </li>
-            <li class="mobile-navigation__menu-item">
-                <a target="_blank" href="https://www.instagram.com/anetgallery/" class="mobile-navigation__menu-link">GALLERY</a>
+
+            <li class="new-navbar__menu-item">
+                <div class="a new-navbar__link">
+                    Shop
+                </div>
             </li>
-            <li class="mobile-navigation__menu-item">
-                <a href="{{ route('contact.index') }}"
-                   class="mobile-navigation__menu-link @yield('contact')">CONTACT</a>
+
+            <li class="new-navbar__menu-item">
+                <div class="a new-navbar__link">
+                    Projects
+                </div>
+            </li>
+
+            <li class="new-navbar__menu-item">
+                <div class="a new-navbar__link">
+                    About
+                </div>
+            </li>
+
+            <li class="new-navbar__menu-item">
+                <div class="a new-navbar__link">
+                    Contact
+                </div>
             </li>
         </ul>
     </div>
 </nav>
-
 @auth
     <div class="secondary-navbar">
         <div class="secondary-navbar__content container">

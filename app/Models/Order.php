@@ -46,8 +46,8 @@ class Order extends Model
         return $this->hasOne(Invoice::class);
     }
 
-    public function country(): HasOne
+    public function country(): BelongsTo
     {
-        return $this->hasOne(Country::class);
+        return $this->belongsTo(Country::class);
     }
 }
