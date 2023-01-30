@@ -82,7 +82,7 @@
 }
 
 .container {
-    max-width: 130rem;
+    max-width: 110rem;
     margin: 0 auto;
 
     @media(max-width: 1000px) {
@@ -286,3 +286,23 @@
 }
 
 
+.cursor {
+    height: 1.2rem;
+    width: 0.2rem;
+    background-color: black;
+    animation: blink 1s infinite;
+    display: inline-block;
+    margin-bottom: -0.2rem;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
