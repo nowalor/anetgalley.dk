@@ -154,11 +154,6 @@ table {
   display: flex;
   align-items: center;
 }
-@media (max-width: 600px) {
-  .navbar__menu {
-    display: none;
-  }
-}
 .navbar__menu-item {
   margin: 0 1rem;
 }
@@ -196,6 +191,9 @@ table {
 .navbar__icon {
   cursor: pointer;
   display: none;
+  position: absolute;
+  right: 2rem;
+  top: 2.2rem;
 }
 @media (max-width: 600px) {
   .navbar__icon {
@@ -214,7 +212,7 @@ table {
 .navbar__icon-line {
   width: 35px;
   height: 5px;
-  background-color: var(--primary);
+  background-color: white;
   margin: 6px 0;
   transition: 0.4s;
 }
@@ -262,6 +260,11 @@ table {
   background-position: center;
   background-repeat: no-repeat;
   z-index: 1;
+}
+@media (max-width: 600px) {
+  .cta {
+    padding-top: 9rem;
+  }
 }
 .cta__dog-container {
   position: absolute;
@@ -489,12 +492,32 @@ table {
   height: 9rem;
   width: 100%;
   background-color: #444;
+  transition: height 0.3s ease-in-out;
+}
+@media (max-width: 600px) {
+  .new-navbar {
+    z-index: 500;
+    display: flex;
+    align-items: center;
+  }
 }
 .new-navbar__content {
   display: flex;
   height: 100%;
   align-items: center;
   justify-content: center;
+}
+@media (max-width: 900px) {
+  .new-navbar__content {
+    max-width: 75rem !important;
+  }
+}
+@media (max-width: 600px) {
+  .new-navbar__content {
+    max-width: 100% !important;
+    height: 80%;
+    flex-direction: column;
+  }
 }
 .new-navbar__menu {
   display: flex;
@@ -503,11 +526,43 @@ table {
   justify-content: space-between;
   width: 100%;
 }
+@media (max-width: 900px) {
+  .new-navbar__menu {
+    justify-content: center;
+  }
+}
+@media (max-width: 600px) {
+  .new-navbar__menu {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
 .new-navbar__link {
   font-family: SunZoomSpark;
   font-size: 4.2rem;
   color: #FFF;
   text-decoration: none;
+}
+@media (max-width: 900px) {
+  .new-navbar__link {
+    margin: 0 1.4rem;
+    font-size: 3.6rem;
+  }
+}
+@media (max-width: 600px) {
+  .new-navbar__link {
+    font-size: 5.6rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hidden-sm {
+    display: none;
+  }
+}
+
+.height-100vh {
+  height: 100vh !important;
 }
 
 .footer {
