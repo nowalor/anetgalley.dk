@@ -193,10 +193,12 @@
             //     x = 2000 * 100 / window.innerWidth - 50
             // }
 
-            x = x + 15
-            y = y + 35
-            eyeImg.style.left = x + (e.clientX / 200)  + "%"
-            console.log('img', eyeImg.getBoundingClientRect())
+            console.log(e.clientX / 100)
+            x = x + (45 - e.clientX / 90)
+            y = y + 35 - (e.clientY / 60)
+            eyeImg.style.left = x  + "%"
+            // + (e.clientX / 180)
+            //console.log('img', eyeImg.getBoundingClientRect())
             eyeImg.style.top = y + 5 + "%"
         }
 
