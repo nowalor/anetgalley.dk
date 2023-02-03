@@ -177,7 +177,6 @@
             let y = e.clientY * 100 / window.innerHeight - 50
 
 
-            console.log('e.clientx', e.clientX)
             // if (e.clientY < 1000) {
             //     y = 1000 * 100 / window.innerWidth - 50
             // }
@@ -193,12 +192,10 @@
             //     x = 2000 * 100 / window.innerWidth - 50
             // }
 
-            console.log(e.clientX / 100)
             x = x + (45 - e.clientX / 90)
             y = y + 35 - (e.clientY / 60)
+
             eyeImg.style.left = x  + "%"
-            // + (e.clientX / 180)
-            //console.log('img', eyeImg.getBoundingClientRect())
             eyeImg.style.top = y + 5 + "%"
         }
 

@@ -112,21 +112,21 @@
     <div class="new-navbar__content container">
         <ul class="new-navbar__menu">
             <li class="new-navbar__menu-item">
-                <div class="a new-navbar__link" id="home-link">
+                <a href="{{ route('home') }}" class="new-navbar__link" id="home-link">
                     Home
-                </div>
+                </a>
             </li>
 
             <li class="new-navbar__menu-item">
-                <div class="a new-navbar__link" id="gallery-link">
+                <a href="{{ route('gallery.index') }}" class="new-navbar__link" id="home-link">
                     Gallery
-                </div>
+                </a>
             </li>
 
             <li class="new-navbar__menu-item">
-                <div class="a new-navbar__link">
-                    Shop
-                </div>
+                <a href="{{ route('products.index') }}" class="new-navbar__link" id="home-link">
+                    Products
+                </a>
             </li>
 
             <li class="new-navbar__menu-item">
@@ -142,9 +142,9 @@
             </li>
 
             <li class="new-navbar__menu-item">
-                <div class="a new-navbar__link">
+                <a href="{{ route('contact.index') }}" class="new-navbar__link" id="home-link">
                     Contact
-                </div>
+                </a>
             </li>
         </ul>
     </div>
