@@ -209,9 +209,17 @@
 
         const homeLink = document.getElementById('home-link')
         const galleryLink = document.getElementById('gallery-link')
+        const shopLink = document.getElementById('shop-link')
+        const contactLink = document.getElementById('contact-link')
+        const aboutLink = document.getElementById('about-link')
+        const projectsLink = document.getElementById('projects-link')
+
+
 
         let typeTimer
         let eraseTimer
+
+        let currentLink
 
         const type = (typedString) => {
             let i = 0
@@ -226,7 +234,7 @@
             }, 50)
         }
 
-        const erase = (callbackString) => {
+        const erase = () => {
             clearInterval(typeTimer)
 
             let i = textBubbleEl.innerHTML.length
@@ -237,20 +245,59 @@
                     i--
                 } else {
                     clearInterval(eraseTimer)
-                    return type(callbackString)
                 }
             }, 5)
+        }
+
+        const handleMouseHover = (currentLinkName) => {
+            if(currentLinkName === currentLink) {
+                return
+            }
+
+            currentLink = currentLinkName
+
+            erase()
+
+            setTimeout(() => {
+                type(currentLinkName)
+            }, 500)
         }
 
         type(initialString)
 
         homeLink.addEventListener('mouseover', () => {
-            erase('You are already home silly')
+            handleMouseHover('You are already home silly')
         })
 
         galleryLink.addEventListener('mouseover', () => {
-            erase('Checkout the latest images in my gallery!')
+            handleMouseHover('Checkout the latest images in my gallery!')
         })
 
+        shopLink.addEventListener('mouseover', () => {
+            handleMouseHover('Buy some of my art!')
+        })
+
+        projectsLink.addEventListener('mouseover', () => {
+            handleMouseHover('Checkout some of my projects!')
+        })
+
+        aboutLink.addEventListener('mouseover', () => {
+            handleMouseHover('Learn more about me!')
+        })
+
+        contactLink.addEventListener('mouseover', () => {
+            handleMouseHover('Contact me!')
+        })
+
+        let navLeaveTimer
+
+        navbar.addEventListener('mouseover', () => {
+            clearInterval(navLeaveTimer)
+        })
+        navbar.addEventListener('mouseleave', () => {
+            navLeaveTimer = setTimeout(() => {
+                handleMouseHover('Art is reflection, existencial expansion - pulse - please - provacationa... a sense of life')
+           }, 5000)
+        })
     </script>
 @endsection

@@ -123,31 +123,31 @@
             </li>
 
             <li class="new-navbar__menu-item">
-                <a href="{{ route('gallery.index') }}" class="new-navbar__link" id="home-link">
+                <a href="{{ route('gallery.index') }}" class="new-navbar__link" id="gallery-link">
                     Gallery
                 </a>
             </li>
 
             <li class="new-navbar__menu-item">
-                <a href="{{ route('products.index') }}" class="new-navbar__link" id="home-link">
+                <a href="{{ route('products.index') }}" class="new-navbar__link" id="shop-link">
                     Products
                 </a>
             </li>
 
             <li class="new-navbar__menu-item">
-                <div class="a new-navbar__link">
+                <a href="#" class="a new-navbar__link" id="projects-link">
                     Projects
-                </div>
+                </a>
             </li>
 
             <li class="new-navbar__menu-item">
-                <div class="a new-navbar__link">
+                <a href="#" class="a new-navbar__link" id="about-link">
                     About
-                </div>
+                </a>
             </li>
 
             <li class="new-navbar__menu-item">
-                <a href="{{ route('contact.index') }}" class="new-navbar__link" id="home-link">
+                <a href="{{ route('contact.index') }}" class="new-navbar__link" id="contact-link">
                     Contact
                 </a>
             </li>
@@ -165,7 +165,7 @@
                 </li>
                 <li class="secondary-navbar__list-item">
                     <a href="{{ route('admin.products.index') }}" class="secondary-navbar__list-link">
-                        Products
+                        Shop
                     </a>
                 </li>
                 <li class="secondary-navbar__list-item">

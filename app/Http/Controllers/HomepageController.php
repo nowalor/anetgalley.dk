@@ -21,6 +21,10 @@ class HomepageController extends Controller
 
         $chunkedImages = collect($galleryImages)->chunk(3);
 
-        return view('home', compact('products', 'homepageInformation', 'chunkedImages'));
+        return view('home', compact(
+            'products',
+            'homepageInformation',
+            'chunkedImages'
+        ));
     }
 }
