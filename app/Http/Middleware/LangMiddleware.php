@@ -23,7 +23,7 @@ class LangMiddleware
     {
         if (Session::has('lang')) {
             $lang = Session::get('lang');
-
+            Log::info($lang);
             App::setLocale($lang);
         }
 

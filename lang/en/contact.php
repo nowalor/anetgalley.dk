@@ -5,6 +5,6 @@ return [
     'email' => 'Email',
     'subject' => 'Subject',
     'message' => 'Message',
-    'send' => 'Send',
+    'send' => 'Send Message',
     'your_message_has_been_sent' => 'Your message has been sent',
 ];

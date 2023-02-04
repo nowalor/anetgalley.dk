@@ -31,8 +31,8 @@
                 <div class="admin-products__item">{{ $order->quantity * $order->product->price }} / DKK</div>
                 <div class="admin-products__item">{{ $order->product->price }} / DKK</div>
                 <div class="admin-products__item">{{ $order->quantity }}</div>
-                <div class="admin-products__item">{{ $order->invoice->invoice_number }}</div>
-                <div class="admin-products__item">{{ $order->invoice->buyer_name }}</div>
+                <div class="admin-products__item">{{ $order->invoice?->invoice_number }}</div>
+                <div class="admin-products__item">{{ $order->invoice?->buyer_name }}</div>
                 <div class="admin-products__item admin-products__actions">
                     <a class="view-button" href="{{ route('admin.orders.show', $order) }}">View</a>
                     <form method="POST" action="{{ route('admin.orders.update', $order) }}">

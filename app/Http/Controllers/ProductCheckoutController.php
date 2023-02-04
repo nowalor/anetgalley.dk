@@ -21,6 +21,7 @@ class ProductCheckoutController extends Controller
     {
         $validated = $request->validated();
         $product = Product::find($request->input('product-id'));
+        $deliveryTypes = Order::DELIVERY_TYPES;
 
         try {
             $product->update([
@@ -35,7 +36,7 @@ class ProductCheckoutController extends Controller
             ];
 
             if($order['delivery_type'] === Order::DELIVERY_TYPE_DELIVERY_DENMARK) {
-                $order['country_id'] = 55;
+                $order['country_id'] = 1;
                 $order['city'] = $request->get('city');
                 $order['address'] = $request->get('address');
                 $order['zip_code'] = $request->get('zip_code');
@@ -47,20 +48,20 @@ class ProductCheckoutController extends Controller
                 'order_id' => $order->id,
                 'buyer_name' => $request->name,
                 'buyer_email' => $request->email,
-                'buyer_phone' => '61477261',
+                'buyer_phone' => $request->phone,
             ]);
 
             $invoice->update([
                 'invoice_number' => Str::random(6) . $invoice->id,
             ]);
 
-            $pdf = PDF::loadView('pdfs.invoice' , compact('product', 'order', 'invoice'));
+            $pdf = PDF::loadView('pdfs.invoice' , compact('product', 'order', 'invoice', 'deliveryTypes',));
 
             Storage::put("public/pdf/$invoice->invoice_number.pdf", $pdf->output());
 
-            $invoice = $pdf->output();
+            $invoicePdf = $pdf->output();
 
-            Mail::to($invoice->buyer_email)->send(new InvoiceMail($invoice));
+            Mail::to($invoice->buyer_email)->send(new InvoiceMail($invoicePdf));
 
             return redirect()->route('products.show', $product)
                 ->with('order-successful', 'Your order was successful. Check your email');
