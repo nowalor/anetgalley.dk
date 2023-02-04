@@ -141,7 +141,7 @@
             </li>
 
             <li class="new-navbar__menu-item">
-                <a href="#" class="a new-navbar__link" id="about-link">
+                <a href="{{ route('about') }}" class="a new-navbar__link" id="about-link">
                     About
                 </a>
             </li>

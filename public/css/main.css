@@ -272,10 +272,27 @@ table {
   transform: translateX(-50%);
   bottom: 1rem;
 }
+@media (max-width: 600px) {
+  .cta__dog-container {
+    bottom: 1rem;
+  }
+}
 .cta .cta__text-bubble-div {
   position: absolute;
   top: -9rem;
   left: -14rem;
+}
+@media (max-width: 900px) {
+  .cta .cta__text-bubble-div {
+    top: -12rem;
+    left: -14rem;
+    transform: scale(0.9);
+  }
+}
+@media (max-width: 600px) {
+  .cta .cta__text-bubble-div {
+    display: none;
+  }
 }
 .cta .cta__text-bubble-img {
   height: 26rem;
@@ -316,6 +333,16 @@ table {
 .cta__dog-img {
   height: 56rem;
 }
+@media (max-width: 900px) {
+  .cta__dog-img {
+    height: 50rem;
+  }
+}
+@media (max-width: 600px) {
+  .cta__dog-img {
+    height: 46rem;
+  }
+}
 .cta .cta__bottom-box {
   width: 100%;
   height: 15rem;
@@ -323,6 +350,11 @@ table {
   position: absolute;
   bottom: 0;
   z-index: -1;
+}
+@media (max-width: 900px) {
+  .cta .cta__bottom-box {
+    height: 10rem;
+  }
 }
 .cta .cta__logo {
   font-size: 15.2rem;
@@ -332,6 +364,11 @@ table {
   top: 7rem;
   left: 50%;
   transform: translateX(-50%);
+}
+@media (max-width: 600px) {
+  .cta .cta__logo {
+    font-size: 8rem;
+  }
 }
 .cta .red {
   color: red !important;
@@ -557,6 +594,18 @@ table {
 
 @media (max-width: 600px) {
   .hidden-sm {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .hidden-md {
+    display: none;
+  }
+}
+
+@media (min-width: 900px) {
+  .hidden-lg {
     display: none;
   }
 }

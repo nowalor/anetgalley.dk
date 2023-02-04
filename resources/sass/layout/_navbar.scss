@@ -163,12 +163,26 @@
         left: 50%;
         transform: translateX(-50%);
         bottom: 1rem;
+
+        @media(max-width: 600px) {
+            bottom: 1rem;
+        }
     }
 
     .cta__text-bubble-div {
         position: absolute;
         top: -9rem;
         left: -14rem;
+
+        @media(max-width: 900px) {
+            top: -12rem;
+            left: -14rem;
+            transform: scale(0.9);
+        }
+
+        @media(max-width: 600px) {
+            display: none;
+        }
     }
 
     .cta__text-bubble-img {
@@ -217,6 +231,13 @@
     &__dog-img {
         height: 56rem;
 
+        @media(max-width: 900px) {
+            height: 50rem;
+        }
+
+        @media(max-width: 600px) {
+            height: 46rem;
+        }
     }
 
     .cta__bottom-box {
@@ -226,6 +247,10 @@
         position: absolute;
         bottom: 0;
         z-index: -1;
+
+        @media(max-width: 900px) {
+            height: 10rem;
+        }
     }
 
     .cta__logo {
@@ -236,6 +261,10 @@
         top: 7rem;
         left: 50%;
         transform: translateX(-50%);
+
+        @media(max-width: 600px) {
+            font-size: 8rem;
+        }
     }
 
     .red {
@@ -470,6 +499,18 @@
 
 .hidden-sm {
     @media(max-width: 600px) {
+        display: none;
+    }
+}
+
+.hidden-md {
+    @media(max-width: 900px) {
+        display: none;
+    }
+}
+
+.hidden-lg {
+    @media(min-width: 900px) {
         display: none;
     }
 }
