@@ -274,7 +274,7 @@ table {
 }
 @media (max-width: 600px) {
   .cta__dog-container {
-    bottom: 2rem;
+    bottom: 3.5rem;
   }
 }
 .cta .cta__text-bubble-div {
