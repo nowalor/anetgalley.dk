@@ -16,6 +16,7 @@ Route::group(['middleware' => 'lang'], function() {
     // Normal routes
     Route::get('', HomepageController::class)->name('home');
     Route::get('gallery', GalleryController::class)->name('gallery.index');
+    Route::get('about', \App\Http\Controllers\AboutController::class)->name('about');
     Route::get('contact', [ContactPageController::class, 'index'])->name('contact.index');
     Route::post('contact', [ContactPageController::class, 'sendEmail'])->name('contact.send-email');
     Route::get('events', \App\Http\Controllers\EventPageController::class)->name('events.index');

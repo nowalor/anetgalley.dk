@@ -109,42 +109,47 @@
 {{--    </div>--}}
 {{--</nav>--}}
 <nav class="new-navbar" id="navbar">
-    <div class="new-navbar__content container">
+    <div class="navbar__icon" id="navbar-icon">
+        <div class="navbar__icon-line navbar__icon-line-1"></div>
+        <div class="navbar__icon-line navbar__icon-line-2"></div>
+        <div class="navbar__icon-line navbar__icon-line-3"></div>
+    </div>
+    <div class="new-navbar__content container hidden-sm" id="navbar-content">
         <ul class="new-navbar__menu">
             <li class="new-navbar__menu-item">
-                <div class="a new-navbar__link" id="home-link">
+                <a href="{{ route('home') }}" class="new-navbar__link" id="home-link">
                     Home
-                </div>
+                </a>
             </li>
 
             <li class="new-navbar__menu-item">
-                <div class="a new-navbar__link" id="gallery-link">
+                <a href="{{ route('gallery.index') }}" class="new-navbar__link" id="gallery-link">
                     Gallery
-                </div>
+                </a>
             </li>
 
             <li class="new-navbar__menu-item">
-                <div class="a new-navbar__link">
-                    Shop
-                </div>
+                <a href="{{ route('products.index') }}" class="new-navbar__link" id="shop-link">
+                    Products
+                </a>
             </li>
 
             <li class="new-navbar__menu-item">
-                <div class="a new-navbar__link">
+                <a href="#" class="a new-navbar__link" id="projects-link">
                     Projects
-                </div>
+                </a>
             </li>
 
             <li class="new-navbar__menu-item">
-                <div class="a new-navbar__link">
+                <a href="{{ route('about') }}" class="a new-navbar__link" id="about-link">
                     About
-                </div>
+                </a>
             </li>
 
             <li class="new-navbar__menu-item">
-                <div class="a new-navbar__link">
+                <a href="{{ route('contact.index') }}" class="new-navbar__link" id="contact-link">
                     Contact
-                </div>
+                </a>
             </li>
         </ul>
     </div>
@@ -160,7 +165,7 @@
                 </li>
                 <li class="secondary-navbar__list-item">
                     <a href="{{ route('admin.products.index') }}" class="secondary-navbar__list-link">
-                        Products
+                        Shop
                     </a>
                 </li>
                 <li class="secondary-navbar__list-item">

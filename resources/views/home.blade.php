@@ -13,17 +13,18 @@
                 <div class="cta__text-bubble-div">
                     <img src="{{ asset('img/text-bubble.png') }}" alt="" class="cta__text-bubble-img">
                     <div class="cta__text-bubble-text-container">
-                        <span id="text-bubble" class="cta__text-bubble-text"></span>
+                        <span id="text-bubble" class="cta__text-bubble-text">Art is reflection, existencial expansion - pulse - please - provacationa... a sense of life</span>
                         <div class="cursor"></div>
                     </div>
                 </div>
                 <div class="cta__dog-div">
-                    <div id="eye-container" class="cta__eye-container-absolute">
+                    <div id="eye-container" class="cta__eye-container-absolute hidden-md">
                         <div class="cta__eye-container-relative">
                             <img id="eye-img" class="cta__eye-img" src="{{ asset('img/eye.svg')}}" alt="">
                         </div>
                     </div>
-                    <img alt="Dog painting" class="cta__dog-img" src="{{ asset('img/dog-final.png')}}">
+                    <img alt="Dog painting" class="cta__dog-img hidden-md" src="{{ asset('img/dog-final.png')}}">
+                    <img alt="Dog painting" class="cta__dog-img hidden-lg" src="{{ asset('img/dog-sm.svg')}}">
                 </div>
             </div>
             <div class="cta__bottom-box">
@@ -167,91 +168,151 @@
 @endsection
 @section('scripts')
     <script>
-        const eyeImg = document.getElementById('eye-img')
-        const eye = document.getElementById('eye-container')
-        const cta = document.getElementById('cta')
-        const navbar = document.getElementById('navbar')
+        if (screen.width > 900) {
+            const eyeImg = document.getElementById('eye-img')
+            const eye = document.getElementById('eye-container')
+            const cta = document.getElementById('cta')
+            const navbar = document.getElementById('navbar')
 
-        const handleMouseMove = (e) => {
-            let x = e.clientX * 100 / window.innerWidth - 50
-            let y = e.clientY * 100 / window.innerHeight - 50
+            const handleMouseMove = (e) => {
+                let x = e.clientX * 100 / window.innerWidth - 50
+                let y = e.clientY * 100 / window.innerHeight - 50
 
 
-            console.log('e.clientx', e.clientX)
-            // if (e.clientY < 1000) {
-            //     y = 1000 * 100 / window.innerWidth - 50
-            // }
+                // if (e.clientY < 1000) {
+                //     y = 1000 * 100 / window.innerWidth - 50
+                // }
 
-            /*if (e.clientY > 1000) {
-                y = 1000 * 100 / window.innerWidth - 50
-            } */
+                /*if (e.clientY > 1000) {
+                    y = 1000 * 100 / window.innerWidth - 50
+                } */
 
-            // if (e.clientX < 650) {
-            //     x = 650 * 100 / window.innerWidth - 50
-            // }
-            // if (e.clientX > 2000) {
-            //     x = 2000 * 100 / window.innerWidth - 50
-            // }
+                // if (e.clientX < 650) {
+                //     x = 650 * 100 / window.innerWidth - 50
+                // }
+                // if (e.clientX > 2000) {
+                //     x = 2000 * 100 / window.innerWidth - 50
+                // }
 
-            x = x + 15
-            y = y + 35
-            eyeImg.style.left = x + (e.clientX / 200)  + "%"
-            console.log('img', eyeImg.getBoundingClientRect())
-            eyeImg.style.top = y + 5 + "%"
-        }
+                x = x + (45 - e.clientX / 90)
+                y = y + 35 - (e.clientY / 60)
 
-        cta.addEventListener("mousemove", (e) => handleMouseMove(e))
-        navbar.addEventListener("mousemove", (e) => handleMouseMove(e))
+                eyeImg.style.left = x + "%"
+                eyeImg.style.top = y + 5 + "%"
+            }
 
-        // Typewriter for text bubble
-        const textBubbleEl = document.getElementById('text-bubble')
+            cta.addEventListener("mousemove", (e) => handleMouseMove(e))
+            navbar.addEventListener("mousemove", (e) => handleMouseMove(e))
 
-        const initialString = "Art is reflection, existencial expansion - pulse - please - provacationa... a sense of life"
+            // Typewriter for text bubble
+            const textBubbleEl = document.getElementById('text-bubble')
+            textBubbleEl.innerHTML = ''
 
-        const homeLink = document.getElementById('home-link')
-        const galleryLink = document.getElementById('gallery-link')
 
-        let typeTimer
-        let eraseTimer
+            const initialString = "Art is reflection, existencial expansion - pulse - please - provacationa... a sense of life"
 
-        const type = (typedString) => {
-            let i = 0
-            let string = typedString
-            typeTimer = setInterval(() => {
-                if (i < string.length) {
-                    textBubbleEl.innerHTML += string.charAt(i)
-                    i++
-                } else {
-                    clearInterval(typeTimer)
+            const homeLink = document.getElementById('home-link')
+            const galleryLink = document.getElementById('gallery-link')
+            const shopLink = document.getElementById('shop-link')
+            const contactLink = document.getElementById('contact-link')
+            const aboutLink = document.getElementById('about-link')
+            const projectsLink = document.getElementById('projects-link')
+            const links = [homeLink, galleryLink, shopLink, contactLink, aboutLink, projectsLink]
+
+
+            let typeTimer
+            let eraseTimer
+
+            let currentLink
+
+            const type = (typedString) => {
+                let i = 0
+                let string = typedString
+                typeTimer = setInterval(() => {
+                    if (i < string.length) {
+                        textBubbleEl.innerHTML += string.charAt(i)
+                        i++
+                    } else {
+                        clearInterval(typeTimer)
+                    }
+                }, 50)
+            }
+
+            const erase = () => {
+                clearInterval(typeTimer)
+
+                let i = textBubbleEl.innerHTML.length
+                let string = textBubbleEl.innerHTML
+                eraseTimer = setInterval(() => {
+                    if (i >= 0) {
+                        textBubbleEl.innerHTML = string.slice(0, i)
+                        i--
+                    } else {
+                        clearInterval(eraseTimer)
+                    }
+                }, 5)
+            }
+
+            let beforeTypingTimer
+
+            const handleMouseHover = (currentLinkName) => {
+                if (currentLinkName === currentLink) {
+                    return
                 }
-            }, 50)
+
+                currentLink = currentLinkName
+
+                erase()
+
+                beforeTypingTimer = setTimeout(() => {
+                    type(currentLinkName)
+                }, 500)
+            }
+
+            type(initialString)
+
+            homeLink.addEventListener('mouseover', () => {
+                handleMouseHover('You are already home silly')
+            })
+
+            galleryLink.addEventListener('mouseover', () => {
+                handleMouseHover('Checkout the latest images in my gallery!')
+            })
+
+            shopLink.addEventListener('mouseover', () => {
+                handleMouseHover('Buy some of my art!')
+            })
+
+            projectsLink.addEventListener('mouseover', () => {
+                handleMouseHover('Checkout some of my projects!')
+            })
+
+            aboutLink.addEventListener('mouseover', () => {
+                handleMouseHover('Learn more about me!')
+            })
+
+            contactLink.addEventListener('mouseover', () => {
+                handleMouseHover('Contact me!')
+            })
+
+            links.forEach(link => {
+                link.addEventListener('mouseleave', () => {
+                    clearInterval(beforeTypingTimer)
+                })
+            })
+
+
+            let navLeaveTimer
+
+            navbar.addEventListener('mouseover', () => {
+                clearInterval(navLeaveTimer)
+            })
+            navbar.addEventListener('mouseleave', () => {
+                navLeaveTimer = setTimeout(() => {
+                    handleMouseHover('Art is reflection, existencial expansion - pulse - please - provacationa... a sense of life')
+                }, 5000)
+            })
         }
-
-        const erase = (callbackString) => {
-            clearInterval(typeTimer)
-
-            let i = textBubbleEl.innerHTML.length
-            let string = textBubbleEl.innerHTML
-            eraseTimer = setInterval(() => {
-                if (i >= 0) {
-                    textBubbleEl.innerHTML = string.slice(0, i)
-                    i--
-                } else {
-                    clearInterval(eraseTimer)
-                    return type(callbackString)
-                }
-            }, 5)
-        }
-
-        type(initialString)
-
-        homeLink.addEventListener('mouseover', () => {
-            erase('You are already home silly')
-        })
-
-        galleryLink.addEventListener('mouseover', () => {
-            erase('Checkout the latest images in my gallery!')
-        })
 
     </script>
 @endsection
