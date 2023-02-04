@@ -154,8 +154,12 @@
     background-repeat: no-repeat;
     z-index: 1;
 
+    @media(max-width:900px) {
+        background-size: cover;
+    }
+
     @media(max-width: 600px) {
-        padding-top: 9rem;
+        // padding-top: 9rem;
     }
 
     &__dog-container {
@@ -165,7 +169,7 @@
         bottom: 1rem;
 
         @media(max-width: 600px) {
-            bottom: 1rem;
+            bottom: 2rem;
         }
     }
 
@@ -248,9 +252,6 @@
         bottom: 0;
         z-index: -1;
 
-        @media(max-width: 900px) {
-            height: 10rem;
-        }
     }
 
     .cta__logo {

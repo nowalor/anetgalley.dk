@@ -261,9 +261,9 @@ table {
   background-repeat: no-repeat;
   z-index: 1;
 }
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .cta {
-    padding-top: 9rem;
+    background-size: cover;
   }
 }
 .cta__dog-container {
@@ -274,7 +274,7 @@ table {
 }
 @media (max-width: 600px) {
   .cta__dog-container {
-    bottom: 1rem;
+    bottom: 2rem;
   }
 }
 .cta .cta__text-bubble-div {
@@ -350,11 +350,6 @@ table {
   position: absolute;
   bottom: 0;
   z-index: -1;
-}
-@media (max-width: 900px) {
-  .cta .cta__bottom-box {
-    height: 10rem;
-  }
 }
 .cta .cta__logo {
   font-size: 15.2rem;
