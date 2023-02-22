@@ -133,7 +133,12 @@
                             an email to figure out delivery cost.
                         </div>
 
-                        <input type="submit" value="buy" class="mt-2 button-pink-100 ttu"/>
+                        <div class="display-flex align-center" style="height:1.4rem;">
+                            <label for="" class="label" style="margin-bottom: 0.2rem;">I agree to the <a href="{{ asset('pdfs/terms-and-conditions') }}" target="blank">Terms & conditions</a></label>
+                            <input type="checkbox" name="terms" style="height: 1.6rem; width: 1.6rem; margin-left: 1rem;" required>
+                        </div>
+
+                        <input type="submit" value="buy" class="mt-4 button-pink-100 ttu"/>
                     </form>
                 </div>
             </div>
