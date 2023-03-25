@@ -139,7 +139,7 @@
                     Events
                 </a>
             </li>
-            
+
             <li class="new-navbar__menu-item">
                 <a href="{{ route('contact.index') }}" class="new-navbar__link" id="contact-link">
                     Contact
@@ -176,12 +176,6 @@
                 <li class="secondary-navbar__list-item">
                     <a href="{{ route('admin.orders.index') }}" class="secondary-navbar__list-link">
                         Orders
-                    </a>
-                </li>
-
-                <li class="secondary-navbar__list-item">
-                    <a href="{{ route('admin.homepage.index') }}" class="secondary-navbar__list-link">
-                        Edit homepage
                     </a>
                 </li>
             </ul>

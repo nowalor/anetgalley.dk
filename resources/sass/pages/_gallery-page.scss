@@ -10,6 +10,11 @@
         flex: 30%;
         max-width: 33%;
         padding: 5px 8px;
+
+        @media(max-width: 660px) {
+            max-width: 50%;
+            flex: 50%;
+        }
     }
 
     &__image-container {
