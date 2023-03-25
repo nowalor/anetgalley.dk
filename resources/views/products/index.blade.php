@@ -4,7 +4,7 @@
 
 @section('content')
     <main>
-        <div class="container pb-8">
+        <div class="container">
             <div class="breadcrumbs">
                 <a href="{{ route('home') }}" class="breadcrumbs__link">{{ __('shop.home') }}</a>
                 <p class="breadcrumbs__slash">/</p>
@@ -26,7 +26,7 @@
                        class="filter-links__link font16 medium ttu @if(Request::query('filter') === 'replica') active @endif">{{ __('shop.replicas') }}</a>
                 </li>
             </ul>
-            <div class="products">
+            <div class="products pb-12">
                 @forelse($products as $product)
                     <div class="product pt-8">
                         <h2 class="heading-lg medium">{{ $product->name }}</h2>

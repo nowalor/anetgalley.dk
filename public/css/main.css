@@ -1138,6 +1138,7 @@ table {
 }
 .description-and-information .description {
   font-size: 1.6rem;
+  white-space: pre-line;
   text-align: left;
 }
 .description-and-information .description::first-letter {
@@ -1195,6 +1196,10 @@ table {
 
 .pb-10 {
   padding-bottom: 10rem;
+}
+
+.pb-12 {
+  padding-bottom: 12rem;
 }
 
 .ml-auto {
