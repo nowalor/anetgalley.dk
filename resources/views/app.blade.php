@@ -135,17 +135,11 @@
             </li>
 
             <li class="new-navbar__menu-item">
-                <a href="#" class="a new-navbar__link" id="projects-link">
-                    Projects
+                <a href="{{ route('events.index') }}" class="a new-navbar__link" id="projects-link">
+                    Events
                 </a>
             </li>
-
-            <li class="new-navbar__menu-item">
-                <a href="{{ route('about') }}" class="a new-navbar__link" id="about-link">
-                    About
-                </a>
-            </li>
-
+            
             <li class="new-navbar__menu-item">
                 <a href="{{ route('contact.index') }}" class="new-navbar__link" id="contact-link">
                     Contact
