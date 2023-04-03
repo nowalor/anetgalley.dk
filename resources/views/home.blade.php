@@ -88,13 +88,12 @@
                                     {{ Str::words($product->description, 60)}}
                                 </p>
 
-                                <div class="button-pink-100 mt-12"
-                                     style="width: 80%; max-width: 40rem;">{{ __('homepage.view_product') }}</div>
+                                <div class="button-pink-100 shop-preview-item__button">{{ __('homepage.view_product') }}</div>
                             </div>
                         </div>
                     </div>
                 @else
-                    <div class="shop-preview-item">
+                    <div class="shop-preview-item should-reverse">
                         <div class="shop-preview-item__box" data-aos="fade-left">
                             <div class="shop-preview-item__content">
                                 <h2 class="heading-md-white">{{ $product->name }}</h2>
@@ -130,7 +129,7 @@
         </div>
 
         <div class="gallery-preview container">
-            <h1 class="heading-xl ttu">
+            <h1 class="heading-xl ttu pt-12">
                 {{ __('homepage.gallery') }}
             </h1>
             <h3 class="tagline-italic mt-1">

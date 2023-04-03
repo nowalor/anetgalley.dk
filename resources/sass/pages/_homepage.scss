@@ -97,11 +97,24 @@
         font-size: 1.6rem;
         margin-top: 4rem;
         width: 80%;
+
+        @media(max-width: 600px) {
+            width: 100% !important;
+            margin-top: 2rem;
+        }
+    }
+
+    &__button {
+        margin-top: 12rem;
+
+        @media(max-width: 600px) {
+            margin-top: 4rem;
+            margin-bottom: 8rem;
+        }
     }
 }
 
 .gallery-preview {
-    padding-top: 11rem;
     text-align: center;
 
     &__gallery {

@@ -25,7 +25,7 @@
             <div class="single-product">
                 <div class="center pt-2 pb-8">
                     <span class="single-product__price">
-                        {{ round($product->price) }}DKK
+                        {{ $product->price }}DKK
                     </span>
                 </div>
 
