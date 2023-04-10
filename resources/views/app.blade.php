@@ -117,7 +117,8 @@
     <div class="new-navbar__content container hidden-sm" id="navbar-content">
         <ul class="new-navbar__menu">
             <li class="new-navbar__menu-item">
-                <a href="{{ route('home') }}" class="new-navbar__link" id="home-link">
+                <a href="{{ route('home') }}" class="new-navbar__link {{ request()->is('/') ? 'active' : '' }}"
+                   id="home-link">
                     Home
                 </a>
             </li>
@@ -129,7 +130,7 @@
             </li>
 
             <li class="new-navbar__menu-item">
-                <a href="{{ route('products.index') }}" class="new-navbar__link" id="shop-link">
+                <a href="{{ route('products.index') }}" class="new-navbar__link {{ request()->is('products*') ? 'active' : '' }}" id="shop-link">
                     Products
                 </a>
             </li>

@@ -136,9 +136,6 @@ table {
   position: relative;
   background-color: #FFF;
 }
-.navbar .active {
-  color: var(--pink);
-}
 .navbar__content {
   height: 7.5rem;
   display: flex;
@@ -368,7 +365,7 @@ table {
   }
 }
 .cta .red {
-  color: red !important;
+  color: #E20101;
 }
 @media (max-width: 900px) {
   .cta {
@@ -535,6 +532,9 @@ table {
     align-items: center;
   }
 }
+.new-navbar .active {
+  color: #E20101;
+}
 .new-navbar__content {
   display: flex;
   height: 100%;
@@ -587,6 +587,11 @@ table {
   .new-navbar__link {
     font-size: 5.6rem;
   }
+}
+.new-navbar__link:hover {
+  opacity: 0.7;
+  color: #E20101;
+  transition: all 0.3s;
 }
 
 @media (max-width: 600px) {
