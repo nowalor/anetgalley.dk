@@ -195,13 +195,14 @@
 
     .cta__text-bubble-text-container {
         position: absolute;
-        top: 9.3rem;
-        left: 5rem;
-        width: 18rem;
+        top: 8.8rem;
+        left: 3.5rem;
+        width: 19rem;
     }
 
     .cta__text-bubble-text {
         font-size: 1.2rem;
+        font-family: 'Special Elite', cursive;
     }
 
     &__dog-div {
@@ -256,6 +257,7 @@
 
     .cta__logo {
         font-size: 15.2rem;
+        font-weight: 300;
         color: black;
         font-family: SunZoomSpark;
         position: absolute;
