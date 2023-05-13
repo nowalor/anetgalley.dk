@@ -628,8 +628,8 @@ table {
 }
 @media (max-width: 1000px) {
   .footer {
-    padding-top: 2rem;
-    height: 24rem;
+    padding-top: 4rem;
+    min-height: 24rem;
   }
 }
 .footer__content {
@@ -642,10 +642,24 @@ table {
     align-items: flex-start;
   }
 }
-@media (max-width: 600px) {
-  .footer__content-img {
-    height: 2.4rem;
+.footer__content-logo {
+  font-size: 10.2rem;
+  font-weight: 300;
+  color: black;
+  font-family: SunZoomSpark;
+}
+@media (max-width: 1000px) {
+  .footer__content-logo {
+    font-size: 6.2rem;
   }
+}
+@media (max-width: 600px) {
+  .footer__content-logo {
+    font-size: 4.2rem;
+  }
+}
+.footer__content-logo .red {
+  color: #E20101;
 }
 .footer__content-right {
   display: flex;

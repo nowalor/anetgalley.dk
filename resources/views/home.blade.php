@@ -157,7 +157,7 @@
                 @endforelse
             </div>
 
-            <div class="pt-8 pb-10" data-aos="fade-in">
+            <div class="pt-8 pb-10 mb-4" data-aos="fade-in">
                 <a href="{{ route('products.index') }}" class="link-button-underline">
                     {{ __('homepage.view_entire_gallery') }}&rarr;
                 </a>

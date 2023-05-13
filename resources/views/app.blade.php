@@ -193,7 +193,9 @@
 <div class="footer">
     <div class="footer__content container">
         <div>
-            <img src="{{ asset('img/logo-white.svg') }}" alt="" class="footer__content-img">
+            <h1 class="footer__content-logo">
+                A<span class="red">net</span>gallery.dk
+            </h1>
         </div>
         <div class="footer__content-right" style="margin-left: auto;">
             <div class="footer__content-block">
