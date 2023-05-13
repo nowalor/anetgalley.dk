@@ -106,7 +106,7 @@
                                     {{ Str::words($product->description, 60)}}
                                 </p>
 
-                                <div class="button-pink-100 mt-12"
+                                <div class="button-black-inverse mt-12"
                                      style="width: 80%; max-width: 40rem;">{{ __('homepage.view_product') }}</div>
                             </div>
                         </div>
