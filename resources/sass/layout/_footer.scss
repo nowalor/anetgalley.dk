@@ -6,11 +6,11 @@
     bottom: 0;
     left: 0;
     padding-top: 6rem;
-    padding-bottom: 2rem;
+    padding-bottom: 6rem;
 
     @media(max-width: 1000px) {
-        padding-top: 2rem;
-        height: 24rem;
+        padding-top: 4rem;
+        min-height: 24rem;
     }
 
     &__content {
@@ -22,9 +22,22 @@
             align-items: flex-start;
         }
 
-        &-img {
-            @media(max-width: 600px) {
-                height: 2.4rem;
+        &-logo {
+            font-size: 10.2rem;
+            font-weight: 300;
+            color: black;
+            font-family: SunZoomSpark;
+
+            @media(max-width: 1000px) {
+                font-size: 6.2rem;
+            }
+
+            @media (max-width: 600px) {
+                font-size: 4.2rem;
+            }
+
+            .red {
+                color: #E20101;
             }
         }
 

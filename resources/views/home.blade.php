@@ -106,7 +106,7 @@
                                     {{ Str::words($product->description, 60)}}
                                 </p>
 
-                                <div class="button-pink-100 mt-12"
+                                <div class="button-black-inverse mt-12"
                                      style="width: 80%; max-width: 40rem;">{{ __('homepage.view_product') }}</div>
                             </div>
                         </div>
@@ -157,7 +157,7 @@
                 @endforelse
             </div>
 
-            <div class="pt-8 pb-10" data-aos="fade-in">
+            <div class="pt-8 pb-10 mb-4" data-aos="fade-in">
                 <a href="{{ route('products.index') }}" class="link-button-underline">
                     {{ __('homepage.view_entire_gallery') }}&rarr;
                 </a>
