@@ -25,7 +25,7 @@
             <div class="single-product">
                 <div class="center pt-2 pb-8">
                     <span class="single-product__price">
-                        {{ round($product->price) }}DKK
+                        {{ $product->price }}DKK
                     </span>
                 </div>
 
@@ -54,7 +54,8 @@
                             <div class="description-and-information">
                                 <div class="header-links display-flex">
                                     <h3 id="description-link" class="font16 bold active ttu">Description</h3>
-                                    <h3 id="additional-information-link" class="font16 bold ttu">Additional information</h3>
+                                    <h3 id="additional-information-link" class="font16 bold ttu">Additional
+                                        information</h3>
                                 </div>
                                 <p id="single-product-description" class="description">
                                     {{ $product->description }}
@@ -83,8 +84,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="#" class="button-primary ttu single-product__button">Buy now</a>
-                            <a href="{{ route('checkout.products.show', $product) }}" class="button-primary ttu single-product__button">Invoice</a>
+                            <div class="mt-8">
+                                <a href="{{ route('checkout.products.show', $product) }}" class="button-black-inverse ttu width100">Request invoice</a>
+                                <a href="{{ config('app.mobile_pay_link') }}"
+                                   class="button-black-inverse ttu width100">Buy now</a>
+                            </div>
                         </div>
                     </div>
                 </div>

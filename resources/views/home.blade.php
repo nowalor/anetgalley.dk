@@ -88,13 +88,13 @@
                                     {{ Str::words($product->description, 60)}}
                                 </p>
 
-                                <div class="button-pink-100 mt-12"
-                                     style="width: 80%; max-width: 40rem;">{{ __('homepage.view_product') }}</div>
+                                <a href="{{ route('products.show', $product) }}" class="button-black-inverse mt-12"
+                                   style="width: 80%; max-width: 40rem;">{{ __('homepage.view_product') }}</a>
                             </div>
                         </div>
                     </div>
                 @else
-                    <div class="shop-preview-item">
+                    <div class="shop-preview-item should-reverse">
                         <div class="shop-preview-item__box" data-aos="fade-left">
                             <div class="shop-preview-item__content">
                                 <h2 class="heading-md-white">{{ $product->name }}</h2>
@@ -107,8 +107,8 @@
                                     {{ Str::words($product->description, 60)}}
                                 </p>
 
-                                <div class="button-pink-100 mt-12"
-                                     style="width: 80%; max-width: 40rem;">{{ __('homepage.view_product') }}</div>
+                                <a href="{{ route('products.show', $product) }}" class="button-black-inverse mt-12"
+                                     style="width: 80%; max-width: 40rem;">{{ __('homepage.view_product') }}</a>
                             </div>
                         </div>
                         <div class="shop-preview-item__box" data-aos="fade-right">
@@ -130,7 +130,7 @@
         </div>
 
         <div class="gallery-preview container">
-            <h1 class="heading-xl ttu">
+            <h1 class="heading-xl ttu pt-12">
                 {{ __('homepage.gallery') }}
             </h1>
             <h3 class="tagline-italic mt-1">
@@ -158,7 +158,7 @@
                 @endforelse
             </div>
 
-            <div class="pt-8 pb-10" data-aos="fade-in">
+            <div class="pt-8 pb-10 mb-4" data-aos="fade-in">
                 <a href="{{ route('products.index') }}" class="link-button-underline">
                     {{ __('homepage.view_entire_gallery') }}&rarr;
                 </a>

@@ -58,6 +58,29 @@
     cursor: pointer;
 }
 
+.button-black-inverse {
+    height: 5.2rem;
+    width: 12rem;
+    border-radius: 0.5rem;
+    border: 2px solid #FFF;
+    background-color: #444;
+    color: #FFF;
+    font-size: 1.6rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    text-decoration: none;
+
+    &:hover {
+        background-color: #FFF;
+        color: #444;
+    }
+}
+
 .button-primary {
     padding: 1rem 2.2rem;
     font-size: 2rem;

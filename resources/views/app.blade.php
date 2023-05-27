@@ -117,7 +117,8 @@
     <div class="new-navbar__content container hidden-sm" id="navbar-content">
         <ul class="new-navbar__menu">
             <li class="new-navbar__menu-item">
-                <a href="{{ route('home') }}" class="new-navbar__link" id="home-link">
+                <a href="{{ route('home') }}" class="new-navbar__link {{ request()->is('/') ? 'active' : '' }}"
+                   id="home-link">
                     Home
                 </a>
             </li>
@@ -129,20 +130,14 @@
             </li>
 
             <li class="new-navbar__menu-item">
-                <a href="{{ route('products.index') }}" class="new-navbar__link" id="shop-link">
+                <a href="{{ route('products.index') }}" class="new-navbar__link {{ request()->is('products*') ? 'active' : '' }}" id="shop-link">
                     Products
                 </a>
             </li>
 
             <li class="new-navbar__menu-item">
-                <a href="#" class="a new-navbar__link" id="projects-link">
-                    Projects
-                </a>
-            </li>
-
-            <li class="new-navbar__menu-item">
-                <a href="{{ route('about') }}" class="a new-navbar__link" id="about-link">
-                    About
+                <a href="{{ route('events.index') }}" class="a new-navbar__link" id="projects-link">
+                    Events
                 </a>
             </li>
 
@@ -184,12 +179,6 @@
                         Orders
                     </a>
                 </li>
-
-                <li class="secondary-navbar__list-item">
-                    <a href="{{ route('admin.homepage.index') }}" class="secondary-navbar__list-link">
-                        Edit homepage
-                    </a>
-                </li>
             </ul>
             <div class="ml-auto">
                 <form class="" method="POST" action="{{ route('auth.logout') }}">
@@ -204,7 +193,9 @@
 <div class="footer">
     <div class="footer__content container">
         <div>
-            <img src="{{ asset('img/logo-white.svg') }}" alt="" class="footer__content-img">
+            <h1 class="footer__content-logo">
+                A<span class="red">net</span>gallery.dk
+            </h1>
         </div>
         <div class="footer__content-right" style="margin-left: auto;">
             <div class="footer__content-block">
