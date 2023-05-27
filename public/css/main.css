@@ -920,6 +920,7 @@ table {
 }
 .product__description {
   width: 90%;
+  min-height: 12rem;
 }
 .product__image {
   width: 100%;

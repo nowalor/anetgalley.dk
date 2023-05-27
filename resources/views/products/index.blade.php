@@ -28,7 +28,7 @@
             </ul>
             <div class="products pb-12">
                 @forelse($products as $product)
-                    <div class="product pt-8">
+                    <div class="product pt-8 mb-4">
                         <h2 class="heading-lg medium">{{ $product->name }}</h2>
                         <div class="product__price-box mt-2">
                             <p class="product__price medium">{{$product->price }}DKK</p>
