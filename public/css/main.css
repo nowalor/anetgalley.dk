@@ -1162,6 +1162,31 @@ table {
   font-size: 1.6rem;
   white-space: pre-line;
   text-align: left;
+  height: 35rem;
+  overflow-y: scroll;
+  margin-right: 1rem;
+  /* Track */
+  /* Handle */
+  /* Track */
+  /* Handle on hover */
+}
+.description-and-information .description::-webkit-scrollbar {
+  width: 0.6rem;
+}
+.description-and-information .description::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+.description-and-information .description::-webkit-scrollbar-thumb {
+  background: #777;
+  border-radius: 1rem;
+}
+.description-and-information .description::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 1rem;
+}
+.description-and-information .description::-webkit-scrollbar-thumb:hover {
+  background: #777;
 }
 .description-and-information .description::first-letter {
   font-weight: 500;
