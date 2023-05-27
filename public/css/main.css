@@ -1599,6 +1599,7 @@ table {
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s;
+  text-decoration: none;
 }
 .button-black-inverse:hover {
   background-color: #FFF;

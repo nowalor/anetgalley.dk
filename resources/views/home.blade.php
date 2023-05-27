@@ -88,7 +88,8 @@
                                     {{ Str::words($product->description, 60)}}
                                 </p>
 
-                                <div class="button-pink-100 shop-preview-item__button">{{ __('homepage.view_product') }}</div>
+                                <a href="{{ route('products.show', $product) }}" class="button-black-inverse mt-12"
+                                   style="width: 80%; max-width: 40rem;">{{ __('homepage.view_product') }}</a>
                             </div>
                         </div>
                     </div>
@@ -106,8 +107,8 @@
                                     {{ Str::words($product->description, 60)}}
                                 </p>
 
-                                <div class="button-black-inverse mt-12"
-                                     style="width: 80%; max-width: 40rem;">{{ __('homepage.view_product') }}</div>
+                                <a href="{{ route('products.show', $product) }}" class="button-black-inverse mt-12"
+                                     style="width: 80%; max-width: 40rem;">{{ __('homepage.view_product') }}</a>
                             </div>
                         </div>
                         <div class="shop-preview-item__box" data-aos="fade-right">
