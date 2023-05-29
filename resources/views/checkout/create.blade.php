@@ -1,7 +1,7 @@
 @extends('app')
 @section('shop', 'active')
 @section('content')
-    <div class="container pb-4">
+    <div class="container pb-12">
         <div class="product-checkout-page">
             <div class="breadcrumbs">
                 <a href="{{ route('home') }}" class="breadcrumbs__link">Home</a>
@@ -138,7 +138,7 @@
                             <input type="checkbox" name="terms" style="height: 1.6rem; width: 1.6rem; margin-left: 1rem;" required>
                         </div>
 
-                        <input type="submit" value="buy" class="mt-4 button-pink-100 ttu"/>
+                        <input type="submit" value="submit" class="mt-4 button-black-inverse width100 ttu"/>
                     </form>
                 </div>
             </div>

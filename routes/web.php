@@ -7,6 +7,7 @@ use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\QuickpayMobilepayOnlineLinkController;
 use App\Http\Controllers\ContactPageController;
 use App\Http\Controllers\AdminEditHomepageInformationController;
 use Illuminate\Support\Facades\Route;
@@ -27,6 +28,12 @@ Route::group(['middleware' => 'lang'], function() {
     Route::resource('checkout/products', \App\Http\Controllers\ProductCheckoutController::class,
         ['only' => ['show', 'store'], 'as' => 'checkout',]
     );
+
+    Route::get('checkout/products/{product}/quickpay-mobilepay-online-link',
+        QuickpayMobilepayOnlineLinkController::class
+    )->name('checkout.products.quickpay-mobilepay-online-link');
+
+
 
 
 // Guest routes

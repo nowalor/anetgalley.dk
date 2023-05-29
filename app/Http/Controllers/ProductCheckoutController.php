@@ -44,27 +44,6 @@ class ProductCheckoutController extends Controller
 
             $order = Order::create($order);
 
-            $invoice = Invoice::create([
-                'order_id' => $order->id,
-                'buyer_name' => $request->name,
-                'buyer_email' => $request->email,
-                'buyer_phone' => $request->phone,
-            ]);
-
-            $invoice->update([
-                'invoice_number' => Str::random(6) . $invoice->id,
-            ]);
-
-            $pdf = PDF::loadView('pdfs.invoice' , compact('product', 'order', 'invoice', 'deliveryTypes',));
-
-            Storage::put("public/pdf/$invoice->invoice_number.pdf", $pdf->output());
-
-            $invoicePdf = $pdf->output();
-
-            Mail::to($invoice->buyer_email)->send(new InvoiceMail($invoicePdf));
-
-            return redirect()->route('products.show', $product)
-                ->with('order-successful', 'Your order was successful. Check your email');
         } catch(\Exception $ex) {
             Log::info($ex->getMessage());
 
