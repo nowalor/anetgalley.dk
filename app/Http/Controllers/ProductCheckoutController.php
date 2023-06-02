@@ -3,16 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateProductCheckoutRequest;
-use App\Mail\InvoiceMail;
 use App\Models\Country;
-use App\Models\Invoice;
 use App\Models\Order;
 use App\Models\Product;
+use App\Services\QuickPayService;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
-use PDF;
 
 class ProductCheckoutController extends Controller
 {
@@ -24,6 +20,8 @@ class ProductCheckoutController extends Controller
         $deliveryTypes = Order::DELIVERY_TYPES;
 
         try {
+            DB::beginTransaction();
+
             $product->update([
                 'quantity' => $product->quantity - $request->get('quantity'),
             ]);
@@ -44,7 +42,19 @@ class ProductCheckoutController extends Controller
 
             $order = Order::create($order);
 
+            $quickPayCheckout = (new QuickPayService($order))->createCheckoutLink();
+
+            if(!$quickPayCheckout['success']) {
+                return 'not success :(';
+            }
+
+
+            DB::commit();
+
+            return redirect($quickPayCheckout['link']);
         } catch(\Exception $ex) {
+            DB::rollBack();
+
             Log::info($ex->getMessage());
 
             return redirect()->back()->withError('Something went wrong. Please let us know and we will investigate');

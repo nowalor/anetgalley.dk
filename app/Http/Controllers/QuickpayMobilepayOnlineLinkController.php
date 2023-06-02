@@ -15,11 +15,12 @@ class QuickpayMobilepayOnlineLinkController extends Controller
         $client = new QuickPay(":$apiKey", [
             'QuickPay-Callback-Url' => 'https://google.com',
             'callbackurl' => 'https://google.com',
+            'continue_url' => 'https://google.com',
         ]);
 
         try {
             $payment = $client->request->post('/payments', [
-                'order_id' => '1234c4hx22xbasv', // Todo replace with orders.id
+                'order_id' => '1234c4hxh2v2xbasv', // Todo replace with orders.id
                 'currency' => 'DKK',
             ]);
 
@@ -35,7 +36,8 @@ class QuickpayMobilepayOnlineLinkController extends Controller
             $endpoint = sprintf("/payments/%s/link", $paymentObject->id);
 
             $link = $client->request->put($endpoint, [
-                'amount' => 100
+                'amount' => 100,
+                'continue_url' => 'https://google.com',
             ]);
 
             if ($link->httpStatus() !== 200) {

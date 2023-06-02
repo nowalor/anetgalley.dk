@@ -222,10 +222,14 @@
 
             let typeTimer
             let eraseTimer
+            let isTyping = false
 
             let currentLink
 
             const type = (typedString) => {
+                console.log('typedString', typedString)
+                isTyping = true
+
                 let i = 0
                 let string = typedString
                 typeTimer = setInterval(() => {
@@ -233,8 +237,10 @@
                         textBubbleEl.innerHTML += string.charAt(i)
                         i++
                     } else {
+                        isTyping = false
                         clearInterval(typeTimer)
                     }
+
                 }, 50)
             }
 
@@ -248,6 +254,7 @@
                         textBubbleEl.innerHTML = string.slice(0, i)
                         i--
                     } else {
+                        isTyping = false
                         clearInterval(eraseTimer)
                     }
                 }, 5)
@@ -265,7 +272,7 @@
                 erase()
 
                 beforeTypingTimer = setTimeout(() => {
-                    type(currentLinkName)
+                    !isTyping && type(currentLinkName)
                 }, 500)
             }
 
@@ -285,10 +292,6 @@
 
             projectsLink.addEventListener('mouseover', () => {
                 handleMouseHover('Checkout some of my projects!')
-            })
-
-            aboutLink.addEventListener('mouseover', () => {
-                handleMouseHover('Learn more about me!')
             })
 
             contactLink.addEventListener('mouseover', () => {
