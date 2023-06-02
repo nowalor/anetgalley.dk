@@ -17,7 +17,6 @@ class ProductCheckoutController extends Controller
     {
         $validated = $request->validated();
         $product = Product::find($request->input('product-id'));
-        $deliveryTypes = Order::DELIVERY_TYPES;
 
         try {
             DB::beginTransaction();
@@ -28,9 +27,10 @@ class ProductCheckoutController extends Controller
 
             $order = [
                 'product_id' => $product->id,
-                'method' => 'invoice',
+                'method' => 'TODO',
                 'quantity' => $request->get('quantity'),
                 'delivery_type' => $validated['delivery_type'],
+                'uuid' => Order::createUUID(),
             ];
 
             if($order['delivery_type'] === Order::DELIVERY_TYPE_DELIVERY_DENMARK) {
@@ -44,10 +44,10 @@ class ProductCheckoutController extends Controller
 
             $quickPayCheckout = (new QuickPayService($order))->createCheckoutLink();
 
-            if(!$quickPayCheckout['success']) {
-                return 'not success :(';
-            }
 
+            if(!$quickPayCheckout['success']) {
+                return redirect()->back()->withError('Something went wrong. Please let us know and we will investigate');
+            }
 
             DB::commit();
 

@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Order;
+use Illuminate\Support\Facades\Log;
 use QuickPay\QuickPay;
 
 class QuickPayService
@@ -22,11 +23,9 @@ class QuickPayService
 
         try {
             $payment = $client->request->post('/payments', [
-                'order_id' => \Str::uuid()->toString(),
+                'order_id' => $this->order->uuid,
                 'currency' => 'DKK',
             ]);
-
-            dd(json_encode($payment));
 
             $status = $payment->httpStatus();
 
@@ -42,8 +41,10 @@ class QuickPayService
             $endpoint = sprintf("/payments/%s/link", $paymentObject->id);
 
             $link = $client->request->put($endpoint, [
-                'amount' => $this->order->price,
-                'cancel_url' => redirect()->back()->with('payment_cancel', 'You have canceled the payment.')
+                'amount' => $this->order->product->price,
+                'cancel_url' => route('checkout.products.show', ['product' => $this->order->product, 'error' => 'You cancelled the payment. Please try again.']),
+                'continue_url' => route('checkout.success'),
+                'callback_url' => route('quickpay.webhook'),
             ]);
 
             if ($link->httpStatus() !== 200) {
@@ -61,7 +62,12 @@ class QuickPayService
                 'link' => $redirectUrl,
             ];
         } catch(\Exception $ex) {
+            Log::info($ex->getMessage());
 
+            return [
+                'success' => false,
+                'message' => $ex->getMessage(),
+            ];
         }
     }
 }

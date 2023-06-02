@@ -29,6 +29,8 @@ Route::group(['middleware' => 'lang'], function() {
         ['only' => ['show', 'store'], 'as' => 'checkout',]
     );
 
+    Route::get('/purchase-completed', \App\Http\Controllers\PurchaseCompletedController::class)->name('checkout.success');
+
     Route::get('checkout/products/{product}/quickpay-mobilepay-online-link',
         QuickpayMobilepayOnlineLinkController::class
     )->name('checkout.products.quickpay-mobilepay-online-link');
@@ -73,6 +75,8 @@ Route::group(['middleware' => 'lang'], function() {
         ])->except(['create', 'store', 'edit']);
     });
 });
+
+Route::post('/webhook', \App\Http\Controllers\ProcessQuickpayWebhookController::class)->name('quickpay.webhook');
 
 
 

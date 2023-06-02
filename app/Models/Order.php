@@ -7,12 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Str;
 
 class Order extends Model
 {
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
+        'uuid',
         'product_id',
         'method',
         'completed_at',
@@ -49,5 +51,16 @@ class Order extends Model
     public function country(): BelongsTo
     {
         return $this->belongsTo(Country::class);
+    }
+
+    public static function createUUID(): mixed
+    {
+        $uuid = Str::random(20);
+
+        if(self::where('uuid', $uuid)->exists()) {
+            return self::createUUID();
+        }
+
+        return $uuid;
     }
 }
