@@ -1620,6 +1620,7 @@ table {
   background-color: #444;
   color: #FFF;
   font-size: 1.6rem;
+  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1630,6 +1631,7 @@ table {
 .button-black-inverse:hover {
   background-color: #FFF;
   color: #444;
+  border: 2px solid #444;
 }
 
 .button-primary {

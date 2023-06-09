@@ -46,7 +46,7 @@
                     @enderror
                 </div>
 
-                <button class="mt-2 button-pink-100 ttu">{{ __('contact.send') }}</button>
+                <button class="mt-2 button-black-inverse width100 ttu">{{ __('contact.send') }}</button>
             </form>
         </div>
     </div>
