@@ -206,19 +206,15 @@
                 <ul class="footer__list">
                     <li class="footer__list-item">
                         <i class="fa-brands fa-instagram footer__icon"></i>
-                        <a href="" class="footer__link font16">Instagram</a>
+                        <a target="_blank" href="https://www.instagram.com/anetgallery/" class="footer__link font16">Instagram</a>
                     </li>
                     <li class="footer__list-item">
                         <i class="fa-brands fa-facebook-f footer__icon"></i>
-                        <a href="" class="footer__link font16">Facebook</a>
+                        <a target="_blank" href="https://www.facebook.com/profile.php?id=100063985475603" class="footer__link font16">Facebook</a>
                     </li>
                     <li class="footer__list-item">
                         <i class="fa-brands fa-pinterest-p footer__icon"></i>
-                        <a href="" class="footer__link font16">Pintrest</a>
-                    </li>
-                    <li class="footer__list-item">
-                        <i class="fa-brands fa-twitter footer__icon"></i>
-                        <a href="" class="footer__link font16">Twitter</a>
+                        <a target="_blank" href="https://www.pinterest.com/anetgallery/" class="footer__link font16">Pintrest</a>
                     </li>
                 </ul>
             </div>

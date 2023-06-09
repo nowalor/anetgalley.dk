@@ -28,7 +28,7 @@
             </ul>
             <div class="products pb-12">
                 @forelse($products as $product)
-                    <div class="product pt-8">
+                    <div class="product pt-8 mb-4">
                         <h2 class="heading-lg medium">{{ $product->name }}</h2>
                         <div class="product__price-box mt-2">
                             <p class="product__price medium">{{$product->price }}DKK</p>
@@ -38,7 +38,7 @@
                         </p>
                         <img src="{{ asset("storage/product-images/$product->id/$product->image_url") }}" alt=""
                              class="product__image mt-2">
-                        <a href="{{route('products.show', $product->id)}}" class="button-pink-100 ttu mt-2">{{ __('shop.view_product') }}</a>
+                        <a href="{{ route('products.show', $product) }}" class="button-black-inverse mt-2 width100">{{ __('homepage.view_product') }}</a>
                     </div>
                     @empty
                     <p class="heading-md mt-2">No products match criteria.</p>

@@ -15,6 +15,7 @@
                 width: 100%;
             }
         }
+
         &__price {
             padding: 1rem 1.5rem;
             border-radius: 10rem;
@@ -102,6 +103,36 @@
         font-size: 1.6rem;
         white-space: pre-line;
         text-align: left;
+        height: 35rem;
+        overflow-y: scroll;
+        margin-right: 1rem;
+
+        &::-webkit-scrollbar {
+            width: 0.6rem;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 10px;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: #777;
+            border-radius: 1rem;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 1rem;
+        }
+
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+            background: #777;
+        }
     }
 
     .description::first-letter {
