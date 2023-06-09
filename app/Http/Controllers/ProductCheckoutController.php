@@ -44,7 +44,6 @@ class ProductCheckoutController extends Controller
 
             $quickPayCheckout = (new QuickPayService($order))->createCheckoutLink();
 
-
             if(!$quickPayCheckout['success']) {
                 return redirect()->back()->withError('Something went wrong. Please let us know and we will investigate');
             }

@@ -10,15 +10,17 @@ class ProductController extends Controller
 {
     public function index(Request $request)
     {
+        $products = Product::where('quantity', '>', 0);
+
         if($request->query('filter')) {
             if($request->query('filter') === 'original') {
-                $products = Product::where('category_id', 1)->paginate(6)->withQueryString();
+                $products = $products->where('category_id', 1);
             } else if($request->query('filter') === 'replica') {
-                $products = Product::where('category_id', 2)->paginate(6)->withQueryString();
+                $products = $products->where('category_id', 2);
             }
-        } else {
-            $products = Product::paginate(6)->withQueryString();
         }
+
+        $products = $products->paginate(6)->withQueryString();
 
         return view('products.index', compact('products'));
     }
