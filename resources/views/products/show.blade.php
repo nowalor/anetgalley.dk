@@ -85,9 +85,7 @@
                                 </div>
                             </div>
                             <div class="mt-8">
-                                <a href="{{ route('checkout.products.show', $product) }}" class="button-black-inverse ttu width100">Request invoice</a>
-                                <a href="{{ config('app.mobile_pay_link') }}"
-                                   class="button-black-inverse ttu width100">Buy now</a>
+                                <a href="{{ route('checkout.products.show', $product) }}" class="button-black-inverse ttu width100">Purchase</a>
                             </div>
                         </div>
                     </div>
