@@ -24,6 +24,9 @@ class Order extends Model
         'city',
         'zip_code',
         'address',
+        'buyer_name',
+        'buyer_phone',
+        'buyer_email',
     ];
 
     const DELIVERY_TYPE_LOCATION_A = 'location_a';

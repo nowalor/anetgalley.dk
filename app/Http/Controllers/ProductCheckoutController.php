@@ -31,6 +31,9 @@ class ProductCheckoutController extends Controller
                 'quantity' => $request->get('quantity'),
                 'delivery_type' => $validated['delivery_type'],
                 'uuid' => Order::createUUID(),
+                'buyer_name' => $validated['buyer_name'],
+                'buyer_phone' => $validated['buyer_phone'],
+                'buyer_email' => $validated['buyer_email'],
             ];
 
             if($order['delivery_type'] === Order::DELIVERY_TYPE_DELIVERY_DENMARK) {

@@ -44,7 +44,6 @@ class QuickPayService
                 'amount' => $this->order->product->price,
                 'cancel_url' => route('checkout.products.show', ['product' => $this->order->product, 'error' => 'You cancelled the payment. Please try again.']),
                 'continue_url' => route('checkout.success'),
-                'callback_url' => route('quickpay.webhook'),
             ]);
 
             if ($link->httpStatus() !== 200) {

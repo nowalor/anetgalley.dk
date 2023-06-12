@@ -12,6 +12,8 @@
             <i class="fa-solid fa-circle-check icon-xll" style="color: #25a61c;"></i>
             <h1 class="heading-lg medium checkout-success__heading pt-4">Thank you for your purchase!</h1>
             <p class="heading-sm pt-2">You will receive an email with your order confirmation shortly.</p>
+            <p class="heading-sm pt-2">Didn't get the email? Check your spam folder.</p>
+            <p class="heading-sm pt-2">Still didn't get it? Reach out at anetgallery@anetgallery.dk</p>
             <div class="pt-4">
                 <a href="{{ route('products.index') }}" class="link-button-underline">
                     Go back home &rarr;

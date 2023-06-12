@@ -32,7 +32,7 @@ return [
     ],
 
     'quickpay' => [
-        'api_key' => env('QUICKPAY_PRIVATE_KEY'),
-    ]
-
+        'api_key' => env('QUICKPAY_API_KEY'),
+        'private_key' => env('QUICKPAY_PRIVATE_KEY'),
+    ],
 ];
