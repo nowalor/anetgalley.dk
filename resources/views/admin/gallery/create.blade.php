@@ -8,7 +8,7 @@
         <form style="width: 45rem;" method="POST" action="{{ route('admin.gallery.store') }}"
               enctype="multipart/form-data">
             @csrf
-            <input type="file" name="image"/>
+            <input type="file" name="images[]" multiple/>
             <button type="submit" class="mt-2 button-pink-100 ttu">Submit</button>
         </form>
     </div>

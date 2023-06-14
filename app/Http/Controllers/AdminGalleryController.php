@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AdminStoreGalleryImageRequest;
 use App\Models\GalleryImage;
-use Illuminate\Http\Request;
 
 class AdminGalleryController extends Controller
 {
@@ -26,10 +25,13 @@ class AdminGalleryController extends Controller
     {
         $request->validated();
 
-        $image = $request->file('image');
-        $storedImage = $image->store('gallery', 'public');
+        if($request->hasFile('images')) {
+            foreach($request->file('images') as $image) {
+                $storedImage = $image->store('gallery', 'public');
 
-        GalleryImage::create(['image' => $storedImage]);
+                GalleryImage::create(['image' => $storedImage]);
+            }
+        }
 
         return redirect()->route('admin.gallery.index');
     }
