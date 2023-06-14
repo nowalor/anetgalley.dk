@@ -643,7 +643,7 @@ table {
 .footer__content-logo {
   font-size: 10.2rem;
   font-weight: 300;
-  color: black;
+  color: #FFF;
   font-family: SunZoomSpark;
 }
 @media (max-width: 1000px) {
