@@ -34,7 +34,6 @@ class UpdateProductRequest extends FormRequest
                'dimensions' => 'string|nullable',
                'weight' => 'string|nullable',
                'material' => 'string|nullable',
-               'condition' => 'string|nullable',
             ];
     }
 }

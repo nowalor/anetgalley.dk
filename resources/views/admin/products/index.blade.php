@@ -27,7 +27,6 @@
             <div class="admin-product-header__item">Dimensions</div>
             <div class="admin-product-header__item">Weight</div>
             <div class="admin-product-header__item">Material</div>
-            <div class="admin-product-header__item">Condition</div>
             <div class="admin-product-header__item">Actions</div>
         </div>
         @forelse($products  as $product)
@@ -38,7 +37,6 @@
                 <div class="admin-products__item">{{ $product->dimensions && $product->dimensions }}</div>
                 <div class="admin-products__item">{{ $product->weight && $product->weight }}</div>
                 <div class="admin-products__item">{{ $product->material && $product->material }}</div>
-                <div class="admin-products__item">{{ $product->condition && $product->condition }}</div>
                 <div class="admin-products__item admin-products__actions">
                     <a class="view-button" href="{{ route('admin.products.show', $product) }}">View</a>
                     <a class="edit-button" href="{{ route('admin.products.edit', $product) }}">Edit</a>

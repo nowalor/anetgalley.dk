@@ -108,15 +108,6 @@
                 @enderror
             </div>
 
-            <div class="form-group pt-2">
-                <label class="label">Condition</label>
-                <input type="text" class="input @error('condition') validation-error-input @enderror" name="condition"
-                       value="{{ old('condition') }}">
-                @error('condition')
-                <p class="validation-error">{{ $message }}</p>
-                @enderror
-            </div>
-
             <button type="submit" class="mt-2 button-pink-100 ttu">Submit</button>
         </form>
     </div>

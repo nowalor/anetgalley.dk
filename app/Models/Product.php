@@ -21,7 +21,6 @@ class Product extends Model
         'dimensions',
         'weight',
         'material',
-        'condition',
         'quantity',
         'delivery_cost',
     ];
