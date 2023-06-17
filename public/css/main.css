@@ -690,7 +690,7 @@ table {
 .pink-divider {
   height: 0.2rem;
   width: 1.6rem;
-  background-color: var(--pink);
+  background-color: #e20101;
   margin-left: 0.3rem;
 }
 
@@ -850,7 +850,7 @@ table {
   text-decoration: none;
 }
 .filter-links .active {
-  color: var(--pink) !important;
+  color: #e20101 !important;
   cursor: default;
 }
 
@@ -1105,7 +1105,7 @@ table {
   cursor: pointer;
 }
 .description-and-information .active {
-  color: var(--pink);
+  color: #e20101;
   cursor: default;
 }
 .description-and-information .description, .description-and-information .additional-information {
@@ -1498,7 +1498,7 @@ table {
   color: var(--primary);
 }
 .breadcrumbs__link-active {
-  color: var(--pink);
+  color: #e20101;
   font-weight: 600;
 }
 .breadcrumbs__slash {
@@ -1639,7 +1639,7 @@ table {
   padding-bottom: 8rem;
 }
 .paginator__active {
-  background-color: var(--pink);
+  background-color: #e20101;
 }
 .paginator__active-text {
   color: #FFF !important;
