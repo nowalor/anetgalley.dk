@@ -887,9 +887,6 @@ table {
 }
 .product__image {
   width: 100%;
-  height: 37.5rem;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 .contact-page {
@@ -1057,15 +1054,9 @@ table {
 }
 .single-product-page .single-product__image {
   width: 100%;
-  height: 50vh;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 0.3rem;
-}
-@media (max-width: 1200px) {
-  .single-product-page .single-product__image {
-    height: 30vh;
-  }
 }
 @media (max-width: 1000px) {
   .single-product-page .single-product__image {
