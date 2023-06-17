@@ -28,7 +28,6 @@ class ProductFactory extends Factory
             'dimensions' => '0.3',
             'weight' => '5kg',
             'material' => 'gold',
-            'condition' => 'amazing',
             'quantity' => $categoryId === 1 ? 1 : rand(1, 20),
         ];
     }

@@ -76,11 +76,6 @@
                                             <h3 class="ttu medium heading-sm">Material:</h3>
                                             <h3 class="heading sm text-lighter">{{ $product->material }}</h3>
                                         </div>
-
-                                        <div class="information-box__row display-flex justify-space-between">
-                                            <h3 class="ttu medium heading-sm">Condition:</h3>
-                                            <h3 class="heading sm text-lighter">{{ $product->condition }}</h3>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

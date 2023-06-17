@@ -49,15 +49,13 @@
   font-weight: 600;
 }
 
-.tagline-italic {
+.tagline {
   font-size: 2.4rem;
-  font-style: italic;
 }
 
 .tagline-white-italic {
   font-size: 2.4rem;
   color: #FFF;
-  font-style: italic;
 }
 
 /* UTILITIES */
@@ -645,7 +643,7 @@ table {
 .footer__content-logo {
   font-size: 10.2rem;
   font-weight: 300;
-  color: black;
+  color: #FFF;
   font-family: SunZoomSpark;
 }
 @media (max-width: 1000px) {
@@ -717,41 +715,6 @@ table {
   background: #444;
   text-align: center;
   padding-top: 11rem;
-}
-
-.decoration-line {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 2.8rem;
-  width: 100%;
-}
-.decoration-line__line {
-  height: 0.2rem;
-  width: 20rem;
-  background-color: #A5A0A0;
-  margin: 0 1.7rem;
-}
-.decoration-line__square {
-  height: 1rem;
-  width: 1rem;
-  background-color: #A5A0A0;
-  transform: rotate(45deg);
-}
-.decoration-line__outer-square {
-  margin: 0 1.2rem;
-  height: 1.6rem;
-  width: 1.6rem;
-  border: 0.2rem solid #A5A0A0;
-  transform: rotate(45deg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.decoration-line__inner-square {
-  height: 0.6rem;
-  width: 0.6rem;
-  border: 0.2rem solid #A5A0A0;
 }
 
 .shop-preview-item {
@@ -924,9 +887,6 @@ table {
 }
 .product__image {
   width: 100%;
-  height: 37.5rem;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 .contact-page {
@@ -1094,15 +1054,9 @@ table {
 }
 .single-product-page .single-product__image {
   width: 100%;
-  height: 50vh;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 0.3rem;
-}
-@media (max-width: 1200px) {
-  .single-product-page .single-product__image {
-    height: 30vh;
-  }
 }
 @media (max-width: 1000px) {
   .single-product-page .single-product__image {

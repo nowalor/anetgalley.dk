@@ -52,19 +52,10 @@
             <h1 class="large-heading-white" data-aos="fade-right">
                 {{ __('homepage.shop') }}
             </h1>
-            <h3 class="tagline-white-italic mt-1" data-aos="fade-left">
+            <h3 class="tagline-white mt-1" data-aos="fade-left">
                 {{ __('homepage.checkout_the_latest_items') }}
             </h3>
-            <div class="decoration-line mt-2">
-                <div class="decoration-line__line"></div>
-                <div class="decoration-line__square"></div>
-                <div class="decoration-line__outer-square">
-                    <div class="decoration-line__inner-square"></div>
-                </div>
-                <div class="decoration-line__square"></div>
-                <div class="decoration-line__line"></div>
-            </div>
-            <div class="pt-4">
+            <div class="pt-8">
 
             </div>
 
@@ -133,20 +124,11 @@
             <h1 class="heading-xl ttu pt-12">
                 {{ __('homepage.gallery') }}
             </h1>
-            <h3 class="tagline-italic mt-1">
+            <h3 class="tagline mt-1">
                 {{ __('homepage.latest_posts_from_my_gallery') }}
             </h3>
-            <div class="decoration-line mt-2">
-                <div class="decoration-line__line"></div>
-                <div class="decoration-line__square"></div>
-                <div class="decoration-line__outer-square">
-                    <div class="decoration-line__inner-square"></div>
-                </div>
-                <div class="decoration-line__square"></div>
-                <div class="decoration-line__line"></div>
-            </div>
 
-            <div class="gallery">
+            <div class="gallery pt-8">
                 @forelse($chunkedImages as $images)
                     <div class="gallery__column">
                         @foreach($images as $image)

@@ -24,7 +24,8 @@ class AdminStoreGalleryImageRequest extends FormRequest
     public function rules()
     {
         return [
-            'image' => 'required|image'
+            'images' => 'array',
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ];
     }
 }

@@ -6,7 +6,7 @@
 @endsection
 @section('title', 'Admin')
 @section('content')
-    <div class="container center">
+    <div class="container center pb-8">
         <h1 class="heading-lg pt-2">Create a new product</h1>
         <form class="pt-4" action="{{ route('admin.products.update', $product) }}" method="POST"
               enctype="multipart/form-data"
@@ -111,16 +111,7 @@
                 @enderror
             </div>
 
-            <div class="form-group">
-                <label class="label">Condition</label>
-                <input type="text" class="input @error('condition') validation-error-input @enderror" name="condition"
-                       value="{{ $product->condition }}">
-                @error('condition')
-                <p class="validation-error">{{ $message }}</p>
-                @enderror
-            </div>
-
-            <button type="submit" class="mt-2 button-pink-100 ttu">Submit</button>
+            <button type="submit" class="mt-2 button-pink-100 ttu mb-8">Submit</button>
         </form>
     </div>
 @endsection

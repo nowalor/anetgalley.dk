@@ -31,7 +31,7 @@ class AdminProductController extends Controller
     {
         $validated = $request->validated();
 
-        if($validated['dimensions'] || $validated['weight'] || $validated['material'] || $validated['condition']) {
+        if($validated['dimensions'] || $validated['weight'] || $validated['material']) {
             $validated['has_additional_info'] = true;
         }
 
