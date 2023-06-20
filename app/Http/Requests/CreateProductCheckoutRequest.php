@@ -28,6 +28,7 @@ class CreateProductCheckoutRequest extends FormRequest
         return [
             'name' => 'required|string',
             'email' => 'required|string',
+            'phone' => 'required|string',
             'quantity' => 'numeric',
             'delivery_type' => ['required', Rule::in(Order::DELIVERY_TYPES)],
             'country_id' => 'exists:countries,id',
