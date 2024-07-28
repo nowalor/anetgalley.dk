@@ -54,7 +54,8 @@
                         <p class="order-preview-box__info-header mt-2">Delivery information</p>
                         <div>
                             <p class="order-preview-box__info-heading">Delivery type: <span
-                                    class="order-preview-box__info" id="checkout_delivery_type_preview">Pick up at {{ $deliveryTypes[0] }}</span></p>
+                                    class="order-preview-box__info"
+                                    id="checkout_delivery_type_preview">Pick up at {{ $deliveryTypes[0] }}</span></p>
                             <div id="delivery-mail-preview" class="display-none">
                                 <p class="order-preview-box__info-heading">City: <span
                                         class="order-preview-box__info" id="checkout_city_preview"></span></p>
@@ -76,24 +77,24 @@
                             <label class="label" for="">Quantity</label>
                             <select class="input" name="quantity" id="checkout_quantity_select">
                                 @for($i = 1; $i <= $product->quantity; $i++)
-                                    <option value="{{ $i }}">{{ $i }}</option>
+                                    <option value="{{ $i }}" {{ old('quantity') === $i && "selected" }}>{{ $i }}</option>
                                 @endfor
                             </select>
                         </div>
 
                         <div class="form-group">
                             <label for="" class="label">Your name*</label>
-                            <input name="name" type="text" class="input" required>
+                            <input name="name" type="text" class="input" required value="{{ old('name') }}">
                         </div>
 
                         <div class="form-group">
                             <label for="" class="label">Your email*</label>
-                            <input name="email" type="text" class="input" required>
+                            <input name="email" type="text" class="input" required value="{{ old('email') }}">
                         </div>
 
                         <div class="form-group">
                             <label for="" class="label">Your phone*</label>
-                            <input name="phone" type="text" class="input" required>
+                            <input name="phone" type="text" class="input" required value="{{ old('phone') }}">
                         </div>
 
                         <h1 class="mb-2">Delivery information</h1>
@@ -140,8 +141,11 @@
                         </div>
 
                         <div class="display-flex align-center" style="height:1.4rem;">
-                            <label for="terms-and-conditions" class="label" style="margin-bottom: 0.2rem;">I agree to the <a href="{{ asset('pdfs/terms-and-conditions') }}" target="blank">Terms & conditions</a></label>
-                            <input id="terms-and-conditions" type="checkbox" name="terms" style="height: 1.6rem; width: 1.6rem; margin-left: 1rem;" required>
+                            <label for="terms-and-conditions" class="label" style="margin-bottom: 0.2rem;">I agree to
+                                the <a href="{{ asset('pdfs/terms-and-conditions') }}" target="blank">Terms &
+                                    conditions</a></label>
+                            <input id="terms-and-conditions" type="checkbox" name="terms"
+                                   style="height: 1.6rem; width: 1.6rem; margin-left: 1rem;" required>
                         </div>
 
                         <input type="submit" value="submit" class="mt-4 button-black-inverse width100 ttu"/>
@@ -224,13 +228,13 @@
             checkoutAddressPreviewEl.innerHTML = checkoutAddressInputValue
             checkoutZipPreviewEl.innerHTML = checkoutZipInputValue
 
-            if(selectedDeliveryOption === 'location_a') {
+            if (selectedDeliveryOption === 'location_a') {
                 checkoutDeliveryTypePreviewEl.innerHTML = '{{ $deliveryTypes[0] }}'
-            } else if(selectedDeliveryOption === 'location_b') {
+            } else if (selectedDeliveryOption === 'location_b') {
                 checkoutDeliveryTypePreviewEl.innerHTML = '{{ $deliveryTypes[1] }}'
-            } else if(selectedDeliveryOption === 'delivery_denmark') {
+            } else if (selectedDeliveryOption === 'delivery_denmark') {
                 checkoutDeliveryTypePreviewEl.innerHTML = '{{ $deliveryTypes[2] }}'
-            } else if(selectedDeliveryOption === 'delivery_outside_denmark') {
+            } else if (selectedDeliveryOption === 'delivery_outside_denmark') {
                 checkoutDeliveryTypePreviewEl.innerHTML = '{{ $deliveryTypes[3] }}'
             }
         }

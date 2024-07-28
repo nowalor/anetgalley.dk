@@ -34,5 +34,7 @@ class ProcessQuickpayWebhookController extends Controller
         ]);
 
         $email = $order->buyer_email;
+
+        \Mail::to('nikulasoskarsson@gmail.com')->send(new \App\Mail\PurchaseConfirmationMail($order));
     }
 }
